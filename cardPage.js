@@ -218,10 +218,10 @@ function displaySelectedPokemon(formIndex = 0) {
         <div class="pokemon-abilities">
             <div class="ability-list">
                 ${[ability1, ability2, abilityh].filter(Boolean).map(a => {
-        const isLacadia = abilities[a]?.tag === 'lacadia' || abilities[a]?.tag === 'hyper';
+        const isAndela = abilities[a]?.tag === 'andela' || abilities[a]?.tag === 'hyper';
         return `
-                    <div class="pokemon-ability${isLacadia ? ' lacadia-ability' : ''}" tabindex="0">
-                        ${isLacadia ? '◆ ' : ''}${a}${isLacadia ? ' ◆' : ''}
+                    <div class="pokemon-ability${isAndela ? ' andela-ability' : ''}" tabindex="0">
+                        ${isAndela ? '◆ ' : ''}${a}${isAndela ? ' ◆' : ''}
                         <span class="ability-description-popup">
                             ${typeof abilities[a] === 'object' ? abilities[a].description : (abilities[a] || "No Description")}
                         </span>
