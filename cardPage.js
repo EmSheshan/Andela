@@ -2,7 +2,7 @@
 import {abilities} from './abilities.js';
 import {moves} from './moves.js';
 import {pokedex} from './pokedex.js';
-import {hyperdex} from './hyperdex.js';
+import {megadex} from './megadex.js';
 
 // Map where Key = Pokedex Number, Value = ARRAY of Pokémon Objects
 let pokemonNumMap = new Map();
@@ -10,7 +10,7 @@ let uniquePokedexNumbers = [];
 
 function initializePokemonData() {
     const rawData = Object.values(pokedex);
-    const hyperData = Object.values(hyperdex);
+    const megaData = Object.values(megadex);
 
     rawData.forEach((pokemon) => {
         const num = parseInt(pokemon.num);
@@ -22,7 +22,7 @@ function initializePokemonData() {
         pokemonNumMap.get(num).push(pokemon);
     });
 
-    hyperData.forEach((pokemon) => {
+    megaData.forEach((pokemon) => {
         const num = parseInt(pokemon.num);
         pokemonNumMap.set(num, []);
         uniquePokedexNumbers.push(num);
@@ -50,7 +50,7 @@ function getPokemonFormsByNum(pokemonNumber) {
 // --- Display Logic ---
 
 function displayStatBar(stat, value, color, BST = false) {
-    let maxStatValue = 255;
+    let maxStatValue = 180;
     if (BST) maxStatValue = 700;
     const percentageWidth = (value / maxStatValue) * 100;
     const bstClass = BST ? ' bst-row' : '';
@@ -81,10 +81,10 @@ function displaySelectedPokemon(formIndex = 0) {
     const currentFormIndex = formIndex % availableForms.length;
     const selectedPokemon = availableForms[currentFormIndex];
 
-    const isHyper = selectedPokemon.num >= 3000
+    const isMega = selectedPokemon.num >= 3000
 
 
-    document.body.classList.toggle("hyper-pokemon", isHyper);
+    document.body.classList.toggle("mega-pokemon", isMega);
 
     // --- Navigation Logic ---
     const currentSeqIndex = uniquePokedexNumbers.indexOf(pokemonNumber);
@@ -96,14 +96,14 @@ function displaySelectedPokemon(formIndex = 0) {
 
     // --- 1. TITLE FORMATTING (Yakoyza-Oni -> Yakoyza (Oni)) ---
     let displayName = selectedPokemon.name;
-    if (displayName.includes("-") && !isHyper) {
+    if (displayName.includes("-") && !isMega) {
         const parts = displayName.split("-");
         // "Yakoyza" + " (" + "Oni" + ")"
         displayName = `${parts[0]} (${parts[1]})`;
     }
 
     // --- Set Page Title & Nav ---
-    document.title = isHyper ? displayName : `#${pokemonNumber - 1999} ${displayName}`;
+    document.title = isMega ? displayName : `#${pokemonNumber - 1999} ${displayName}`;
 
     const navLabel = (p) => p?.num >= 3000
         ? { num: '', name: p.name }
@@ -218,10 +218,10 @@ function displaySelectedPokemon(formIndex = 0) {
         <div class="pokemon-abilities">
             <div class="ability-list">
                 ${[ability1, ability2, abilityh].filter(Boolean).map(a => {
-        const isAndela = abilities[a]?.tag === 'andela' || abilities[a]?.tag === 'hyper';
+        const isAndela = abilities[a]?.tag === 'andela' || abilities[a]?.tag === 'mega';
         return `
                     <div class="pokemon-ability${isAndela ? ' andela-ability' : ''}" tabindex="0">
-                        ${isAndela ? '◆ ' : ''}${a}${isAndela ? ' ◆' : ''}
+                        ${a}
                         <span class="ability-description-popup">
                             ${typeof abilities[a] === 'object' ? abilities[a].description : (abilities[a] || "No Description")}
                         </span>

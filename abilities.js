@@ -359,10 +359,7 @@ export const abilities = {
     "Dominion": { description: "While the Pokémon is in the battle, the effects of all other Pokémon's Abilities will be nullified or will not be triggered.", tag: "lacadia"},
     "Manifestation": { description: "Boosts the Pokémon's most proficient stat the first time the Pokémon enters a battle.", tag: "lacadia"},
 
-    // Hyper abilities
-    "Burning Heart": { description: "When this Pokémon uses the move Eruption, it is always at maximum damage.", tag: "hyper"},
-    "Tranquility": { description: "This Pokémon's stats cannot be lowered by nay means.", tag: "hyper"},
-    "Deadeye": { description: "Boosts the Pokémon's critical hit ratio when the Pokémon enters a battle.", tag: "hyper"},
-    "Acid Rain": { description: "The Pokémon starts Heavy Rain when it enters battle. All non-Poison type Pokémon become poisoned at the end of the turn in the rain.", tag: "hyper"},
-    "Better Half": { description: "When this Pokémon transforms, its base speed stat is increased by one point.", tag: "hyper"}
+    // Andela Abilities
+    "Cloudburst": { description: "In rain, this Pokémon can immediately use moves that normally require a turn to charge.", tag: "andela"},
+
 }
