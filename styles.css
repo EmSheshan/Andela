@@ -198,6 +198,7 @@ body.mega-pokemon .pokemon-image-large {
             slatePulse 5s ease-in-out infinite;
 }
 
+
 @keyframes slatePulse {
     0% {
         filter:

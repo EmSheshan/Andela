@@ -62,7 +62,7 @@ export const pokedex = {
         kind: "Illuminating",
         description: ["Its spores have a calming effect on those around it, making them lose the will to fight. Too much exposure can lead to losing one's memory and sense of self.",
             "Amistaphore lets off minor radio signals that can reach across the region. People and Pokémon who are sensitive to the signals are drawn to Amistaphore and will feel a sense of calm and happiness when near it."
-        ], "signatureMove": null
+        ], "signatureMove": "Strength Sap"
     }
 
 }

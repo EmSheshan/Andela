@@ -261,10 +261,16 @@ export const moves = {
         description: "The user ignores the effects of opposing Pokémon’s moves and Abilities that draw in moves, allowing this move to hit the chosen target. It has a high critical-hit ratio.",
     },
     "Transform": {
-        type: Type.Normal,
+        type: Type.NORMAL,
         category: Category.STATUS,
         pp: 10,
-        description: "The user transforms into a copy of the target, right down to having the same move set.",
+        description: "The user transforms into a copy of the target, right down to having the same move set."
+    },
+    "Strength Sap": {
+        type: Type.GRASS,
+        category: Category.STATUS,
+        pp: 10,
+        description: "The user restores its own HP by the same amount as the target’s Attack stat. It then lowers the target’s Attack stat.",
     }
 
 };
