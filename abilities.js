@@ -340,16 +340,12 @@ export const abilities = {
   "Metal Eater": { description: "This Pokémon's moves become 30% more powerful when a Steel-type Pokémon is on the field.", tag: "lacadia" },
   "Momentum": { description: "This Pokémon's attack moves become more powerful each time they are used consecutively.", tag: "lacadia" },
   "Hunter's Instincts": { description: "When this Pokémon or an opposing Pokémon enters the battle, the Pokémon reveals whether the opponent can be knocked out in one hit.", tag: "lacadia" },
-  "Abrasive": { description: "When it enters battle, this Pokémon deals damage equal to one-eighth of the enemy's max HP.", tag: "lacadia" },
-  "Lucky Star": { description: "This Pokémon's moves have a doubled chance of triggering secondary effects, while the opponent's moves have a half chance of triggering secondary effects on the user.", tag: "lacadia" },
-  "Aspect Twist": { description: "This Pokémon's Physical moves use its Sp. Atk stat, while Special moves use the Atk stat.", tag: "lacadia" },
-  "Brain Jack": { description: "This Pokémon's Psychic-type moves have a 50% chance of inflicting confusion, infatuation, disable, encore, or torment.", tag: "lacadia" },
+"Brain Jack": { description: "This Pokémon's Psychic-type moves have a 50% chance of inflicting confusion, infatuation, disable, encore, or torment.", tag: "lacadia" },
   "Flightless": { description: "Powers up Flying-type moves.", tag: "lacadia" },
   "Life Aurora": { description: "Whenever an opposing Pokémon restores health, this Pokémon restores the same amount of health.", tag: "lacadia" },
   "Inrush Current": { description: "If the user's previous move has failed, the power of its next move doubles.", tag: "lacadia" },
   "Vitrified": { description: "Boosts its and its ally's special defense stat the first time the Pokémon enters a battle.", tag: "lacadia" },
   "Decay": { description: "All non-Ghost and Dark type Pokémon lose 1/16 of their max HP at the end of each turn.", tag: "lacadia" },
-  "Honor-Bound Duel": { description: "Doubles the damage dealt to the target's replacement if the target switches out.", tag: "lacadia" },
   "Circle of Protection": { description: "The Pokémon takes half damage from moves with a base power of 100 or higher.", tag: "lacadia" },
     "Stealth Strike": { description: "Semi-invulnerable moves deal 50% more damage, and deal 100% more damage if the target switches.", tag: "lacadia" },
   "Weight of the World": { description: "The Pokémon starts the effects of Gravity when it enters battle.", tag: "lacadia" },
@@ -361,5 +357,7 @@ export const abilities = {
 
     // Andela Abilities
     "Cloudburst": { description: "In rain, this Pokémon can immediately use moves that normally require a turn to charge.", tag: "andela"},
+    "Pacifism": { description: "Whenever this Pokemon targets the opponent with a status move, the opponent's Sp. Atk stat is lowered by one stage.", tag: "andela"},
+
 
 }

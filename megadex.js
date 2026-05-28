@@ -5,13 +5,13 @@ export const megadex = {
         name: "Mega Lokix",
         types: ["Bug", "Dark"],
         genderRatio: {M: 0.5, F: 0.5},
-        baseStats: {hp: 81, atk: 137, def: 102, spa: 52, spd: 66, spe: 112},
-        abilities: {0: "Tinted Lens"},
+        baseStats: {hp: 71, atk: 112, def: 108, spa: 92, spd: 95, spe: 72},
+        abilities: {0: "Huge Power"},
         heightm: 1.1,
         weightkg: 19.0,
         kind: "Grasshopper",
-        description: ["Its folded set of legs constantly buzz and can cut through its foes with ease.",
-            "With its newfound power, it challenges all who stand in its way. It feels no need to hide in the shadows."
+        description: ["Its folded set of legs have transformed into powerful blades that can cut through steel. It can strike with blinding speed and precision.",
+            "With its newfound power, it challenges all who stand in its way. It feels no need to hide in the shadows and strikes without mercy."
         ], "signatureMove": "Axe Kick"
     },
     xenotyranitar: {
