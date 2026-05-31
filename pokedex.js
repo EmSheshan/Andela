@@ -15,6 +15,20 @@ export const pokedex = {
             "Aviance enjoy mimicking human laughter, and will often gather in groups to cackle together. To avoid being attacked by Aviance, it is best to join in on their revelry."
         ], "signatureMove": null
     },
+    necrondor: {
+        num: 2022,
+        name: "Necrondor",
+        types: ["Ghost", "Flying"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 100, atk: 60, def: 70, spa: 100, spd: 105, spe: 75},
+        abilities: {0: "Early Bird", 1: "Unnerve", H: "Mummy"},
+        heightm: 1,
+        weightkg: 15,
+        kind: "Deception",
+        description: ["Necrondor are long-lived and their bones are said to grant eternal life. Many ancient funerary sites are said to be guarded by Necrondor, who will attack anyone who tries to steal from them.",
+            "Its tattered wings protect it from the chilling winds of the mountains they call home. They stand still for hours, watching the land with their hypnotic gaze."
+        ], "signatureMove": null
+    },
     sedimentaldormant: {
         num: 2036,
         name: "Sedimental-Dormant",
