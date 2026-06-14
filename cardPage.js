@@ -280,21 +280,6 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowRight') navigatePokemon('next');
 });
 
-// Mobile swipe navigation
-let touchStartX = 0;
-let touchStartY = 0;
-document.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-}, { passive: true });
-document.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    const dy = e.changedTouches[0].screenY - touchStartY;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
-        navigatePokemon(dx < 0 ? 'next' : 'previous');
-    }
-}, { passive: true });
-
 document.addEventListener('DOMContentLoaded', () => {
     setDarkModeFromStorage('.toggle-dark-mode-card');
 
