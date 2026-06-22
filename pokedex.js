@@ -1,5 +1,50 @@
 export const pokedex = {
 
+    fawnna: {
+        num: 2000,
+        name: "Fawnna",
+        types: ["Grass"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 45, atk: 65, def: 50, spa: 40, spd: 55, spe: 63},
+        abilities: {0: "Overgrow", H: "Steadfast"},
+        heightm: 0.4,
+        weightkg: 6,
+        kind: "Budding Fawn",
+        description: ["Incredibly timid, Fawnna hide deep within dense bamboo and copihue groves. If they sense danger, they freeze completely, hoping the flower buds on their heads blend into the brush.",
+            "The twin buds on its head absorb solar energy to keep it warm. When it feels completely safe around its Trainer, the buds emit a soft, comforting glow and a sweet, calming scent."
+        ],
+        signatureMove: null
+    },
+    fawliage: {
+        num: 2001,
+        name: "Fawliage",
+        types: ["Grass"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 60, atk: 85, def: 65, spa: 55, spd: 70, spe: 83},
+        abilities: {0: "Overgrow", H: "Steadfast"},
+        heightm: 0.9,
+        weightkg: 22.5,
+        kind: "Noble Yearling",
+        description: ["Having grown more confident, Fawliage actively patrols its territory. It wears a thick poncho of leaves that acts as a solar panel, channeling energy into its rapidly growing wooden antlers.",
+            "It takes immense pride in its appearance, spending hours grooming its foliage. It practices martial discipline by using its bark-covered rear legs to deliver precise, swift kicks against tree trunks."
+        ],
+        signatureMove: null
+    },
+    dynastag: {
+        num: 2002,
+        name: "Dynastag",
+        types: ["Grass", "Fighting"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 75, atk: 121, def: 75, spa: 60, spd: 82, spe: 117},
+        abilities: {0: "Overgrow", H: "Sharpness"},
+        heightm: 1.7,
+        weightkg: 68,
+        kind: "Grand Monarch",
+        description: ["With an air of absolute nobility, Dynastag rules over its forest domain. It uses its hardened wooden cane with the flawless grace of a master fencer, deflecting enemy attacks with a single, effortless parry.",
+            "When it shakes its elegant, ornate antlers, the delicate bell-flowers ring out a rhythmic chime. This sound relaxes allies, but to its enemies, it is the chilling signal that a duel has begun."
+        ],
+        signatureMove: "Floral Flourish"
+    },
 
     aviance: {
         num: 2021,
