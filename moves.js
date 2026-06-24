@@ -271,6 +271,22 @@ export const moves = {
         category: Category.STATUS,
         pp: 10,
         description: "The user restores its own HP by the same amount as the target’s Attack stat. It then lowers the target’s Attack stat.",
+    },
+    "Counterattack": {
+        type: Type.FIGHTING,
+        category: Category.PHYSICAL,
+        accuracy: 100,
+        power: 70,
+        pp: 5,
+        description: "This move enables the user to attack first. This move fails if the target is not readying an attack.",
+    },
+    "Desperado Strike": {
+        type: Type.FIRE,
+        category: Category.PHYSICAL,
+        accuracy: 90,
+        power: 20,
+        pp: 5,
+        description: "A consecutive three-whip attack that becomes more powerful with each successful hit.",
     }
 
 };
