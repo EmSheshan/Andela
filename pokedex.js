@@ -81,7 +81,7 @@ export const pokedex = {
         name: "Smoldero",
         types: ["Fire", "Ground"],
         genderRatio: {M: 0.875, F: 0.125},
-        baseStats: {hp: 100, atk: 120, def: 85, spa: 65, spd: 75, spe: 85},
+        baseStats: {hp: 90, atk: 120, def: 85, spa: 65, spd: 85, spe: 85},
         abilities: {0: "Blaze", H: "Sand Rush"},
         heightm: 1.6,
         weightkg: 88.5,
@@ -90,6 +90,51 @@ export const pokedex = {
             "Its stone-like greaves are formed from layers of cooled, hardened magma, protecting its legs during high-speed pursuits. Its glowing, fiery fangs can melt through solid iron, leaving molten scorch marks on anything it bites."
         ],
         signatureMove: "Desperado Strike"
+    },
+    sealor: {
+        num: 2006,
+        name: "Sealor",
+        types: ["Water"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 65, atk: 60, def: 65, spa: 45, spd: 50, spe: 33},
+        abilities: {0: "Torrent", H: "Oblivious"},
+        heightm: 0.5,
+        weightkg: 8.2,
+        kind: "Cadet",
+        description: ["It wears a star-shaped mark on its chest with immense pride, eagerly following the orders of older, more experienced Pokémon.",
+            "Despite its clumsy movements on land, it diligently salutes with its flippers to show respect. The thick white fur on its head keeps it warm in freezing ocean currents."
+        ],
+        signatureMove: null
+    },
+    seagent: {
+        num: 2007,
+        name: "Seagent",
+        types: ["Water"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 85, atk: 75, def: 85, spa: 65, spd: 70, spe: 40},
+        abilities: {0: "Torrent", H: "Oblivious"},
+        heightm: 1.2,
+        weightkg: 32.5,
+        kind: "Officer",
+        description: ["Known for its strict discipline, it commands its pod with crisp, sharp barks. The yellow band around its neck acts as a biological flotation device during turbulent storms.",
+            "It stands at attention on jagged coastal rocks, constantly surveying the ocean for signs of danger. Its sleek blue body is built to navigate treacherous waters with ease."
+        ],
+        signatureMove: null
+    },
+    brigantide: {
+        num: 2008,
+        name: "Brigantide",
+        types: ["Water", "Steel"],
+        genderRatio: {M: 0.875, F: 0.125},
+        baseStats: {hp: 110, atk: 105, def: 110, spa: 70, spd: 85, spe: 50},
+        abilities: {0: "Torrent", H: "Intimidate"},
+        heightm: 2.1,
+        weightkg: 145.0,
+        kind: "Admiral",
+        description: ["A legendary commander of the seas, its heavy, steel claws can shred through the hulls of ships. The iron plating on its chest acts as an impenetrable breastplate against enemy attacks.",
+            "It governs massive pods of Sealor and Seagent with unyielding strictness, communicating complex tactical formations through deep, rumbling barks. To withstand extreme deep-sea pressure, it continuously absorbs iron from the ocean floor to naturally harden its body."
+        ],
+        signatureMove: "Hull Press"
     },
 
     aviance: {

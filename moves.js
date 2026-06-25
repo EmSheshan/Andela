@@ -287,6 +287,14 @@ export const moves = {
         power: 20,
         pp: 5,
         description: "A consecutive three-whip attack that becomes more powerful with each successful hit. This may also leave the target with a burn.",
-    }
+    },
+    "Hull Press": {
+        type: Type.STEEL,
+        category: Category.PHYSICAL,
+        accuracy: 100,
+        power: 80,
+        pp: 5,
+        description: "The user attacks by slamming its body into the target. The higher the user's Defense stat, the greater the damage this move deals.",
+    },
 
 };
