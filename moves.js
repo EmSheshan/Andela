@@ -286,7 +286,7 @@ export const moves = {
         accuracy: 90,
         power: 20,
         pp: 5,
-        description: "A consecutive three-whip attack that becomes more powerful with each successful hit.",
+        description: "A consecutive three-whip attack that becomes more powerful with each successful hit. This may also leave the target with a burn.",
     }
 
 };
