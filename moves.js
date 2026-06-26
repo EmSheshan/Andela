@@ -272,7 +272,7 @@ export const moves = {
         pp: 10,
         description: "The user restores its own HP by the same amount as the target’s Attack stat. It then lowers the target’s Attack stat.",
     },
-    "Counterattack": {
+    "Swift Riposte": {
         type: Type.FIGHTING,
         category: Category.PHYSICAL,
         accuracy: 100,

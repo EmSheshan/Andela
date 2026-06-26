@@ -397,14 +397,12 @@ body.mega-pokemon .pokemon-image-large {
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.08em;
-    padding: 0.25rem 0.7rem;
     border-radius: 0;
     white-space: nowrap;
     flex-shrink: 0;
     transition: opacity 0.2s;
     clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 0 100%);
-    /* Right-pointing chevron shape */
-    padding-right: 1rem;
+    padding: 0.25rem 1rem 0.25rem 0.7rem;
 }
 
 .type-filter-container {

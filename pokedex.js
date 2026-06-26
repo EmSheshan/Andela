@@ -43,7 +43,7 @@ export const pokedex = {
         description: ["With an air of absolute nobility, Dynastag rules over its forest domain. It uses its hardened wooden cane with the flawless grace of a master fencer, deflecting enemy attacks with a single, effortless parry.",
             "When it shakes its elegant, ornate antlers, the delicate bell-flowers ring out a rhythmic chime. This sound relaxes allies, but to its enemies, it is the chilling signal that a duel has begun."
         ],
-        signatureMove: "Counterattack"
+        signatureMove: "Swift Riposte"
     },
 
     pyrowl: {
