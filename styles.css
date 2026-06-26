@@ -35,6 +35,25 @@
     /* --- Geometric accent line --- */
     --geo-line: rgba(74, 122, 110, 0.35);  /* verdigris rule */
     --geo-cut:  rgba(58, 88, 112, 0.2);    /* slate rule */
+
+    --type-normal: #cdc9c4;
+    --type-grass: #83c18b;
+    --type-fire: #ed8163;
+    --type-water: #7acde5;
+    --type-electric: #ede263;
+    --type-ice: #9bded5;
+    --type-fighting: #d59d9b;
+    --type-poison: #bc8dc4;
+    --type-ground: #ddbd8b;
+    --type-flying: #acc5ee;
+    --type-psychic: #f591ac;
+    --type-bug: #bcd15a;
+    --type-rock: #cd956b;
+    --type-ghost: #a4a9dd;
+    --type-dragon: #7ab1e5;
+    --type-dark: #a4a9ac;
+    --type-steel: #acc1bc;
+    --type-fairy: #f5b5ee;
 }
 
 
@@ -635,7 +654,7 @@ body.mega-pokemon .pokemon-image-large {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at top right, rgba(195, 137, 28, 0.08), rgba(195, 137, 28, 0) 50%);
+
     pointer-events: none;
 }
 
@@ -761,7 +780,7 @@ body.mega-pokemon .pokemon-image-large {
 .pokemon-description {
     display: block;
     width: 80%;
-    text-align: center;
+    text-align: left;
     box-sizing: border-box;
     padding: 1.4rem;
     color: var(--second-text);

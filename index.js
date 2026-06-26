@@ -6,6 +6,27 @@ import {megadex} from "./megadex.js";
 const IMAGE_PATH = "pokemonArt/";
 const TYPE_ICON_PATH = "typeIcons/";
 
+const TYPE_COLORS = {
+    Normal: "#cdc9c4",
+    Grass: "#83c18b",
+    Fire: "#ed8163",
+    Water: "#7acde5",
+    Electric: "#ede263",
+    Ice: "#9bded5",
+    Fighting: "#d59d9b",
+    Poison: "#bc8dc4",
+    Ground: "#ddbd8b",
+    Flying: "#acc5ee",
+    Psychic: "#f591ac",
+    Bug: "#bcd15a",
+    Rock: "#cd956b",
+    Ghost: "#a4a9dd",
+    Dragon: "#7ab1e5",
+    Dark: "#a4a9ac",
+    Steel: "#acc1bc",
+    Fairy: "#f5b5ee"
+}
+
 
 /**
  * Loads Pokémon data from the imported module and filters it to display only base forms.
@@ -55,7 +76,7 @@ function loadPokemonData() {
             backToTopBtn.classList.toggle('visible', window.scrollY > 400);
         });
         backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({top: 0, behavior: 'smooth'});
         });
     }
 
@@ -94,7 +115,9 @@ function buildTypeFilters(allPokemon) {
     });
 }
 
-
+/**
+ * Filters Pokémon cards based on search input and active type filters.
+ */
 function filterCards() {
     const searchText = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
     const activeTypes = [...document.querySelectorAll('.type-filter-btn.active')].map(b => b.dataset.type);
@@ -134,7 +157,10 @@ function filterCards() {
     });
 }
 
-
+/**
+ * Updates the result count badge with the number of visible Pokémon cards.
+ * @param count
+ */
 function updateResultCount(count) {
     const badge = document.getElementById('resultCount');
     if (!badge) return;
@@ -143,7 +169,11 @@ function updateResultCount(count) {
     badge.textContent = `${count} / ${total}`;
 }
 
-
+/**
+ * Displays Pokémon data in the specified container.
+ * @param {Array} pokemonList - List of Pokémon objects to display.
+ * @param {string} containerId - ID of the container element where cards will be displayed.
+ */
 function displayPokemonData(pokemonList, containerId) {
     const container = document.getElementById(containerId);
     container.innerHTML = "";
@@ -155,11 +185,11 @@ function displayPokemonData(pokemonList, containerId) {
                 entry.target.classList.add("slide-in");
                 entry.target.addEventListener('transitionend', () => {
                     entry.target.style.setProperty('--animation-delay', '0s');
-                }, { once: true });
+                }, {once: true});
                 obs.unobserve(entry.target);
             }
         });
-    }, { root: null, threshold: 0.1 });
+    }, {root: null, threshold: 0.1});
 
     pokemonList.forEach((pokemon) => {
         const displayTileName = pokemon.displayName || pokemon.name;
@@ -179,8 +209,9 @@ function displayPokemonData(pokemonList, containerId) {
 
         pokemonCard.dataset.name = pokemon.name.toLowerCase();
         pokemonCard.dataset.types = pokemon.types.join(',');
+        pokemonCard.style.borderTop =    `6px solid var(--type-${type1.toLowerCase()})`;
 
-        // Set stagger delay only for this card (fixes O(n²) re-loop)
+        // Set stagger delay only for this card
         const randomDelay = (Math.random() * 0.4).toFixed(2);
         pokemonCard.style.setProperty('--animation-delay', `${randomDelay}s`);
 
@@ -203,8 +234,12 @@ function displayPokemonData(pokemonList, containerId) {
         // Use pokemonCard.querySelector instead of document.getElementById
         const cardImage = pokemonCard.querySelector('.pokemon-image');
         if (cardImage) {
-            cardImage.addEventListener("mouseover", () => { cardImage.src = shinyImage; });
-            cardImage.addEventListener("mouseout", () => { cardImage.src = regularImage; });
+            cardImage.addEventListener("mouseover", () => {
+                cardImage.src = shinyImage;
+            });
+            cardImage.addEventListener("mouseout", () => {
+                cardImage.src = regularImage;
+            });
         }
 
         pokemonCard.addEventListener("click", () => {

@@ -358,6 +358,6 @@ export const abilities = {
     // Andela Abilities
     "Cloudburst": { description: "In rain, this Pokémon can immediately use moves that normally require a turn to charge.", tag: "andela"},
     "Pacifism": { description: "Whenever this Pokemon targets the opponent with a status move, the opponent's Sp. Atk stat is lowered by one stage.", tag: "andela"},
-
+    "Ill Omen": { description: "Whenever this Pokemon affects the opponent with a status condition, the opponent also gains the curse effect.", tag: "andela"},
 
 }

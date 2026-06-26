@@ -100,7 +100,7 @@ export const pokedex = {
         abilities: {0: "Torrent", H: "Oblivious"},
         heightm: 0.5,
         weightkg: 8.2,
-        kind: "Cadet",
+        kind: "Naval",
         description: ["It wears a star-shaped mark on its chest with immense pride, eagerly following the orders of older, more experienced Pokémon.",
             "Despite its clumsy movements on land, it diligently salutes with its flippers to show respect. The thick white fur on its head keeps it warm in freezing ocean currents."
         ],
@@ -115,7 +115,7 @@ export const pokedex = {
         abilities: {0: "Torrent", H: "Oblivious"},
         heightm: 1.2,
         weightkg: 32.5,
-        kind: "Officer",
+        kind: "Naval",
         description: ["Known for its strict discipline, it commands its pod with crisp, sharp barks. The yellow band around its neck acts as a biological flotation device during turbulent storms.",
             "It stands at attention on jagged coastal rocks, constantly surveying the ocean for signs of danger. Its sleek blue body is built to navigate treacherous waters with ease."
         ],
@@ -130,7 +130,7 @@ export const pokedex = {
         abilities: {0: "Torrent", H: "Intimidate"},
         heightm: 2.1,
         weightkg: 145.0,
-        kind: "Admiral",
+        kind: "Naval",
         description: ["A legendary commander of the seas, its heavy, steel claws can shred through the hulls of ships. The iron plating on its chest acts as an impenetrable breastplate against enemy attacks.",
             "It governs massive pods of Sealor and Seagent with unyielding strictness, communicating complex tactical formations through deep, rumbling barks. To withstand extreme deep-sea pressure, it continuously absorbs iron from the ocean floor to naturally harden its body."
         ],
@@ -157,7 +157,7 @@ export const pokedex = {
         types: ["Ghost", "Flying"],
         genderRatio: {M: 0.5, F: 0.5},
         baseStats: {hp: 100, atk: 60, def: 70, spa: 100, spd: 105, spe: 75},
-        abilities: {0: "Early Bird", 1: "Unnerve", H: "Mummy"},
+        abilities: {0: "Ill Omen", 1: "Unnerve", H: "Mummy"},
         heightm: 1,
         weightkg: 15,
         kind: "Deception",
