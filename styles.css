@@ -292,7 +292,7 @@ body.mega-pokemon .pokemon-image-large {
             box-shadow 0.35s ease,
             background-color 0.4s ease;
     border-radius: 0;   /* Hard geometric — no rounding */
-    border-top: 0px solid transparent;
+    border-top: 0 solid transparent;
 }
 
 .search-filter-bar.open {
@@ -1070,7 +1070,7 @@ body.mega-pokemon .pokemon-image-large {
     justify-content: center;
     margin-left: 1.1rem;
     margin-top: 0.2rem;
-    margin-bottom: -3.4rem;
+    margin-bottom: -2.6rem;
     border-radius: 0;
     border: none;
     border-bottom: 2px solid var(--accent1);
