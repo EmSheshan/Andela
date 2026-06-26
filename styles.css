@@ -67,6 +67,8 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 8rem;
+    margin-right: 0;
+    margin-bottom: 0;
     overflow-x: hidden;
     background-color: var(--bg1);
     background-image: url('assets/Bg_Light.svg');
@@ -74,6 +76,9 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
     height: 100%;
     position: relative;
+
+
+
 }
 
 
@@ -177,6 +182,17 @@ p {
     gap: 1rem;
     width: 97vw;
     margin: 1rem;
+}
+
+#typeColorOverlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#pokemonCardContainer {
+    position: relative; /* if not already */
 }
 
 #pokedex, #megadex {
@@ -726,6 +742,7 @@ body.mega-pokemon .pokemon-image-large {
     display: block;
 }
 
+
 .card-shiny-toggle:hover     { transform: scale(1.2); filter: brightness(1.2); }
 .card-shiny-toggle.shiny-active { color: var(--accent1); }
 
@@ -851,7 +868,7 @@ body.mega-pokemon .pokemon-image-large {
     top: 0.6rem;
     left: 1rem;
     right: 1rem;
-    height: 1px;
+    height: 0;
     background: var(--geo-line);
 }
 
@@ -1207,7 +1224,7 @@ body.mega-pokemon .pokemon-image-large {
     justify-content: space-between;
     padding: 0.3rem;
     background: var(--accent6);
-    border-bottom: 3px solid var(--accent2);
+    border-bottom: 5px solid var(--accent2);
     background-image: repeating-linear-gradient(
             -65deg,
             transparent 0px,

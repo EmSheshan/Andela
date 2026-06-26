@@ -106,8 +106,8 @@ function displaySelectedPokemon(formIndex = 0) {
     document.title = isMega ? displayName : `#${pokemonNumber - 1999} ${displayName}`;
 
     const navLabel = (p) => p?.num >= 3000
-        ? { num: '', name: p.name }
-        : { num: p ? `#${p.num - 1999}` : '', name: p ? p.name.split('-')[0] : '' };
+        ? {num: '', name: p.name}
+        : {num: p ? `#${p.num - 1999}` : '', name: p ? p.name.split('-')[0] : ''};
 
     const prev = navLabel(prevPokemon);
     const next = navLabel(nextPokemon);
@@ -131,6 +131,15 @@ function displaySelectedPokemon(formIndex = 0) {
     // Handle Types
     const type1 = selectedPokemon.types[0];
     const type2 = selectedPokemon.types[1];
+    document.getElementById('typeColorOverlay').style.background = `linear-gradient(to top, color-mix(in srgb, var(--type-${type1.toLowerCase()}) 20%, transparent) 0%, transparent 50%)`;
+
+    const borderColor = type2
+        ? `linear-gradient(to right, var(--type-${type1.toLowerCase()}), var(--type-${type2.toLowerCase()})) 1`
+        : `linear-gradient(to right, var(--type-${type1.toLowerCase()}), var(--type-${type1.toLowerCase()})) 1`
+
+    document.querySelector('.banner-card').style.borderImage = borderColor;
+    document.querySelector('.banner-card').style.borderBottom = `5px solid transparent`;
+    document.querySelector('.banner-card').style.borderImage = `${borderColor} 1`;
     const type1Image = `typeBars/${type1}.png`;
     const type2Image = type2 ? `typeBars/${type2}.png` : null;
 
