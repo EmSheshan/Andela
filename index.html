@@ -4,7 +4,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
 
@@ -16,8 +15,11 @@
     <title>Andela Pokédex</title>
 
 
-    <link rel="preload" href="assets/Bg_Light.svg" as="image" media="(prefers-color-scheme: light)">
-    <link rel="preload" href="assets/Bg_Dark.svg" as="image" media="(prefers-color-scheme: dark)">
+    <!-- Both are ~500 bytes; preloading both unconditionally avoids a mismatch
+         with the site's manual (localStorage-based) dark mode toggle, which
+         prefers-color-scheme can't detect. -->
+    <link rel="preload" href="assets/Bg_Light.svg" as="image">
+    <link rel="preload" href="assets/Bg_Dark.svg" as="image">
 </head>
 <body>
 
@@ -28,14 +30,14 @@
     <div class="banner-main">
         <h1>Andela Pokédex</h1>
         <button id="searchToggleBtn" class="search-toggle-btn" title="Search & Filter">
-            <i class="fas fa-search"></i>
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15.5" y2="15.5"/></svg>
         </button>
     </div>
 </header>
 
 <div class="search-filter-bar">
     <div class="search-wrapper">
-        <i class="fas fa-search search-icon"></i>
+        <svg class="icon-svg search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15.5" y2="15.5"/></svg>
         <input type="text" id="searchInput" class="search-input" placeholder="Search Pokémon…" autocomplete="off" aria-label="Search Pokémon">
         <span id="resultCount" class="result-count-badge"></span>
     </div>
@@ -57,7 +59,7 @@
 </footer>
 
 <button id="backToTop" class="back-to-top" title="Back to top">
-    <i class="fas fa-arrow-up"></i>
+    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 </button>
 
 <script>

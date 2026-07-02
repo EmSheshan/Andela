@@ -40,8 +40,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/all.min.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="dynamic-favicon" rel="icon"
@@ -60,7 +58,7 @@
 <div class="banner-card">
     <div class="arrow-left">
             <span class="arrow" onclick="navigatePokemon('previous')">
-                <i class="fas fa-chevron-left"></i> <span id="previousPokemonNumber"></span> <span id="previousPokemonName"></span>
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> <span id="previousPokemonNumber"></span> <span id="previousPokemonName"></span>
             </span>
         <span id="previousPokemonInfo" class="pokemon-info"></span>
     </div>
@@ -69,7 +67,7 @@
 
     <div class="arrow-right">
             <span class="arrow" onclick="navigatePokemon('next')">
-                <span id="nextPokemonNumber"></span> <span id="nextPokemonName"> </span> <i class="fas fa-chevron-right"></i>
+                <span id="nextPokemonNumber"></span> <span id="nextPokemonName"> </span> <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
 
             </span>
         <span id="nextPokemonInfo" class="pokemon-info"></span>
@@ -87,7 +85,7 @@
 </div>
 
 
-<button class="exit-button" onclick="window.location.href='index.html'"><i class="fas fa-xmark"></i></button>
+<button class="exit-button" onclick="window.location.href='index.html'"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
 
 <button class="toggle-dark-mode-card" onclick="toggleDarkMode('.toggle-dark-mode-card')"></button>
 

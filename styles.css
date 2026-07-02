@@ -68,6 +68,14 @@
     display: none !important;
 }
 
+/* Inline icons, sized to inherit the parent's font-size like an icon font would. */
+.icon-svg {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: -0.125em;
+}
+
 
 /* ==========================
    Global Styles
