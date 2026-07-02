@@ -49,7 +49,7 @@ function getPokemonFormsByNum(pokemonNumber) {
 
 // --- Display Logic ---
 
-function displayStatBar(stat, value, color, BST = false) {
+function displayStatBar(stat, value, statKey, BST = false) {
     let maxStatValue = 180;
     if (BST) maxStatValue = 700;
     const percentageWidth = (value / maxStatValue) * 100;
@@ -59,10 +59,25 @@ function displayStatBar(stat, value, color, BST = false) {
         <div class="stat-bar${bstClass}">
             <div class="stat-name">${stat}</div>
             <div class="bar-container">
-                <div class="bar-fill" style="background-color: ${color};" data-target-width="${percentageWidth}"></div>
+                <div class="bar-fill ${statKey}" data-target-width="${percentageWidth}"></div>
             </div>
             <div class="stat-value">${value}</div>
         </div>
+    `;
+}
+
+/**
+ * Builds a type badge matching the pastel palette used by the type icons,
+ * instead of the old static typeBars/*.png images.
+ * @param {string} type
+ * @returns {string}
+ */
+function renderTypeBadge(type) {
+    return `
+        <span class="type-badge ${type.toLowerCase()}">
+            <img src="typeIcons/${type}.png" alt="" class="type-badge-icon">
+            ${type}
+        </span>
     `;
 }
 
@@ -116,8 +131,8 @@ function displaySelectedPokemon(formIndex = 0) {
     document.getElementById("nextPokemonNumber").innerText = next.num;
     document.getElementById("nextPokemonName").innerText = next.name;
 
-    document.querySelector(".arrow-left").style.display = prevPokemon ? "block" : "none";
-    document.querySelector(".arrow-right").style.display = nextPokemon ? "block" : "none";
+    document.querySelector(".arrow-left").classList.toggle("hidden", !prevPokemon);
+    document.querySelector(".arrow-right").classList.toggle("hidden", !nextPokemon);
 
 
     // --- 2. IMAGE FILENAME FORMATTING (Yakoyza-Oni -> yakoyzaoni) ---
@@ -131,17 +146,11 @@ function displaySelectedPokemon(formIndex = 0) {
     // Handle Types
     const type1 = selectedPokemon.types[0];
     const type2 = selectedPokemon.types[1];
-    document.getElementById('typeColorOverlay').style.background = `linear-gradient(to top, color-mix(in srgb, var(--type-${type1.toLowerCase()}) 20%, transparent) 0%, transparent 50%)`;
 
-    const borderColor = type2
-        ? `linear-gradient(to right, var(--type-${type1.toLowerCase()}), var(--type-${type2.toLowerCase()})) 1`
-        : `linear-gradient(to right, var(--type-${type1.toLowerCase()}), var(--type-${type1.toLowerCase()})) 1`
-
-    document.querySelector('.banner-card').style.borderImage = borderColor;
-    document.querySelector('.banner-card').style.borderBottom = `5px solid transparent`;
-    document.querySelector('.banner-card').style.borderImage = `${borderColor} 1`;
-    const type1Image = `typeBars/${type1}.png`;
-    const type2Image = type2 ? `typeBars/${type2}.png` : null;
+    // Expose the current type(s) as CSS custom properties; styles.css owns the
+    // actual gradient/overlay formulas that consume them.
+    document.documentElement.style.setProperty('--type1-color', `var(--type-${type1.toLowerCase()})`);
+    document.documentElement.style.setProperty('--type2-color', `var(--type-${(type2 || type1).toLowerCase()})`);
 
     // Handle Abilities
     const ability1 = selectedPokemon.abilities["0"];
@@ -151,8 +160,8 @@ function displaySelectedPokemon(formIndex = 0) {
     // Handle Signature Move
     const sigmove = selectedPokemon.signatureMove;
     const sigmovedesc = moves[sigmove] ? `
-        ${moves[sigmove].type ? `<img src="typeIcons/${moves[sigmove].type}.png" style="width:1.8rem;height:1.8rem;vertical-align:middle;" alt="">` : ''}
-        ${moves[sigmove].category ? `<img src="moveIcons/${moves[sigmove].category}.png" style="width:1.8rem;height:1.8rem;vertical-align:middle;" alt="">` : ''}
+        ${moves[sigmove].type ? `<img src="typeIcons/${moves[sigmove].type}.png" class="sigmove-icon" alt="">` : ''}
+        ${moves[sigmove].category ? `<img src="moveIcons/${moves[sigmove].category}.png" class="sigmove-icon" alt="">` : ''}
         ${moves[sigmove].power ? `Power: ${moves[sigmove].power},` : ''}
         ${moves[sigmove].accuracy ? `Accuracy: ${moves[sigmove].accuracy},` : ''}
         ${moves[sigmove].pp ? `${moves[sigmove].pp} PP<br><br>` : ''}
@@ -166,8 +175,8 @@ function displaySelectedPokemon(formIndex = 0) {
         <div class="title-type-container">
             <h2>${document.title}</h2>
             <span class="type-stack">
-                <img src="${type1Image}" alt="${type1}" class="type-bar">
-                ${type2Image ? `<img src="${type2Image}" alt="${type2}" class="type-bar">` : ""}
+                ${renderTypeBadge(type1)}
+                ${type2 ? renderTypeBadge(type2) : ""}
             </span>
         </div>
         <p class="pokemon-title">The ${selectedPokemon.kind} Pokémon</p>
@@ -213,15 +222,15 @@ function displaySelectedPokemon(formIndex = 0) {
             ${selectedPokemon.weightkg != null ? `<span class="measurement-pill">⚖️ ${selectedPokemon.weightkg} kg</span>` : ''}
         </div>
         <div class="pokemon-stats">
-            ${displayStatBar("HP", selectedPokemon.baseStats.hp, "#FF5959")}
-            ${displayStatBar("Atk", selectedPokemon.baseStats.atk, "#F5AC78")}
-            ${displayStatBar("Def", selectedPokemon.baseStats.def, "#FAE078")}
-            ${displayStatBar("Sp.Atk", selectedPokemon.baseStats.spa, "#9DB7F5")}
-            ${displayStatBar("Sp.Def", selectedPokemon.baseStats.spd, "#A7DB8D")}
-            ${displayStatBar("Speed", selectedPokemon.baseStats.spe, "#FA92B2")}
+            ${displayStatBar("HP", selectedPokemon.baseStats.hp, "hp")}
+            ${displayStatBar("Atk", selectedPokemon.baseStats.atk, "atk")}
+            ${displayStatBar("Def", selectedPokemon.baseStats.def, "def")}
+            ${displayStatBar("Sp.Atk", selectedPokemon.baseStats.spa, "spa")}
+            ${displayStatBar("Sp.Def", selectedPokemon.baseStats.spd, "spd")}
+            ${displayStatBar("Speed", selectedPokemon.baseStats.spe, "spe")}
             ${displayStatBar("BST",
         Object.values(selectedPokemon.baseStats).reduce((a, b) => a + b, 0),
-        "#CA72F2", true
+        "bst", true
     )}
         </div>
         <div class="pokemon-abilities">

@@ -111,7 +111,7 @@ function filterCards() {
         const typeMatch = activeTypes.length === 0 || activeTypes.some(t => types.includes(t));
         const visible = nameMatch && typeMatch;
 
-        card.style.display = visible ? '' : 'none';
+        card.classList.toggle('hidden', !visible);
         if (visible) visibleCount++;
     });
 
@@ -122,7 +122,7 @@ function filterCards() {
         const container = document.getElementById(id);
         if (!container) return;
         let noResults = container.querySelector('.no-results');
-        const hasVisible = [...container.querySelectorAll('.pokemon')].some(c => c.style.display !== 'none');
+        const hasVisible = [...container.querySelectorAll('.pokemon')].some(c => !c.classList.contains('hidden'));
         if (!hasVisible) {
             if (!noResults) {
                 noResults = document.createElement('p');
@@ -188,7 +188,7 @@ function displayPokemonData(pokemonList, containerId) {
 
         pokemonCard.dataset.name = pokemon.name.toLowerCase();
         pokemonCard.dataset.types = pokemon.types.join(',');
-        pokemonCard.style.borderTop =    `6px solid var(--type-${type1.toLowerCase()})`;
+        pokemonCard.style.setProperty('--card-type-color', `var(--type-${type1.toLowerCase()})`);
 
         // Set stagger delay only for this card
         const randomDelay = (Math.random() * 0.4).toFixed(2);

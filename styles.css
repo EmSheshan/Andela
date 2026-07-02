@@ -27,6 +27,10 @@
     /* --- Text --- */
     --main-text: #1e2a20;    /* Near-black blue-slate */
     --second-text: #2d6850;  /* Muted slate */
+    /* Fixed (not theme-driven): the banner bars keep a constant dark
+       background in both light and dark mode, so their text needs a
+       constant light color rather than one that flips per theme. */
+    --banner-text: #f3f5f1;
 
     /* --- Utility --- */
     --shadow: rgba(10, 18, 26, 0.22);
@@ -54,6 +58,14 @@
     --type-dark: #a4a9ac;
     --type-steel: #acc1bc;
     --type-fairy: #f5b5ee;
+}
+
+
+/* ==========================
+   Utilities
+   ========================== */
+.hidden {
+    display: none !important;
 }
 
 
@@ -92,7 +104,7 @@ h1, h2, h3 {
 h1 {
     font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 800;
-    color: var(--bg3);
+    color: var(--banner-text);
     text-align: left;
     letter-spacing: -0.02em;
     filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
@@ -189,6 +201,7 @@ p {
     inset: 0;
     pointer-events: none;
     z-index: 0;
+    background: linear-gradient(to top, color-mix(in srgb, var(--type1-color, var(--type-normal)) 20%, transparent) 0%, transparent 50%);
 }
 
 #pokemonCardContainer {
@@ -341,7 +354,7 @@ body.mega-pokemon .pokemon-image-large {
 .search-toggle-btn {
     background: none;
     border: none;
-    color: var(--bg3);
+    color: var(--banner-text);
     font-size: 1.4rem;
     cursor: pointer;
     padding: 0.4rem 0.6rem;
@@ -576,7 +589,7 @@ body.mega-pokemon .pokemon-image-large {
     border-radius: 0;
 
     /* Hard geometric frame — top accent bar + bottom notch */
-    border-top: 6px solid var(--accent2);
+    border-top: 6px solid var(--card-type-color, var(--accent2));
     border-left: 1px solid var(--bg2);
     border-right: 1px solid var(--bg2);
     border-bottom: 1px solid var(--bg2);
@@ -621,7 +634,6 @@ body.mega-pokemon .pokemon-image-large {
             0 1.6rem 3.2rem rgba(10, 18, 26, 0.25),
             0 0 0 1px rgba(195, 137, 28, 0.3),
             inset 0 1px 0 rgba(255,255,255,0.6);
-    border-top-color: var(--accent1);
 }
 
 .pokemon-image,
@@ -687,10 +699,13 @@ body.mega-pokemon .pokemon-image-large {
     display: flex;
     width: 32rem;
     height: 32rem;
-    border: 5rem solid var(--bg2);
+    /* A grey ring lightly tinted with the primary type color, rather than
+       the type color at full strength. */
+    border: 5rem solid color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
     border-radius: 50%;
     overflow: hidden;
     z-index: -1;
+    transition: border-color 0.4s ease;
 }
 
 .name {
@@ -777,6 +792,12 @@ body.mega-pokemon .pokemon-image-large {
     font-weight: 400;
     color: var(--second-text);
     margin-top: 0.3rem;
+}
+
+.sigmove-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    vertical-align: middle;
 }
 
 
@@ -972,6 +993,14 @@ body.mega-pokemon .pokemon-image-large {
     z-index: 0;
 }
 
+.bar-fill.hp   { background-color: #FF5959; }
+.bar-fill.atk  { background-color: #F5AC78; }
+.bar-fill.def  { background-color: #FAE078; }
+.bar-fill.spa  { background-color: #9DB7F5; }
+.bar-fill.spd  { background-color: #A7DB8D; }
+.bar-fill.spe  { background-color: #FA92B2; }
+.bar-fill.bst  { background-color: #CA72F2; }
+
 
 /* ==========================
    Navigation Arrows
@@ -980,7 +1009,7 @@ body.mega-pokemon .pokemon-image-large {
 .arrow-right { display: flex; justify-content: center; align-items: center; padding-right: 1rem; top: 50%; }
 
 .arrow {
-    color: var(--bg3);
+    color: var(--banner-text);
     font-size: 1.7rem;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -990,7 +1019,43 @@ body.mega-pokemon .pokemon-image-large {
 
 .pokemon-info { text-align: center; flex-grow: 1; }
 
-.type-bar { width: 5rem; height: auto; gap: 1rem; object-fit: contain; margin-top: 0.4rem; }
+.type-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: fit-content;
+    margin-top: 0.4rem;
+    padding: 0.15rem 0.8rem;
+    color: var(--accent6);
+    font-family: "Syne", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+}
+
+.type-badge-icon { height: 1rem; width: auto; }
+
+.type-badge.normal   { background-color: var(--type-normal); }
+.type-badge.fire     { background-color: var(--type-fire); }
+.type-badge.water    { background-color: var(--type-water); }
+.type-badge.grass    { background-color: var(--type-grass); }
+.type-badge.electric { background-color: var(--type-electric); }
+.type-badge.ice      { background-color: var(--type-ice); }
+.type-badge.fighting { background-color: var(--type-fighting); }
+.type-badge.poison   { background-color: var(--type-poison); }
+.type-badge.ground   { background-color: var(--type-ground); }
+.type-badge.flying   { background-color: var(--type-flying); }
+.type-badge.psychic  { background-color: var(--type-psychic); }
+.type-badge.bug      { background-color: var(--type-bug); }
+.type-badge.rock     { background-color: var(--type-rock); }
+.type-badge.ghost    { background-color: var(--type-ghost); }
+.type-badge.dragon   { background-color: var(--type-dragon); }
+.type-badge.dark     { background-color: var(--type-dark); }
+.type-badge.steel    { background-color: var(--type-steel); }
+.type-badge.fairy    { background-color: var(--type-fairy); }
 
 #previousPokemonInfo, #nextPokemonInfo {
     font-family: "Syne", sans-serif;
@@ -1045,13 +1110,16 @@ body.mega-pokemon .pokemon-image-large {
     width: 3rem;
     height: 3rem;
     border-radius: 0;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     border: none;
     background-color: var(--accent2);
     color: var(--bg3);
     z-index: 10;
     box-shadow: 0 0.8rem 1rem var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
@@ -1120,13 +1188,16 @@ body.mega-pokemon .pokemon-image-large {
     background: var(--accent6);
     /* Thin geometric accent stripe at bottom */
     border-bottom: 3px solid var(--accent2);
-    /* Subtle angled stripe detail using gradient */
+    /* Subtle angled stripe detail using gradient. The stops feather by
+       0.5px on each edge so the angled line anti-aliases cleanly instead
+       of showing a hard, pixelated staircase edge. */
     background-image: repeating-linear-gradient(
             -65deg,
             transparent 0px,
-            transparent 28px,
+            transparent 27.5px,
             rgba(74,122,110,0.6) 28px,
-            rgba(74,122,110,0.6) 30px
+            rgba(74,122,110,0.6) 30px,
+            transparent 30.5px
     );
 }
 
@@ -1135,15 +1206,17 @@ body.mega-pokemon .pokemon-image-large {
     justify-content: space-between;
     padding: 0.3rem;
     background: var(--accent6);
-    border-bottom: 5px solid var(--accent2);
+    border-bottom: 5px solid transparent;
+    border-image: linear-gradient(to right, var(--type1-color, var(--accent2)), var(--type2-color, var(--accent2))) 1;
     background-image: repeating-linear-gradient(
             -65deg,
             transparent 0px,
-            transparent 28px,
+            transparent 27.5px,
             rgba(58,88,112,0.5) 28px,
-            rgba(58,88,112,0.5) 30px
+            rgba(58,88,112,0.5) 30px,
+            transparent 30.5px
     );
-    color: var(--bg1);
+    color: var(--banner-text);
     height: 3rem;
 }
 
@@ -1201,7 +1274,8 @@ body.dark-mode {
     --accent2: #c3891c;      /* Verdigris — lightened */
     --accent4: #698e60;      /* Dark slate */
     --accent5: #2d6850;      /* Slate blue — lightened */
-    --accent6: #e8ebe4;
+    /* --accent6 intentionally not overridden: the banner bars and type-badge
+       text are designed against a fixed deep charcoal in both themes. */
 
     --main-text: #d7e3d9;    /* Cool off-white */
     --second-text: #76ae99;  /* Muted teal-slate */
@@ -1218,12 +1292,10 @@ body.dark-mode {
 }
 
 body.dark-mode .pokemon {
-    border-top-color: var(--accent2);
     background-color: var(--bg3);
 }
 
 body.dark-mode .pokemon.slide-in:hover {
-    border-top-color: var(--accent1);
     box-shadow: 0 1rem 2rem var(--shadow);
 }
 

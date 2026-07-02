@@ -7,11 +7,12 @@
 
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Check local storage and apply dark-mode class immediately if needed
+        // Check local storage and apply dark-mode class immediately if needed.
+        // (document.body doesn't exist yet here, so only <html> can be tagged;
+        // the body itself is tagged right after its opening tag, below.)
         const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
         if (isDarkMode) {
             document.documentElement.classList.add('dark-mode');
-            document.body.classList.add('dark-mode');
         }
 
         // Optional: Update favicon immediately if you want
@@ -49,6 +50,9 @@
 </head>
 
 <body id="card-page">
+<script>
+    if (isDarkMode) document.body.classList.add('dark-mode');
+</script>
 
 <div id="typeColorOverlay"></div>
 
@@ -56,7 +60,7 @@
 <div class="banner-card">
     <div class="arrow-left">
             <span class="arrow" onclick="navigatePokemon('previous')">
-                &#8592; <span id="previousPokemonNumber"></span> <span id="previousPokemonName"></span>
+                <i class="fas fa-chevron-left"></i> <span id="previousPokemonNumber"></span> <span id="previousPokemonName"></span>
             </span>
         <span id="previousPokemonInfo" class="pokemon-info"></span>
     </div>
@@ -65,7 +69,7 @@
 
     <div class="arrow-right">
             <span class="arrow" onclick="navigatePokemon('next')">
-                <span id="nextPokemonNumber"></span> <span id="nextPokemonName"> </span> &#8594;
+                <span id="nextPokemonNumber"></span> <span id="nextPokemonName"> </span> <i class="fas fa-chevron-right"></i>
 
             </span>
         <span id="nextPokemonInfo" class="pokemon-info"></span>
@@ -83,7 +87,7 @@
 </div>
 
 
-<button class="exit-button" onclick="window.location.href='index.html'">X</button>
+<button class="exit-button" onclick="window.location.href='index.html'"><i class="fas fa-xmark"></i></button>
 
 <button class="toggle-dark-mode-card" onclick="toggleDarkMode('.toggle-dark-mode-card')"></button>
 
