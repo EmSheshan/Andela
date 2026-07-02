@@ -61,9 +61,28 @@ function displayStatBar(stat, value, statKey, BST = false) {
             <div class="bar-container">
                 <div class="bar-fill ${statKey}" data-target-width="${percentageWidth}"></div>
             </div>
-            <div class="stat-value">${value}</div>
+            <div class="stat-value" data-target-value="${value}">0</div>
         </div>
     `;
+}
+
+/**
+ * Animates a stat number counting up from 0 to its target value.
+ * @param {HTMLElement} el
+ * @param {number} target
+ * @param {number} duration
+ */
+function animateStatValue(el, target, duration = 900) {
+    const startTime = performance.now();
+
+    function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic, matches the bar-fill's easing
+        el.textContent = Math.round(target * eased);
+        if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
 }
 
 /**
@@ -250,12 +269,16 @@ function displaySelectedPokemon(formIndex = 0) {
         ${sigmove ? `<p class="pokemon-sigmove">Signature Move: ${sigmove}<br><span class="pokemon-sigmove-description">${sigmovedesc}</span></p>` : ''}
     `;
 
-    // Animate stat bars after DOM insertion
+    // Animate stat bars and their numbers after DOM insertion
     requestAnimationFrame(() => {
         setTimeout(() => {
             document.querySelectorAll('.bar-fill').forEach(bar => {
                 const target = bar.dataset.targetWidth;
                 if (target != null) bar.style.width = `${target}%`;
+            });
+            document.querySelectorAll('.stat-value').forEach(valueEl => {
+                const target = parseInt(valueEl.dataset.targetValue, 10);
+                if (!isNaN(target)) animateStatValue(valueEl, target);
             });
         }, 60);
     });
@@ -279,6 +302,23 @@ function displaySelectedPokemon(formIndex = 0) {
 }
 
 
+/**
+ * Fades the card content out, runs renderFn (which is expected to update
+ * the DOM), then fades the new content back in.
+ * @param {Function} renderFn
+ */
+function transitionCardContent(renderFn) {
+    const targets = [
+        document.getElementById("pokemonTitleTypeContainer"),
+        document.getElementById("pokemonCardContainer")
+    ];
+    targets.forEach(el => el.classList.add("card-transitioning"));
+    setTimeout(() => {
+        renderFn();
+        targets.forEach(el => el.classList.remove("card-transitioning"));
+    }, 180);
+}
+
 function navigatePokemon(direction) {
     const currentNumber = getPokemonNumberFromURL();
     const currentSeqIndex = uniquePokedexNumbers.indexOf(currentNumber);
@@ -288,11 +328,18 @@ function navigatePokemon(direction) {
     const newIndex = direction === "next" ? currentSeqIndex + 1 : currentSeqIndex - 1;
 
     if (newIndex >= 0 && newIndex < uniquePokedexNumbers.length) {
-        window.location.href = `cardPage.html?pokemonNumber=${uniquePokedexNumbers[newIndex]}`;
+        const newNumber = uniquePokedexNumbers[newIndex];
+        transitionCardContent(() => {
+            history.pushState({}, "", `cardPage.html?pokemonNumber=${newNumber}`);
+            displaySelectedPokemon(0);
+        });
     }
 }
 
 window.navigatePokemon = navigatePokemon;
+window.addEventListener("popstate", () => {
+    transitionCardContent(() => displaySelectedPokemon(0));
+});
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') navigatePokemon('previous');
     if (event.key === 'ArrowRight') navigatePokemon('next');

@@ -208,6 +208,17 @@ p {
     position: relative; /* if not already */
 }
 
+#pokemonTitleTypeContainer,
+#pokemonCardContainer {
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+#pokemonTitleTypeContainer.card-transitioning,
+#pokemonCardContainer.card-transitioning {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
 #pokedex, #megadex {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
@@ -847,9 +858,12 @@ body.mega-pokemon .pokemon-image-large {
     cursor: pointer;
     outline: none;
     transition: background 0.2s, color 0.2s;
-
-
+    animation: fadeInSlide 0.4s ease-out backwards;
 }
+
+.pokemon-ability:nth-child(1) { animation-delay: 0s; }
+.pokemon-ability:nth-child(2) { animation-delay: 0.08s; }
+.pokemon-ability:nth-child(3) { animation-delay: 0.16s; }
 
 .pokemon-ability::before { content: ''; position: absolute; left: 0.6rem; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: var(--accent5); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
 .andela-ability::before { background: var(--accent1); }
