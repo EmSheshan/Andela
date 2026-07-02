@@ -207,7 +207,7 @@ function displaySelectedPokemon(formIndex = 0) {
             <div class="circle-background">
                 <img src="${regularImage}" class="pokemon-image-large" id="pokemonMainImage" alt=""/>
             </div>
-            <button class="card-shiny-toggle" id="cardShinyToggle" title="Toggle Shiny">
+            <button class="card-shiny-toggle" id="cardShinyToggle" title="Toggle Shiny" aria-label="Toggle shiny form" aria-pressed="false">
                 <svg class="sparkle-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                     <!-- large sparkle -->
                     <path d="M10 5 L11.8 12.2 L19 14 L11.8 15.8 L10 23 L8.2 15.8 L1 14 L8.2 12.2 Z"/>
@@ -232,6 +232,7 @@ function displaySelectedPokemon(formIndex = 0) {
             isShiny = !isShiny;
             mainImage.src = isShiny ? shinyImage : regularImage;
             shinyBtn.classList.toggle('shiny-active', isShiny);
+            shinyBtn.setAttribute('aria-pressed', String(isShiny));
         });
     }
 

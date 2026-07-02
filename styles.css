@@ -606,6 +606,8 @@ body.mega-pokemon .pokemon-image-large {
     padding: 0.5rem;
     text-align: center;
     border-radius: 0;
+    text-decoration: none;
+    color: inherit;
 
     /* Hard geometric frame — top accent bar + bottom notch */
     border-top: 6px solid var(--card-type-color, var(--accent2));
@@ -647,12 +649,18 @@ body.mega-pokemon .pokemon-image-large {
     transform: translateY(0) scale(1);
 }
 
-.pokemon.slide-in:hover {
+.pokemon.slide-in:hover,
+.pokemon.slide-in:focus-visible {
     transform: translateY(-8px) scale(1.02);
     box-shadow:
             0 1.6rem 3.2rem rgba(10, 18, 26, 0.25),
             0 0 0 1px rgba(195, 137, 28, 0.3),
             inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.pokemon.slide-in:focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 3px;
 }
 
 .pokemon-image,
@@ -1031,10 +1039,19 @@ body.mega-pokemon .pokemon-image-large {
 .arrow-right { display: flex; justify-content: center; align-items: center; padding-right: 1rem; top: 50%; }
 
 .arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
     color: var(--banner-text);
     font-size: 1.7rem;
     cursor: pointer;
     transition: color 0.3s ease;
+}
+
+.arrow:focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 2px;
 }
 
 .arrow:hover { color: var(--accent2); }
@@ -1317,7 +1334,8 @@ body.dark-mode .pokemon {
     background-color: var(--bg3);
 }
 
-body.dark-mode .pokemon.slide-in:hover {
+body.dark-mode .pokemon.slide-in:hover,
+body.dark-mode .pokemon.slide-in:focus-visible {
     box-shadow: 0 1rem 2rem var(--shadow);
 }
 

@@ -10,7 +10,11 @@ function applyDarkModeState(isDark, buttonSelector) {
     const button = document.querySelector(buttonSelector);
     document.body.classList.toggle('dark-mode', isDark);
     document.documentElement.classList.toggle('dark-mode', isDark);
-    if (button) button.innerHTML = isDark ? MOON_ICON : SUN_ICON;
+    if (button) {
+        button.innerHTML = isDark ? MOON_ICON : SUN_ICON;
+        button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        button.setAttribute('aria-pressed', String(isDark));
+    }
     changeFavicon(isDark ? MOON_FAVICON : SUN_FAVICON);
 }
 

@@ -66,6 +66,7 @@ function loadPokemonData() {
         searchToggleBtn.addEventListener('click', () => {
             const isOpen = searchFilterBar.classList.toggle('open');
             searchToggleBtn.classList.toggle('active', isOpen);
+            searchToggleBtn.setAttribute('aria-expanded', String(isOpen));
             if (isOpen) {
                 setTimeout(() => document.getElementById('searchInput')?.focus(), 50);
             }
@@ -85,9 +86,11 @@ function buildTypeFilters(allPokemon) {
         const btn = document.createElement('button');
         btn.classList.add('type-filter-btn');
         btn.dataset.type = type;
+        btn.setAttribute('aria-pressed', 'false');
         btn.innerHTML = `<img src="${TYPE_ICON_PATH}${type}.png" alt="${type}"> ${type}`;
         btn.addEventListener('click', () => {
-            btn.classList.toggle('active');
+            const isActive = btn.classList.toggle('active');
+            btn.setAttribute('aria-pressed', String(isActive));
             filterCards();
         });
         container.appendChild(btn);
@@ -183,7 +186,8 @@ function displayPokemonData(pokemonList, containerId) {
         const type1Image = `${TYPE_ICON_PATH}${type1}.png`;
         const type2Image = type2 ? `${TYPE_ICON_PATH}${type2}.png` : null;
 
-        const pokemonCard = document.createElement("div");
+        const pokemonCard = document.createElement("a");
+        pokemonCard.href = `cardPage.html?pokemonNumber=${pokemon.num}`;
         pokemonCard.classList.add("pokemon");
 
         pokemonCard.dataset.name = pokemon.name.toLowerCase();
@@ -220,10 +224,6 @@ function displayPokemonData(pokemonList, containerId) {
                 cardImage.src = regularImage;
             });
         }
-
-        pokemonCard.addEventListener("click", () => {
-            window.location.href = `cardPage.html?pokemonNumber=${pokemon.num}`;
-        });
 
         container.appendChild(pokemonCard);
         observer.observe(pokemonCard);
