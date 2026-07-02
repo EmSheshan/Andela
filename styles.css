@@ -516,68 +516,6 @@ body.mega-pokemon .pokemon-image-large {
 
 
 /* ==========================
-   Shiny Toggle Button
-   ========================== */
-.shiny-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.8rem;
-}
-
-.shiny-toggle-btn {
-    background: var(--bg3);
-    color: var(--second-text);
-    border: 1.5px solid var(--bg2);
-    border-radius: 0;
-    padding: 0.45rem 1.4rem;
-    font-family: "Syne", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0px 2px 4px var(--shadow));
-    position: relative;
-    overflow: hidden;
-}
-
-.shiny-toggle-btn::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 8px 8px;
-    border-color: transparent transparent var(--bg2) transparent;
-}
-
-.shiny-toggle-btn:hover {
-    border-color: var(--accent2);
-    color: var(--accent2);
-    transform: translateY(-2px);
-    filter: drop-shadow(0px 4px 8px var(--shadow));
-}
-
-.shiny-toggle-btn.shiny-active {
-    background: linear-gradient(135deg, var(--accent2), var(--accent1));
-    color: var(--bg3);
-    border-color: var(--accent1);
-    font-weight: 800;
-}
-
-.shiny-toggle-btn.shiny-active::after {
-    border-bottom-color: var(--accent1);
-}
-
-.shiny-toggle-btn.shiny-active:hover {
-    transform: translateY(-3px) scale(1.05);
-}
-
-
-/* ==========================
    Pokemon Measurements
    ========================== */
 .pokemon-measurements {
@@ -906,13 +844,6 @@ body.mega-pokemon .pokemon-image-large {
     font-weight: 700;
 }
 
-.ability-description {
-    justify-content: center;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    color: var(--second-text);
-}
-
 .ability-description-popup {
     opacity: 0;
     visibility: hidden;
@@ -964,16 +895,6 @@ body.mega-pokemon .pokemon-image-large {
 /* ==========================
    Details / Stats
    ========================== */
-.pokemon-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    height: 100%;
-    filter: drop-shadow(0px 0px 8px var(--shadow));
-}
-
 .pokemon-stats {
     margin-right: 1.25rem;
     color: var(--second-text);
@@ -1068,14 +989,6 @@ body.mega-pokemon .pokemon-image-large {
 .arrow:hover { color: var(--accent2); }
 
 .pokemon-info { text-align: center; flex-grow: 1; }
-
-.types-stacked {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 66rem;
-}
 
 .type-bar { width: 5rem; height: auto; gap: 1rem; object-fit: contain; margin-top: 0.4rem; }
 

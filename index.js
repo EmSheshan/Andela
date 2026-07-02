@@ -6,27 +6,6 @@ import {megadex} from "./megadex.js";
 const IMAGE_PATH = "pokemonArt/";
 const TYPE_ICON_PATH = "typeIcons/";
 
-const TYPE_COLORS = {
-    Normal: "#cdc9c4",
-    Grass: "#83c18b",
-    Fire: "#ed8163",
-    Water: "#7acde5",
-    Electric: "#ede263",
-    Ice: "#9bded5",
-    Fighting: "#d59d9b",
-    Poison: "#bc8dc4",
-    Ground: "#ddbd8b",
-    Flying: "#acc5ee",
-    Psychic: "#f591ac",
-    Bug: "#bcd15a",
-    Rock: "#cd956b",
-    Ghost: "#a4a9dd",
-    Dragon: "#7ab1e5",
-    Dark: "#a4a9ac",
-    Steel: "#acc1bc",
-    Fairy: "#f5b5ee"
-}
-
 
 /**
  * Loads Pokémon data from the imported module and filters it to display only base forms.

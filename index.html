@@ -66,23 +66,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         setDarkModeFromStorage('.toggle-dark-mode');
     });
-
-    // Function to change the favicon dynamically
-    function changeFavicon(src) {
-        const link = document.createElement('link');
-        const oldLink = document.getElementById('dynamic-favicon');
-        link.id = 'dynamic-favicon';
-        link.rel = 'icon';
-        link.href = src;
-
-        // Remove the old favicon if it exists
-        if (oldLink) {
-            document.head.removeChild(oldLink);
-        }
-
-        // Add the new favicon
-        document.head.appendChild(link);
-    }
 </script>
 </body>
 </html>

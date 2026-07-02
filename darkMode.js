@@ -32,7 +32,7 @@ function toggleDarkMode(buttonSelector = '.toggle-dark-mode') {
         localStorage.setItem('darkMode', 'enabled');
     } else {
         if (button) button.innerHTML = '<i class="fas fa-sun"></i>';
-        changeFavicon("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>️☀️</text></svg>");
+        changeFavicon("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>");
         localStorage.setItem('darkMode', 'disabled');
     }
 }
