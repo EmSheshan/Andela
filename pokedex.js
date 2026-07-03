@@ -46,9 +46,9 @@ export const pokedex = {
         signatureMove: "Swift Riposte"
     },
 
-    pyrowl: {
+    pumace: {
         num: 2003,
-        name: "Pyrowl",
+        name: "Pumace",
         types: ["Fire"],
         genderRatio: {M: 0.875, F: 0.125},
         baseStats: {hp: 55, atk: 65, def: 45, spa: 50, spd: 48, spe: 55},
@@ -57,7 +57,7 @@ export const pokedex = {
         weightkg: 5.5,
         kind: "Prowler",
         description: ["It inhabits arid badlands and volcanic crags, using the dark, ash-colored fur on its face to shield its eyes from intense desert sun glare. It tracks prey patiently through clouds of dust.",
-            "Highly alert, Pyrowl constantly monitors shifting geothermal currents beneath its paws. If cornered, it beats its tail against the parched earth to create a blinding smokescreen of ash."
+            "Highly alert, Pumace constantly monitors shifting geothermal currents beneath its paws. If cornered, it beats its tail against the parched earth to create a blinding smokescreen of ash."
             ],
         signatureMove: null
     },
@@ -137,9 +137,9 @@ export const pokedex = {
         signatureMove: "Hull Press"
     },
 
-    aviance: {
+    cackloon: {
         num: 2021,
-        name: "Aviance",
+        name: "Cackloon",
         types: ["Ghost", "Flying"],
         genderRatio: {M: 0.5, F: 0.5},
         baseStats: {hp: 70, atk: 50, def: 50, spa: 72, spd: 73, spe: 55},
@@ -148,7 +148,7 @@ export const pokedex = {
         weightkg: 5,
         kind: "Deception",
         description: ["They have uniquely evolved to resemble a human head to frighten others. They are said to lure travelers to their doom by mimicking human laughter.",
-            "Aviance enjoy mimicking human laughter, and will often gather in groups to cackle together. To avoid being attacked by Aviance, it is best to join in on their revelry."
+            "Cackloon enjoy mimicking human laughter, and will often gather in groups to cackle together. To avoid being attacked by Cackloon, it is best to join in on their revelry."
         ], "signatureMove": null
     },
     necrondor: {
