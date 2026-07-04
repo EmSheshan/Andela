@@ -81,6 +81,7 @@ html {
        than the actual visible area — which itself causes horizontal
        overflow. 100% doesn't have that problem. */
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* Inline icons, sized to inherit the parent's font-size like an icon font would. */
@@ -101,10 +102,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8rem;
-    margin-right: 0;
-    margin-bottom: 0;
-    overflow-x: hidden;
+    margin: 8rem 0 0;
+    overflow-x: clip;
+    /* overflow-x: hidden alone doesn't stop touch-driven horizontal
+       panning/rubber-banding on mobile Safari — this restricts touch
+       gestures to vertical scrolling (and pinch-zoom) only, so horizontal
+       scroll is blocked even via touch, not just mouse/scrollbar. */
+    /*touch-action: pan-y pinch-zoom;*/
     background-color: var(--bg1);
     background-image: url('assets/Bg_Light.svg');
     background-repeat: repeat;
@@ -1084,7 +1088,7 @@ body.mega-pokemon .pokemon-image-large {
     padding: 0;
     font: inherit;
     color: var(--banner-text);
-    font-size: 1.7rem;
+    font-size: min(1.7rem, 5.5vw);
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -1188,7 +1192,7 @@ body.mega-pokemon .pokemon-image-large {
 .form-switch-button:hover { background-color: var(--accent1); }
 
 .exit-button {
-    position: fixed;
+    position: absolute;
     bottom: 0.7rem;
     right: 0.7rem;
     width: 3rem;
@@ -1234,11 +1238,10 @@ body.mega-pokemon .pokemon-image-large {
     background-color: rgba(0,0,0,0);
     color: var(--accent2);
     font-size: 3rem;
-    padding: 0.5rem 0.6rem;
     border: none;
     cursor: pointer;
     transition: color 0.3s ease;
-    position: fixed;
+    position: absolute;
     bottom: 4.25rem;
     right: 0.7rem;
     font-weight: bold;
@@ -1322,6 +1325,7 @@ body.mega-pokemon .pokemon-image-large {
 ::-webkit-scrollbar-thumb:hover  { background: var(--accent2); }
 ::-webkit-scrollbar-thumb:active { background: var(--accent1); }
 
+
 @media (max-width: 600px) {
     /* The prev/next Pokémon name no longer fits next to its number and
        arrow icon at this width, and wrapping onto a second line inside
@@ -1342,7 +1346,7 @@ body.mega-pokemon .pokemon-image-large {
         margin-top: 0.4rem;
         min-width: 200px;
         max-width: 90vw;
-        clip-path: none;  /* notch looks odd pointing sideways when it's now below */
+        clip-path: none; /* notch looks odd pointing sideways when it's now below */
     }
 
     .pokemon-ability:hover .ability-description-popup,
@@ -1351,6 +1355,25 @@ body.mega-pokemon .pokemon-image-large {
     .pokemon-ability:focus .ability-description-popup.left {
         transform: translateX(-50%) translateY(0);
     }
+
+    .card-shiny-toggle {
+        top: 4.5rem;
+        right: -2.5rem;
+    }
+
+    .pokemon-description {
+        width: 120%;
+    }
+
+    .ability-list {
+        margin: 3rem -2rem;
+    }
+
+    .title-type-container {
+        gap: 0;
+        margin: 3rem 0 0.5rem 1rem;
+    }
+
 }
 
 
