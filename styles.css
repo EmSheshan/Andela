@@ -40,6 +40,12 @@
     --geo-line: rgba(74, 122, 110, 0.35);  /* verdigris rule */
     --geo-cut:  rgba(58, 88, 112, 0.2);    /* slate rule */
 
+    /* Cap on the actual Pokémon artwork (not the decorative ring behind
+       it) so it always stays fully visible and centered on narrow
+       screens, even though the ring itself is allowed to bleed off the
+       edges of the page. */
+    --card-art-size: min(32rem, 95vw);
+
     --type-normal: #cdc9c4;
     --type-grass: #83c18b;
     --type-fire: #ed8163;
@@ -66,6 +72,15 @@
    ========================== */
 .hidden {
     display: none !important;
+}
+
+html {
+    /* Not 100vw: that unit includes the scrollbar's width in most browsers,
+       so on a page with a vertical scrollbar (this one has one, see
+       overflow-y: scroll below) it makes html render a few pixels wider
+       than the actual visible area — which itself causes horizontal
+       overflow. 100% doesn't have that problem. */
+    width: 100%;
 }
 
 /* Inline icons, sized to inherit the parent's font-size like an icon font would. */
@@ -159,6 +174,14 @@ p {
     align-items: flex-start;
     justify-content: center;
     margin-top: -4rem;
+    width: auto;
+    /* Flex items default to min-width:auto, which refuses to shrink below
+       the intrinsic width of content inside them (here, the decorative
+       circle-background, which is deliberately oversized and meant to
+       bleed off the page rather than push the whole layout wider). This
+       overrides that so the container can actually shrink to fit narrow
+       screens. */
+    min-width: 0;
 }
 
 .pokemon-card-left {
@@ -166,6 +189,7 @@ p {
     flex-direction: column;
     flex: 1 1 70%;
     max-width: 70%;
+    min-width: 0;
     justify-content: center;
     align-items: center;
     padding: 1rem;
@@ -496,6 +520,7 @@ body.mega-pokemon .pokemon-image-large {
    Back to Top Button
    ========================== */
 .back-to-top {
+    fill: var(--bg3);
     position: fixed;
     bottom: 0.7rem;
     left: 0.7rem;
@@ -675,8 +700,8 @@ body.mega-pokemon .pokemon-image-large {
 
 .pokemon-image-large {
     position: absolute;
-    width: 32rem;
-    height: 32rem;
+    width: var(--card-art-size);
+    height: var(--card-art-size);
     animation: fadeInSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     filter: drop-shadow(4px 8px 16px rgba(10, 18, 26, 0.35));
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -695,6 +720,11 @@ body.mega-pokemon .pokemon-image-large {
     margin-bottom: -3rem;
     justify-items: center;
     align-items: baseline;
+    min-width: 0;
+    /* Without this, the box shrink-wraps to the oversized circle-background
+       inside it (672px), which genuinely widens the page's scrollable
+       area rather than just letting the ring bleed past its edges visually. */
+    max-width: 100%;
 }
 
 .card-shiny-toggle {
@@ -724,10 +754,20 @@ body.mega-pokemon .pokemon-image-large {
 /* Circle frame */
 .circle-background {
     display: flex;
+    /* Keeps the absolutely-positioned artwork centered inside the ring
+       even when the ring itself is bigger than the viewport and bleeding
+       off both edges. */
+    justify-content: center;
+    align-items: center;
     width: 32rem;
     height: 32rem;
+    /* (Centering the ring itself within its parent, even when it's wider
+       than the parent, is already handled by justify-items: center on
+       .pokemon-images-container — no extra positioning needed here.) */
     /* A grey ring lightly tinted with the primary type color, rather than
-       the type color at full strength. */
+       the type color at full strength. This is decorative and allowed to
+       bleed off the edges of narrow screens, same as it already bleeds
+       off the top/bottom at every screen size. */
     border: 5rem solid color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
     border-radius: 50%;
     overflow: hidden;
@@ -1113,9 +1153,14 @@ body.mega-pokemon .pokemon-image-large {
 .toggle-dark-mode-card {
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .form-switch-button {
+    /* Needed for the z-index below (from the shared button rule above) to
+       actually take effect — without a position, z-index is a no-op, which
+       is why this was rendering under the (z-index: 100) artwork. */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1211,9 +1256,9 @@ body.mega-pokemon .pokemon-image-large {
    ========================== */
 .banner-main,
 .banner-card {
+    width: 100vw;
     display: flex;
     align-items: center;
-    width: 100%;
     position: fixed;
     left: 0;
     z-index: 1000;
@@ -1278,6 +1323,15 @@ body.mega-pokemon .pokemon-image-large {
 ::-webkit-scrollbar-thumb:active { background: var(--accent1); }
 
 @media (max-width: 600px) {
+    /* The prev/next Pokémon name no longer fits next to its number and
+       arrow icon at this width, and wrapping onto a second line inside
+       the fixed-height banner looked broken. Drop the number and keep just
+       the arrow + name. */
+    #previousPokemonNumber,
+    #nextPokemonNumber {
+        display: none;
+    }
+
     .ability-description-popup,
     .ability-description-popup.left {
         right: auto;
