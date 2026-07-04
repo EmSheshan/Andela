@@ -44,7 +44,7 @@
        it) so it always stays fully visible and centered on narrow
        screens, even though the ring itself is allowed to bleed off the
        edges of the page. */
-    --card-art-size: min(32rem, 95vw);
+    --card-art-size: min(32rem, 100vw);
 
     --type-normal: #cdc9c4;
     --type-grass: #83c18b;
@@ -75,11 +75,6 @@
 }
 
 html {
-    /* Not 100vw: that unit includes the scrollbar's width in most browsers,
-       so on a page with a vertical scrollbar (this one has one, see
-       overflow-y: scroll below) it makes html render a few pixels wider
-       than the actual visible area — which itself causes horizontal
-       overflow. 100% doesn't have that problem. */
     width: 100%;
     overflow-x: hidden;
 }
@@ -218,7 +213,6 @@ p {
     box-sizing: border-box;
     background-color: var(--bg1);
     background-image: url('assets/Bg_Light.svg');
-    overflow-y: scroll;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -1259,7 +1253,7 @@ body.mega-pokemon .pokemon-image-large {
    ========================== */
 .banner-main,
 .banner-card {
-    width: 100vw;
+    width: 99vw;
     display: flex;
     align-items: center;
     position: fixed;
