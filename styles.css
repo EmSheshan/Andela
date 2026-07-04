@@ -99,20 +99,12 @@ body {
     align-items: center;
     margin: 8rem 0 0;
     overflow-x: clip;
-    /* overflow-x: hidden alone doesn't stop touch-driven horizontal
-       panning/rubber-banding on mobile Safari — this restricts touch
-       gestures to vertical scrolling (and pinch-zoom) only, so horizontal
-       scroll is blocked even via touch, not just mouse/scrollbar. */
-    /*touch-action: pan-y pinch-zoom;*/
     background-color: var(--bg1);
     background-image: url('assets/Bg_Light.svg');
     background-repeat: repeat;
     transition: background-color 0.4s ease, color 0.4s ease;
     height: 100%;
     position: relative;
-
-
-
 }
 
 
@@ -752,20 +744,10 @@ body.mega-pokemon .pokemon-image-large {
 /* Circle frame */
 .circle-background {
     display: flex;
-    /* Keeps the absolutely-positioned artwork centered inside the ring
-       even when the ring itself is bigger than the viewport and bleeding
-       off both edges. */
     justify-content: center;
     align-items: center;
     width: 32rem;
     height: 32rem;
-    /* (Centering the ring itself within its parent, even when it's wider
-       than the parent, is already handled by justify-items: center on
-       .pokemon-images-container — no extra positioning needed here.) */
-    /* A grey ring lightly tinted with the primary type color, rather than
-       the type color at full strength. This is decorative and allowed to
-       bleed off the edges of narrow screens, same as it already bleeds
-       off the top/bottom at every screen size. */
     border: 5rem solid color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
     border-radius: 50%;
     overflow: hidden;
