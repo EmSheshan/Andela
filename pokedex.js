@@ -91,6 +91,7 @@ export const pokedex = {
         ],
         signatureMove: "Desperado Strike"
     },
+
     sealor: {
         num: 2006,
         name: "Sealor",
@@ -135,6 +136,39 @@ export const pokedex = {
             "It governs massive pods of Sealor and Seagent with unyielding strictness, communicating complex tactical formations through deep, rumbling barks. To withstand extreme deep-sea pressure, it continuously absorbs iron from the ocean floor to naturally harden its body."
         ],
         signatureMove: "Hull Press"
+    },
+
+    panacha: {
+        num: 2009,
+        name: "Panacha",
+        types: ["Normal"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 65, atk: 60, def: 75, spa: 35, spd: 55, spe: 40},
+        abilities: {0: "Thick Fat", 1: "Run Away", H: "Gluttony"},
+        heightm: 0.4,
+        weightkg: 9.5,
+        kind: "Doughy",
+        description: [
+            "Its long, upright ears mimic the shape of wheat stalks to blend into tall grass. It spends hours resting in the harsh sun, allowing its starchy saliva coating to form a light, protective crust over its fur.",
+            "A highly relaxed Pokémon native to rocky foothills. It mixes wild grains with mineral-rich volcanic soil in its cheek pouches to create a thick dough paste, which it uses to reinforce its burrow against predators."
+        ],
+        signatureMove: null
+    },
+    marracacha: {
+        num: 2010,
+        name: "Marracacha",
+        types: ["Normal", "Ground"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 95, atk: 65, def: 100, spa: 65, spd: 80, spe: 35},
+        abilities: {0: "Thick Fat", 1: "Seed Sower", H: "Gluttony"},
+        heightm: 1.1,
+        weightkg: 78.0,
+        kind: "Doughy",
+        description: [
+            "The massive, deep-grooved loaf of bread on its back acts as a rock-hard shield. When threatened, it tucks its body tightly beneath this heavy armor and rolls edge-over-edge like a runaway millstone to flatten enemies.",
+            "The white dust on its face is actually an incredibly fine, dry mountain clay. It uses its internal body heat to kiln-bake its dense shell, venting out hot, yeasty-smelling steam from small indentations along its back when it exerts itself."
+        ],
+        signatureMove: "Oven Bake"
     },
 
     cackloon: {

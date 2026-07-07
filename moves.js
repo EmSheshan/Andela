@@ -297,4 +297,11 @@ export const moves = {
         description: "The user attacks by slamming its body into the target. The higher the user's Defense stat, the greater the damage this move deals.",
     },
 
+    "Oven Bake": {
+        type: Type.GROUND,
+        category: Category.STATUS,
+        pp: 5,
+        description: "The user restores its own HP by up to half its max HP. This also raises the user's Defense and Special Defense by one stage each.",
+    },
+
 };
