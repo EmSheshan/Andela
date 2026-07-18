@@ -199,6 +199,48 @@ export const pokedex = {
             "Its tattered wings protect it from the chilling winds of the mountains they call home. They stand still for hours, watching the land with their hypnotic gaze."
         ], "signatureMove": null
     },
+    peppilla: {
+        num: 2023,
+        name: "Peppilla",
+        types: ["Fire", "Bug"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 45, atk: 40, def: 50, spa: 55, spd: 45, spe: 40},
+        abilities: {0: "Flame Body", 1: "Shield Dust", H: "Compound Eyes"},
+        heightm: 0.3,
+        weightkg: 2.5,
+        kind: "Smoky Pepper",
+        description: ["Peppilla curl around their own tail to mimic ripening peppers, hiding among crops in mountain fields. Farmers consider one in the harvest a sign of a flavorful year.",
+            "Its body builds up a fiery oil as it feeds. Predators that bite a Peppilla are met with a searing taste they never forget."
+        ], "signatureMove": null
+    },
+    peppyre: {
+        num: 2024,
+        name: "Peppyre",
+        types: ["Fire", "Bug"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 45, atk: 45, def: 85, spa: 65, spd: 80, spe: 35},
+        abilities: {0: "Flame Body", 1: "Shield Dust", H: "Compound Eyes"},
+        heightm: 0.6,
+        weightkg: 12,
+        kind: "Smoky Pepper",
+        description: ["Peppyre seals itself in a hardened shell and slowly smolders from within, curing its own body like a smoked pepper. The plume rising from its back carries a rich, spicy aroma for miles.",
+            "It barely moves while its inner fire dries and toughens its shell. Mountain villagers once gathered the fragrant ash it sheds to season their food."
+        ], "signatureMove": null
+    },
+    pepperisher: {
+        num: 2025,
+        name: "Pepperisher",
+        types: ["Fire", "Bug"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 45, atk: 75, def: 70, spa: 115, spd: 90, spe: 90},
+        abilities: {0: "Spicy Spray", 1: "Shield Dust", H: "Tinted Lens"},
+        heightm: 1.4,
+        weightkg: 22,
+        kind: "Smoky Pepper",
+        description: ["Pepperisher scatters burning spice from its wings as it flies, said to be the ground remains of its old shell. A single flake on the tongue can leave a person breathless for days.",
+            "Its bleached mask is the husk of its pupal shell. It descends silently on those who steal from pepper fields, leaving nothing behind but a scorching haze."
+        ], "signatureMove": null
+    },
     sedimentaldormant: {
         num: 2036,
         name: "Sedimental-Dormant",
