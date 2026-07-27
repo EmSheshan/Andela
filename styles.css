@@ -1168,7 +1168,7 @@ body.mega-pokemon .pokemon-image-large {
 .form-switch-button:hover { background-color: var(--accent1); }
 
 .exit-button {
-    position: absolute;
+    position: fixed;
     bottom: 0.7rem;
     right: 0.7rem;
     width: 3rem;
@@ -1217,7 +1217,7 @@ body.mega-pokemon .pokemon-image-large {
     border: none;
     cursor: pointer;
     transition: color 0.3s ease;
-    position: absolute;
+    position: fixed;
     bottom: 4.25rem;
     right: 0.7rem;
     font-weight: bold;

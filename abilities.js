@@ -452,5 +452,9 @@ export const abilities = {
         description: "Whenever this Pokemon affects the opponent with a status condition, the opponent also gains the curse effect.",
         tag: "andela"
     },
+    "Exothermal": {
+        description: "Bug-type moves become Fire-type moves. The power of those moves is boosted a little.",
+        tag: "andela"
+    },
 
 }

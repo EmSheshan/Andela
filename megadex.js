@@ -27,5 +27,21 @@ export const megadex = {
         description: ["If its wounded in any way, it can regrow the wounded parts to be stronger. Eventually, it can become impossible to defeat.",
             "Its old shell is broken from its rapidly-mutating body forcing it apart. Tyranitar is in constant pain from this and lashes out indiscriminately."
         ], "signatureMove": null
+    },
+    xenoscizor: {
+        num: 3002,
+        name: "Xeno Scizor",
+        types: ["Steel", "Fire"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 100, atk: 150, def: 100, spa: 55, spd: 80, spe: 115},
+        abilities: {0: "Exothermal"},
+        heightm: 2.0,
+        weightkg: 200.0,
+        kind: "Pincer",
+        description: [
+            "Its liquid-chrome body conceals a superheated furnace core. It manipulates its molten-steel limbs into terrifying weaponry, crushing targets with cold, mechanical precision.",
+            "A hyper-dense bio-mechanical hunter. Its molten core fuels its morphing limbs, making it virtually indestructible in close combat."
+        ],
+        signatureMove: null
     }
 }
