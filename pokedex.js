@@ -1,5 +1,19 @@
 export const pokedex = {
 
+    synthecyte: {
+        num: 1999,
+        name: "Synthecyte",
+        types: ["Psychic"],
+        baseStats: {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30},
+        abilities: {0: "Normalize"},
+        heightm: 0.3,
+        weightkg: 0.5,
+        kind: "Parasite",
+        description: ["In deep space, Synthecyte fuse together to form a single, massive organism. Together, they travel through the cosmos, feeding on the energy of stars and planets.",
+            "Its DNA is highly adaptable, allowing it to merge with other lifeforms. It seeks out strong species to assimilate, using their power to further its own evolution."
+        ],
+        signatureMove: null
+    },
     fawnna: {
         num: 2000,
         name: "Fawnna",
