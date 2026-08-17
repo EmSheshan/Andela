@@ -456,5 +456,9 @@ export const abilities = {
         description: "Bug-type moves become Fire-type moves. The power of those moves is boosted a little.",
         tag: "andela"
     },
+    "Underdog": {
+        description: "Becomes competitive and deals more damage to Pokémon heavier than the user, but deals less to Pokémon lighter than the user.",
+        tag: "andela"
+    },
 
 }

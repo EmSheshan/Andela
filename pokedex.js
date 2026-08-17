@@ -157,7 +157,7 @@ export const pokedex = {
         name: "Panacha",
         types: ["Normal"],
         genderRatio: {M: 0.5, F: 0.5},
-        baseStats: {hp: 65, atk: 60, def: 75, spa: 35, spd: 55, spe: 40},
+        baseStats: {hp: 55, atk: 40, def: 55, spa: 35, spd: 55, spe: 40},
         abilities: {0: "Thick Fat", 1: "Run Away", H: "Gluttony"},
         heightm: 0.4,
         weightkg: 9.5,
@@ -183,6 +183,39 @@ export const pokedex = {
             "The white dust on its face is actually an incredibly fine, dry mountain clay. It uses its internal body heat to kiln-bake its dense shell, venting out hot, yeasty-smelling steam from small indentations along its back when it exerts itself."
         ],
         signatureMove: "Oven Bake"
+    },
+
+    grismirk: {
+        num: 2017,
+        name: "Grismirk",
+        types: ["Dark"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 45, atk: 60, def: 35, spa: 35, spd: 35, spe: 70},
+        abilities: {0: "Rivalry", H: "Moxie"},
+        heightm: 0.4,
+        weightkg: 4.2,
+        kind: "Grison",
+        description: [
+            "It picks fights with Pokémon far bigger than itself and wears a smug grin the whole time. The tougher the opponent, the more it seems to enjoy the scrap.",
+            "It hides in the thorny brush of the dry hills, darting out to nip at larger Pokémon before scampering off. Trainers know it by its cheeky gold-eyed smirk."
+        ],
+        signatureMove: null
+    },
+    grimson: {
+        num: 2018,
+        name: "Grimson",
+        types: ["Dark"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 66, atk: 100, def: 56, spa: 55, spd: 54, spe: 109},
+        abilities: {0: "Underdog", H: "Moxie"},
+        heightm: 1.0,
+        weightkg: 23.5,
+        kind: "Grison",
+        description: [
+            "It puffs its pale mane up around its head like a hood before a battle. It never backs down from a bigger foe, and it wins far more often than its size suggests.",
+            "Quick, clever, and full of nerve, it thrives on being underestimated. It loves nothing more than toppling an opponent twice its size and strutting off."
+        ],
+        signatureMove: null
     },
 
     cackloon: {
@@ -213,6 +246,7 @@ export const pokedex = {
             "Its tattered wings protect it from the chilling winds of the mountains they call home. They stand still for hours, watching the land with their hypnotic gaze."
         ], "signatureMove": null
     },
+
     peppilla: {
         num: 2023,
         name: "Peppilla",
@@ -255,6 +289,7 @@ export const pokedex = {
             "Its bleached mask is the husk of its pupal shell. It descends silently on those who steal from pepper fields, leaving nothing behind but a scorching haze."
         ], "signatureMove": null
     },
+
     sedimentaldormant: {
         num: 2036,
         name: "Sedimental-Dormant",
@@ -290,6 +325,7 @@ export const pokedex = {
             "Its said that Sedimental is the reincarnation of two lovers who were tragically separated. It constantly searches for its better half, crying in the desert rain."
         ], "signatureMove": null
     },
+
     amistaphore: {
         num: 2068,
         name: "Amistaphore",
@@ -304,5 +340,4 @@ export const pokedex = {
             "Amistaphore lets off minor radio signals that can reach across the region. People and Pokémon who are sensitive to the signals are drawn to Amistaphore and will feel a sense of calm and happiness when near it."
         ], "signatureMove": "Strength Sap"
     }
-
 }
