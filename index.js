@@ -33,45 +33,57 @@ function loadPokemonData() {
     const pokemonList = Array.from(baseFormsMap.values());
     const megaList = Object.values(megadex);
 
+    // Render the main grid first — its first tile is the LCP element, so
+    // getting it into the DOM is the only critical-path work here.
     displayPokemonData(pokemonList, "pokedex");
-    displayPokemonData(megaList, "megadex");
 
-    // Build type filter buttons from all unique types across both lists
-    buildTypeFilters([...pokemonList, ...megaList]);
+    // Everything below the fold (the megadex grid) and the surrounding UI
+    // (type filters, search, buttons) is not needed for the first paint.
+    // Defer it past a paint so the browser can render the LCP tile without
+    // waiting for all this work to finish, cutting LCP render delay.
+    const buildSecondaryUI = () => {
+        displayPokemonData(megaList, "megadex");
 
-    // Wire up search input
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', filterCards);
-    }
+        // Build type filter buttons from all unique types across both lists
+        buildTypeFilters([...pokemonList, ...megaList]);
 
-    // Update count badge initially
-    updateResultCount();
+        // Wire up search input
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', filterCards);
+        }
 
-    // Back to top button
-    const backToTopBtn = document.getElementById('backToTop');
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            backToTopBtn.classList.toggle('visible', window.scrollY > 400);
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-    }
+        // Update count badge initially
+        updateResultCount();
 
-    // Collapsible search toggle
-    const searchToggleBtn = document.getElementById('searchToggleBtn');
-    const searchFilterBar = document.querySelector('.search-filter-bar');
-    if (searchToggleBtn && searchFilterBar) {
-        searchToggleBtn.addEventListener('click', () => {
-            const isOpen = searchFilterBar.classList.toggle('open');
-            searchToggleBtn.classList.toggle('active', isOpen);
-            searchToggleBtn.setAttribute('aria-expanded', String(isOpen));
-            if (isOpen) {
-                setTimeout(() => document.getElementById('searchInput')?.focus(), 50);
-            }
-        });
-    }
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
+        // Collapsible search toggle
+        const searchToggleBtn = document.getElementById('searchToggleBtn');
+        const searchFilterBar = document.querySelector('.search-filter-bar');
+        if (searchToggleBtn && searchFilterBar) {
+            searchToggleBtn.addEventListener('click', () => {
+                const isOpen = searchFilterBar.classList.toggle('open');
+                searchToggleBtn.classList.toggle('active', isOpen);
+                searchToggleBtn.setAttribute('aria-expanded', String(isOpen));
+                if (isOpen) {
+                    setTimeout(() => document.getElementById('searchInput')?.focus(), 50);
+                }
+            });
+        }
+    };
+
+    // Two rAFs guarantee a frame is painted before the deferred work runs.
+    requestAnimationFrame(() => requestAnimationFrame(buildSecondaryUI));
 }
 
 
@@ -160,21 +172,36 @@ function displayPokemonData(pokemonList, containerId) {
     const container = document.getElementById(containerId);
     container.innerHTML = "";
 
-    // One shared observer for all cards in this container
+    // Reveal one tile: give it a playful random stagger delay, add .slide-in to
+    // trigger the fade/slide, then clear the delay so later hover transitions
+    // are snappy.
+    const reveal = (card) => {
+        card.style.setProperty('--animation-delay', `${(Math.random() * 0.4).toFixed(2)}s`);
+        card.classList.add("slide-in");
+        card.addEventListener('transitionend', () => {
+            card.style.setProperty('--animation-delay', '0s');
+        }, {once: true});
+    };
+
+    // Reveal a group of tiles, each popping in on its own random beat.
+    const cascade = (cards) => cards.forEach(reveal);
+
+    // Below-the-fold tiles stagger in as they're scrolled into view.
     const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("slide-in");
-                entry.target.addEventListener('transitionend', () => {
-                    entry.target.style.setProperty('--animation-delay', '0s');
-                }, {once: true});
-                obs.unobserve(entry.target);
-            }
-        });
+        const shown = entries.filter(e => e.isIntersecting).map(e => e.target);
+        shown.forEach(el => obs.unobserve(el));
+        if (shown.length) cascade(shown);
     }, {root: null, threshold: 0.1});
 
-    pokemonList.forEach((pokemon) => {
+    const deferredCards = [];
+
+    pokemonList.forEach((pokemon, index) => {
         const displayTileName = pokemon.displayName || pokemon.name;
+
+        // The first tile of the main Pokédex grid is the LCP element. It must
+        // load eagerly at high priority (and be preloaded from index.html) so
+        // it paints as fast as possible; everything below the fold stays lazy.
+        const isLcpTile = containerId === "pokedex" && index === 0;
 
         const type1 = pokemon.types[0];
         const type2 = pokemon.types[1];
@@ -182,7 +209,6 @@ function displayPokemonData(pokemonList, containerId) {
         const baseId = pokemon.id || pokemon.name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
         const regularImage = `${IMAGE_PATH}${baseId}.png`;
-        const shinyImage = `${IMAGE_PATH}${baseId}_shiny.png`;
         const type1Image = `${TYPE_ICON_PATH}${type1}.png`;
         const type2Image = type2 ? `${TYPE_ICON_PATH}${type2}.png` : null;
 
@@ -194,9 +220,14 @@ function displayPokemonData(pokemonList, containerId) {
         pokemonCard.dataset.types = pokemon.types.join(',');
         pokemonCard.style.setProperty('--card-type-color', `var(--type-${type1.toLowerCase()})`);
 
-        // Set stagger delay only for this card
-        const randomDelay = (Math.random() * 0.4).toFixed(2);
-        pokemonCard.style.setProperty('--animation-delay', `${randomDelay}s`);
+        if (isLcpTile) {
+            // The LCP tile must be visible on the very first frame. The default
+            // tiles start at opacity:0 and only fade in once revealed — that
+            // opacity fade would delay the LCP paint. Start it already-visible
+            // (.slide-in); .lcp-tile plays a transform-only slide-in so it keeps
+            // the entrance animation without the LCP penalty.
+            pokemonCard.classList.add("slide-in", "lcp-tile");
+        }
 
         const displayName = pokemon.num < 3000
             ? `#${pokemon.num - 1999} ${displayTileName}`
@@ -206,7 +237,7 @@ function displayPokemonData(pokemonList, containerId) {
             <img src="${regularImage}"
                 alt="${pokemon.name}"
                 class="pokemon-image"
-                loading="lazy">
+                ${isLcpTile ? 'fetchpriority="high"' : 'loading="lazy"'}>
             <div class="name">${displayName}</div>
             <div class="types">
                 <img src="${type1Image}" alt="${type1}" class="type-image" loading="lazy">
@@ -214,19 +245,25 @@ function displayPokemonData(pokemonList, containerId) {
             </div>
         `;
 
-        // Use pokemonCard.querySelector instead of document.getElementById
-        const cardImage = pokemonCard.querySelector('.pokemon-image');
-        if (cardImage) {
-            cardImage.addEventListener("mouseover", () => {
-                cardImage.src = shinyImage;
-            });
-            cardImage.addEventListener("mouseout", () => {
-                cardImage.src = regularImage;
-            });
-        }
-
         container.appendChild(pokemonCard);
-        observer.observe(pokemonCard);
+        // The LCP tile is already visible (.slide-in above); the rest are
+        // revealed below — immediately if on screen, on scroll otherwise.
+        if (!isLcpTile) deferredCards.push(pokemonCard);
+    });
+
+    // Reveal just the small cluster around mon 1 immediately, so the LCP tile
+    // isn't left visually isolated with a gap after it. Everything else is
+    // handed to the observer and staggers in *as it's scrolled into view* —
+    // that scroll reveal is the whole point of the effect, so keep this count
+    // small (roughly the top row) rather than the whole first screen. A fixed
+    // count avoids reading geometry here (which would force a synchronous
+    // reflow). The megadex is always below the fold, so nothing reveals early.
+    const immediateCount = containerId === "pokedex" ? 6 : 0;
+    requestAnimationFrame(() => {
+        deferredCards.forEach((card, i) => {
+            if (i < immediateCount) reveal(card);
+            else observer.observe(card);
+        });
     });
 }
 

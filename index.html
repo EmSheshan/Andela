@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    <!-- Must be within the first 1024 bytes, so keep it first in <head>. -->
+    <meta charset="UTF-8">
+    <!-- Fonts are self-hosted (see @font-face in styles.css + assets/fonts/),
+         so there's no Google Fonts origin to preconnect to. Preload the primary
+         latin files (DM Sans body, Syne headings) so they're ready before first
+         paint — this avoids the layout shift a late font swap would cause.
+         crossorigin is required on font preloads, even same-origin. -->
+    <link rel="preload" href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="styles.css">
 
     <link id="dynamic-favicon" rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>'">
 
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andela Pokédex</title>
 
@@ -20,6 +25,23 @@
          prefers-color-scheme can't detect. -->
     <link rel="preload" href="assets/Bg_Light.svg" as="image">
     <link rel="preload" href="assets/Bg_Dark.svg" as="image">
+
+    <!-- LCP image: the first Pokédex tile (Synthecyte) is the largest element
+         above the fold. The grid is rendered by a deferred module script, so
+         without this the request isn't discoverable until index.js runs.
+         Preloading it here lets the browser's preload scanner fetch it from
+         the initial document, at high priority. Keep this href in sync with
+         the first tile rendered by index.js. -->
+    <link rel="preload" href="pokemonArt/synthecyte.png" as="image" fetchpriority="high">
+
+    <!-- Preload the whole module graph up front. Without this the browser
+         discovers each import only as the previous module executes
+         (index.js → pokedex.js → megadex.js, a serial round-trip each), which
+         delays creation of the LCP <img> element and shows up as LCP "render
+         delay". modulepreload fetches + compiles them in parallel now. -->
+    <link rel="modulepreload" href="index.js">
+    <link rel="modulepreload" href="pokedex.js">
+    <link rel="modulepreload" href="megadex.js">
 </head>
 <body>
 
@@ -51,7 +73,7 @@
 </main>
 
 <script src="index.js" type="module"></script>
-<script src="darkMode.js"></script>
+<script src="darkMode.js" defer></script>
 
 <footer class="footer">
     <p>&copy; 2026 Pokémon Project. All rights reserved. This is a fan-made project and is not affiliated with or

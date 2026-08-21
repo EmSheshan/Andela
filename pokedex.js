@@ -14,6 +14,7 @@ export const pokedex = {
         ],
         signatureMove: null
     },
+
     fawnna: {
         num: 2000,
         name: "Fawnna",

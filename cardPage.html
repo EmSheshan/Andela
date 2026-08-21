@@ -3,7 +3,31 @@
 
 
 <head>
+    <!-- Must be within the first 1024 bytes, so keep it first in <head>. -->
+    <meta charset="UTF-8">
 
+    <!-- LCP discovery: the large Pokémon art is the LCP element, but its URL
+         depends on ?pokemonNumber, so it can't be a static <link rel=preload>.
+         Resolve it synchronously here — the first thing in <head> — so the
+         request is injected during initial parse instead of waiting for the
+         module graph (pokedex/megadex/cardPage.js) to download and execute.
+         NUM_TO_ART mirrors the num→image-filename mapping in pokedex.js +
+         megadex.js; if a Pokémon is added there, add it here too. A miss only
+         costs the head-start preload — the page still renders the art normally. -->
+    <script>
+        (function () {
+            var NUM_TO_ART = {"1999":"synthecyte","2000":"fawnna","2001":"fawliage","2002":"dynastag","2003":"pumace","2004":"pyroncho","2005":"smoldero","2006":"sealor","2007":"seagent","2008":"brigantide","2009":"panacha","2010":"marracacha","2017":"grismirk","2018":"grimson","2021":"cackloon","2022":"necrondor","2023":"peppilla","2024":"peppyre","2025":"pepperisher","2036":"sedimentaldormant","2068":"amistaphore","3000":"megalokix","3001":"xenotyranitar","3002":"xenoscizor"};
+            var base = NUM_TO_ART[new URLSearchParams(location.search).get('pokemonNumber')];
+            if (base) {
+                var link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = 'pokemonArt/' + base + '.png';
+                link.setAttribute('fetchpriority', 'high');
+                document.head.appendChild(link);
+            }
+        })();
+    </script>
 
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -36,12 +60,14 @@
     </script>
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    <!-- Self-hosted fonts (see @font-face in styles.css + assets/fonts/).
+         Preload the primary latin files so they're ready before first paint,
+         avoiding font-swap layout shift. See index.html for full rationale. -->
+    <link rel="preload" href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2" as="font" type="font/woff2" crossorigin>
 
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link id="dynamic-favicon" rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
     <title>Andela Pokédex</title>
@@ -92,7 +118,7 @@
 
 
 <script type="module" src="cardPage.js"></script>
-<script src="darkMode.js"></script>
+<script src="darkMode.js" defer></script>
 
 </body>
 </html>

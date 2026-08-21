@@ -205,7 +205,7 @@ function displaySelectedPokemon(formIndex = 0) {
     document.getElementById("pokemonCardLeft").innerHTML = `
         <div class="pokemon-images-container">
             <div class="circle-background">
-                <img src="${regularImage}" class="pokemon-image-large" id="pokemonMainImage" alt=""/>
+                <img src="${regularImage}" class="pokemon-image-large" id="pokemonMainImage" alt="" fetchpriority="high"/>
             </div>
             <button class="card-shiny-toggle" id="cardShinyToggle" title="Toggle Shiny" aria-label="Toggle shiny form" aria-pressed="false">
                 <svg class="sparkle-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
