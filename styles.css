@@ -240,34 +240,34 @@
    :root Variables
    ========================== */
 :root {
-    /* --- Backgrounds --- */
-    --bg1: #e9ece5;          /* Cool slate stone */
-    --bg2: #d3d8cc;          /* Mid stone */
-    --bg3: #f3f5f1;          /* Near-white surface */
-    --bg-dark: #111518;
+    /* --- Backgrounds (sun-warmed limestone; green kept, temperature warmed) --- */
+    --bg1: #e8ebd9;          /* Warm pale sage */
+    --bg2: #d7dcc6;          /* Warm mid sage-stone */
+    --bg3: #f5f4e9;          /* Warm limestone surface */
+    --bg-dark: #12140f;
 
-    /* --- Accents (all muted) --- */
-    --accent1: #bf512e;      /* Dusty terracotta / copihue — desaturated */
-    --accent2: #c3891c;      /* Muted verdigris — patinated copper */
-    --accent4: #698e60;      /* Pale warm gray */
-    --accent5: #2d6850;      /* Slate blue — lapis desaturated */
-    --accent6: #1c2e22;      /* Deep Patagonian charcoal */
+    /* --- Accents (richer, less muted — jungle foliage + temple gold) --- */
+    --accent1: #c5542e;      /* Terracotta / copihue */
+    --accent2: #cf9622;      /* Temple gold */
+    --accent4: #689a52;      /* Foliage green */
+    --accent5: #2c7d54;      /* Jungle emerald */
+    --accent6: #1b3324;      /* Deep canopy green */
 
     /* --- Text --- */
-    --main-text: #1e2a20;    /* Near-black blue-slate */
-    --second-text: #2d6850;  /* Muted slate */
+    --main-text: #23291c;    /* Warm near-black olive */
+    --second-text: #316b4c;  /* Deep jungle green */
     /* Fixed (not theme-driven): the banner bars keep a constant dark
        background in both light and dark mode, so their text needs a
        constant light color rather than one that flips per theme. */
-    --banner-text: #f3f5f1;
+    --banner-text: #f5f2e8;
 
     /* --- Utility --- */
-    --shadow: rgba(10, 18, 26, 0.22);
+    --shadow: rgba(28, 20, 10, 0.24);      /* warm brown-black */
     --animation-delay: 0s;
 
-    /* --- Geometric accent line --- */
-    --geo-line: rgba(74, 122, 110, 0.35);  /* verdigris rule */
-    --geo-cut:  rgba(58, 88, 112, 0.2);    /* slate rule */
+    /* --- Geometric accent lines (warm carved-stone rules) --- */
+    --geo-line: rgba(60, 120, 78, 0.35);   /* mossy green rule */
+    --geo-cut:  rgba(191, 81, 46, 0.18);   /* terracotta rule (was cold blue) */
 
     /* Cap on the actual Pokémon artwork (not the decorative ring behind
        it) so it always stays fully visible and centered on narrow
@@ -342,6 +342,7 @@ h1, h2, h3 {
     font-family: "Syne", sans-serif;
     margin: 0;
     letter-spacing: -0.01em;
+    text-wrap: balance;
 }
 
 h1 {
@@ -363,11 +364,12 @@ h2 {
 }
 
 h3 {
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(1.6rem, 4.5vw, 3rem);
+    font-weight: 800;
     color: var(--main-text);
     margin: 2rem 1rem 1.5rem 1rem;
-    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;          /* carved-inscription tracking */
     transition: color 0.4s ease;
     position: relative;
     display: inline-block;
@@ -922,7 +924,7 @@ body.mega-pokemon .pokemon-image-large {
 .pokemon.slide-in:hover::before,
 .pokemon.slide-in:focus-visible::before {
     box-shadow:
-            0 1.6rem 3.2rem rgba(10, 18, 26, 0.25),
+            0 1.6rem 3.2rem rgba(26, 18, 8, 0.25),
             0 0 0 1px rgba(195, 137, 28, 0.3),
             inset 0 1px 0 rgba(255,255,255,0.6);
 }
@@ -947,7 +949,7 @@ body.mega-pokemon .pokemon-image-large {
     width: var(--card-art-size);
     height: var(--card-art-size);
     animation: fadeInSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    filter: drop-shadow(4px 8px 16px rgba(10, 18, 26, 0.35));
+    filter: drop-shadow(4px 8px 16px rgba(26, 18, 8, 0.35));
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     flex: 0 0 200px;
 }
@@ -1224,6 +1226,33 @@ body.mega-pokemon .pokemon-image-large {
 .pokemon-ability:hover  .ability-description-popup.left,
 .pokemon-ability:focus  .ability-description-popup.left {
     transform: translateY(-50%) translateX(0);
+}
+
+/* Phones & tablets: the side popup can run off the edge, so drop it straight
+   below the ability instead. Ability rows are full-width in the (column) list,
+   so anchoring left:0/right:0 makes the popup exactly as wide as the ability and
+   keeps it inside the card — it can't overflow the viewport, and it needs no JS,
+   so it keeps working after navigating between Pokémon. */
+@media (max-width: 1024px) {
+    .ability-description-popup,
+    .ability-description-popup.left {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        margin: 0.4rem 0 0 0;
+        transform: translateY(4px);
+        clip-path: none;   /* the side-pointing notch reads wrong pointing down */
+    }
+    .pokemon-ability:hover .ability-description-popup,
+    .pokemon-ability:focus .ability-description-popup,
+    .pokemon-ability:hover .ability-description-popup.left,
+    .pokemon-ability:focus .ability-description-popup.left {
+        transform: translateY(0);
+    }
 }
 
 
@@ -1522,8 +1551,8 @@ body.mega-pokemon .pokemon-image-large {
             -65deg,
             transparent 0px,
             transparent 27.5px,
-            rgba(74,122,110,0.6) 28px,
-            rgba(74,122,110,0.6) 30px,
+            rgba(207,150,34,0.22) 28px,
+            rgba(207,150,34,0.22) 30px,
             transparent 30.5px
     );
 }
@@ -1539,8 +1568,8 @@ body.mega-pokemon .pokemon-image-large {
             -65deg,
             transparent 0px,
             transparent 27.5px,
-            rgba(58,88,112,0.5) 28px,
-            rgba(58,88,112,0.5) 30px,
+            rgba(207,150,34,0.22) 28px,
+            rgba(207,150,34,0.22) 30px,
             transparent 30.5px
     );
     color: var(--banner-text);
@@ -1576,26 +1605,6 @@ body.mega-pokemon .pokemon-image-large {
         display: none;
     }
 
-    .ability-description-popup,
-    .ability-description-popup.left {
-        right: auto;
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%) translateY(4px);
-        margin-right: 0;
-        margin-top: 0.4rem;
-        min-width: 200px;
-        max-width: 90vw;
-        clip-path: none; /* notch looks odd pointing sideways when it's now below */
-    }
-
-    .pokemon-ability:hover .ability-description-popup,
-    .pokemon-ability:focus .ability-description-popup,
-    .pokemon-ability:hover .ability-description-popup.left,
-    .pokemon-ability:focus .ability-description-popup.left {
-        transform: translateX(-50%) translateY(0);
-    }
-
     .card-shiny-toggle {
         top: 4.5rem;
         right: -2.5rem;
@@ -1622,23 +1631,23 @@ body.mega-pokemon .pokemon-image-large {
    ========================== */
 html.dark-mode,
 body.dark-mode {
-    --bg1: #161e18;          /* Deep slate night */
-    --bg2: #2d3e32;          /* Dark stone surface */
-    --bg3: #233028;          /* Card surface */
+    --bg1: #18201a;          /* Warm canopy night */
+    --bg2: #33402f;          /* Mossy stone surface */
+    --bg3: #2a3327;          /* Warm card surface */
 
-    --accent1: #bf512e;      /* Warm terracotta — dimmed */
-    --accent2: #c3891c;      /* Verdigris — lightened */
-    --accent4: #698e60;      /* Dark slate */
-    --accent5: #2d6850;      /* Slate blue — lightened */
+    --accent1: #cf5a34;      /* Ember terracotta */
+    --accent2: #d39e2e;      /* Firelight gold */
+    --accent4: #74a35c;      /* Foliage green */
+    --accent5: #33875a;      /* Jungle emerald — lightened */
     /* --accent6 intentionally not overridden: the banner bars and type-badge
        text are designed against a fixed deep charcoal in both themes. */
 
-    --main-text: #d7e3d9;    /* Cool off-white */
-    --second-text: #76ae99;  /* Muted teal-slate */
+    --main-text: #e3e6d5;    /* Warm off-white */
+    --second-text: #9ab98a;  /* Warm sage */
     --shadow: rgba(0, 0, 0, 0.7);
 
-    --geo-line: rgba(90, 158, 140, 0.2);
-    --geo-cut:  rgba(88, 128, 160, 0.18);
+    --geo-line: rgba(90, 150, 110, 0.22);
+    --geo-cut:  rgba(207, 90, 52, 0.18);   /* warm ember rule (was cold blue) */
 
     background-image: url('assets/Bg_Dark.svg');
 }

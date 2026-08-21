@@ -348,34 +348,37 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     setDarkModeFromStorage('.toggle-dark-mode-card');
+});
 
-    // Popup Logic — reposition only; show/hide handled by CSS transitions
-    document.querySelectorAll('.pokemon-ability').forEach(abilityEl => {
-        abilityEl.addEventListener('mouseenter', handleAbilityPopupPosition);
-        abilityEl.addEventListener('focus', handleAbilityPopupPosition);
-        abilityEl.addEventListener('mouseleave', removeAbilityPopupLeftClass);
-        abilityEl.addEventListener('blur', removeAbilityPopupLeftClass);
-    });
+// Ability popup positioning.
+// Phones & tablets (<=1024px): CSS drops the popup below the ability, so there's
+// nothing to compute here. Desktop: the popup opens to the side, so flip it to
+// the other side if it would run off-screen. Delegated on `document` (rather
+// than bound per-element) so it keeps working after the ability list is
+// re-rendered when navigating between Pokémon.
+function positionAbilityPopup(abilityEl) {
+    const popup = abilityEl.querySelector('.ability-description-popup');
+    if (!popup) return;
+    popup.classList.remove('left');
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+    // Briefly reveal to measure, then hand positioning back to CSS.
+    popup.style.visibility = 'visible';
+    popup.style.opacity = '1';
+    const rect = popup.getBoundingClientRect();
+    popup.style.visibility = '';
+    popup.style.opacity = '';
+    if (rect.right > window.innerWidth || rect.left < 0) popup.classList.add('left');
+}
 
-    function handleAbilityPopupPosition(e) {
-        const popup = e.currentTarget.querySelector('.ability-description-popup');
-        if (!popup) return;
-        popup.classList.remove('left');
-        // Briefly make visible to measure, then revert to CSS control
-        popup.style.visibility = 'visible';
-        popup.style.opacity = '1';
-        const rect = popup.getBoundingClientRect();
-        popup.style.visibility = '';
-        popup.style.opacity = '';
-        if (rect.right > window.innerWidth || rect.left < 0) {
-            popup.classList.add('left');
-        }
-    }
-
-    function removeAbilityPopupLeftClass(e) {
-        const popup = e.currentTarget.querySelector('.ability-description-popup');
-        if (popup) popup.classList.remove('left');
-    }
+// mouseover with a relatedTarget check behaves like a delegated mouseenter
+// (fires once per entry, not on every move within the ability).
+document.addEventListener('mouseover', (e) => {
+    const a = e.target.closest && e.target.closest('.pokemon-ability');
+    if (a && !a.contains(e.relatedTarget)) positionAbilityPopup(a);
+});
+document.addEventListener('focusin', (e) => {
+    const a = e.target.closest && e.target.closest('.pokemon-ability');
+    if (a) positionAbilityPopup(a);
 });
 
 if ('serviceWorker' in navigator) {
