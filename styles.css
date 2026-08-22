@@ -922,7 +922,7 @@ body.mega-pokemon .pokemon-image-large {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: clamp(100rem, 20vw, 100rem);
     max-width: 100%;
     max-height: 100%;
@@ -1114,9 +1114,20 @@ body.mega-pokemon .pokemon-image-large {
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.2;
-    margin-top: 0.35rem;
     color: var(--main-text);
     transition: color 0.4s ease;
+}
+
+/* Name and type icons share one line, centered, pulled up into the art's
+   transparent bottom padding so there's no big gap under the mon. Wraps the
+   icons below only if a name is too long to fit alongside them. */
+.name-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: -0.75rem;
 }
 
 /* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
@@ -1155,13 +1166,12 @@ body.mega-pokemon .pokemon-image-large {
 
 .type-image { max-height: 1.2rem; width: auto; }
 
-/* Tidy, centered type-icon row beneath the name. */
+/* Type-icon row, sitting inline next to the name (see .name-row). */
 .types {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
-    margin-top: 0.35rem;
 }
 
 .type-stack {

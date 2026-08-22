@@ -274,10 +274,12 @@ function displayPokemonData(pokemonList, containerId) {
                     class="pokemon-image"
                     ${isLcpTile ? 'fetchpriority="high"' : 'loading="lazy"'}>
             </div>
-            <div class="name">${displayTileName}</div>
-            <div class="types">
-                <img src="${type1Image}" alt="${type1}" class="type-image" loading="lazy">
-                ${type2Image ? `<img src="${type2Image}" alt="${type2}" class="type-image" loading="lazy">` : ""}
+            <div class="name-row">
+                <div class="name">${displayTileName}</div>
+                <div class="types">
+                    <img src="${type1Image}" alt="${type1}" class="type-image" loading="lazy">
+                    ${type2Image ? `<img src="${type2Image}" alt="${type2}" class="type-image" loading="lazy">` : ""}
+                </div>
             </div>
         `;
 
