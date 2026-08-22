@@ -137,7 +137,11 @@ function displaySelectedPokemon(formIndex = 0) {
     }
 
     // --- Set Page Title & Nav ---
-    document.title = isMega ? displayName : `#${pokemonNumber - 1999} ${displayName}`;
+    const dexLabel = isMega ? '' : `Nº ${String(pokemonNumber - 1999).padStart(3, '0')}`;
+    document.title = isMega ? displayName : `${dexLabel} · ${displayName}`;
+    const titleHtml = isMega
+        ? displayName
+        : `<span class="dex-num">${dexLabel}</span> ${displayName}`;
 
     const navLabel = (p) => p?.num >= 3000
         ? {num: '', name: p.name}
@@ -192,7 +196,7 @@ function displaySelectedPokemon(formIndex = 0) {
 
     document.getElementById("pokemonTitleTypeContainer").innerHTML = `
         <div class="title-type-container">
-            <h2>${document.title}</h2>
+            <h2>${titleHtml}</h2>
             <span class="type-stack">
                 ${renderTypeBadge(type1)}
                 ${type2 ? renderTypeBadge(type2) : ""}
@@ -238,8 +242,8 @@ function displaySelectedPokemon(formIndex = 0) {
 
     document.getElementById("pokemonCardRight").innerHTML = `
         <div class="pokemon-measurements">
-            ${selectedPokemon.heightm != null ? `<span class="measurement-pill">📏 ${selectedPokemon.heightm} m</span>` : ''}
-            ${selectedPokemon.weightkg != null ? `<span class="measurement-pill">⚖️ ${selectedPokemon.weightkg} kg</span>` : ''}
+            ${selectedPokemon.heightm != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 6l4-3 4 3"/><path d="M8 18l4 3 4-3"/></svg>${selectedPokemon.heightm} m</span>` : ''}
+            ${selectedPokemon.weightkg != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7a3 3 0 0 1 6 0"/><path d="M6 8h12l1.6 12H4.4z"/></svg>${selectedPokemon.weightkg} kg</span>` : ''}
         </div>
         <div class="pokemon-stats">
             ${displayStatBar("HP", selectedPokemon.baseStats.hp, "hp")}
@@ -270,7 +274,10 @@ function displaySelectedPokemon(formIndex = 0) {
         ${sigmove ? `<p class="pokemon-sigmove">Signature Move: ${sigmove}<br><span class="pokemon-sigmove-description">${sigmovedesc}</span></p>` : ''}
     `;
 
-    // Animate stat bars and their numbers after DOM insertion
+    // Animate stat bars and their numbers after DOM insertion (skip the
+    // number count-up for anyone who prefers reduced motion; the bar widths
+    // snap instantly via the reduced-motion CSS).
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     requestAnimationFrame(() => {
         setTimeout(() => {
             document.querySelectorAll('.bar-fill').forEach(bar => {
@@ -279,7 +286,9 @@ function displaySelectedPokemon(formIndex = 0) {
             });
             document.querySelectorAll('.stat-value').forEach(valueEl => {
                 const target = parseInt(valueEl.dataset.targetValue, 10);
-                if (!isNaN(target)) animateStatValue(valueEl, target);
+                if (isNaN(target)) return;
+                if (reduceMotion) valueEl.textContent = target;
+                else animateStatValue(valueEl, target);
             });
         }, 60);
     });

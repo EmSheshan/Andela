@@ -3,6 +3,15 @@
 <head>
     <!-- Must be within the first 1024 bytes, so keep it first in <head>. -->
     <meta charset="UTF-8">
+
+    <!-- Apply dark mode before first paint so a saved dark theme never flashes
+         light on load. Runs synchronously here (and on <body> below); the full
+         toggle wiring lives in darkMode.js. -->
+    <script>
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) document.documentElement.classList.add('dark-mode');
+    </script>
+
     <!-- Fonts are self-hosted (see @font-face in styles.css + assets/fonts/),
          so there's no Google Fonts origin to preconnect to. Preload the primary
          latin files (DM Sans body, Syne headings) so they're ready before first
@@ -44,6 +53,7 @@
     <link rel="modulepreload" href="megadex.js">
 </head>
 <body>
+<script>if (isDarkMode) document.body.classList.add('dark-mode');</script>
 
 <button class="toggle-dark-mode" onclick="toggleDarkMode('.toggle-dark-mode')"></button>
 

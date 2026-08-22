@@ -3,6 +3,14 @@
 import {pokedex} from "./pokedex.js";
 import {megadex} from "./megadex.js";
 
+// The grid is built by JS after the page loads, so the browser's automatic
+// scroll restoration tries to re-apply the old scroll position while the page
+// is still short/building — which makes the content lurch on refresh. Opt out
+// and start at the top; the grid then fills in below without moving the view.
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 const IMAGE_PATH = "pokemonArt/";
 const TYPE_ICON_PATH = "typeIcons/";
 
@@ -87,6 +95,15 @@ function loadPokemonData() {
 }
 
 
+// Canonical in-game type order (the type-chart order), so the filters read the
+// way they do in the games rather than alphabetically. Reorder this list to
+// change the filter order.
+const TYPE_ORDER = [
+    "Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison",
+    "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark",
+    "Steel", "Fairy"
+];
+
 function buildTypeFilters(allPokemon) {
     const typeSet = new Set();
     allPokemon.forEach(p => p.types.forEach(t => typeSet.add(t)));
@@ -94,7 +111,12 @@ function buildTypeFilters(allPokemon) {
     const container = document.getElementById('typeFilterContainer');
     if (!container) return;
 
-    [...typeSet].sort().forEach(type => {
+    const orderOf = (t) => {
+        const i = TYPE_ORDER.indexOf(t);
+        return i === -1 ? TYPE_ORDER.length : i;   // unknown types fall to the end
+    };
+
+    [...typeSet].sort((a, b) => orderOf(a) - orderOf(b)).forEach(type => {
         const btn = document.createElement('button');
         btn.classList.add('type-filter-btn');
         btn.dataset.type = type;
@@ -140,9 +162,13 @@ function filterCards() {
         const hasVisible = [...container.querySelectorAll('.pokemon')].some(c => !c.classList.contains('hidden'));
         if (!hasVisible) {
             if (!noResults) {
-                noResults = document.createElement('p');
+                noResults = document.createElement('div');
                 noResults.className = 'no-results';
-                noResults.textContent = 'No Pokémon match your search.';
+                noResults.innerHTML = `
+                    <div class="no-results-mark">◆</div>
+                    <p class="no-results-title">Nothing in the archive</p>
+                    <p class="no-results-sub">No Pokémon match that search. Try a different name, or clear the type filters.</p>
+                `;
                 container.appendChild(noResults);
             }
         } else if (noResults) {
@@ -227,18 +253,28 @@ function displayPokemonData(pokemonList, containerId) {
             // (.slide-in); .lcp-tile plays a transform-only slide-in so it keeps
             // the entrance animation without the LCP penalty.
             pokemonCard.classList.add("slide-in", "lcp-tile");
+            // Once the one-shot entrance finishes, drop .lcp-tile so its CSS
+            // animation can't replay when filters toggle the tile's display
+            // (display:none→block restarts CSS animations). .slide-in remains,
+            // holding it visible — matching the other tiles, which never replay.
+            pokemonCard.addEventListener('animationend', () => {
+                pokemonCard.classList.remove('lcp-tile');
+            }, {once: true});
         }
 
-        const displayName = pokemon.num < 3000
-            ? `#${pokemon.num - 1999} ${displayTileName}`
-            : displayTileName;
+        const dexNum = pokemon.num < 3000
+            ? `<span class="dex-num">Nº ${String(pokemon.num - 1999).padStart(3, '0')}</span>`
+            : '';
 
         pokemonCard.innerHTML = `
-            <img src="${regularImage}"
-                alt="${pokemon.name}"
-                class="pokemon-image"
-                ${isLcpTile ? 'fetchpriority="high"' : 'loading="lazy"'}>
-            <div class="name">${displayName}</div>
+            <div class="pokemon-art">
+                ${dexNum}
+                <img src="${regularImage}"
+                    alt="${pokemon.name}"
+                    class="pokemon-image"
+                    ${isLcpTile ? 'fetchpriority="high"' : 'loading="lazy"'}>
+            </div>
+            <div class="name">${displayTileName}</div>
             <div class="types">
                 <img src="${type1Image}" alt="${type1}" class="type-image" loading="lazy">
                 ${type2Image ? `<img src="${type2Image}" alt="${type2}" class="type-image" loading="lazy">` : ""}

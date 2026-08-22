@@ -15,7 +15,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 300;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -24,7 +24,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 300;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -33,7 +33,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -42,7 +42,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -51,7 +51,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 300;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -60,7 +60,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 300;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -69,7 +69,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -78,7 +78,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -87,7 +87,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -96,7 +96,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -105,7 +105,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -114,7 +114,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -123,7 +123,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -132,7 +132,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -141,7 +141,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -150,7 +150,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -159,7 +159,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -168,7 +168,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -177,7 +177,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 600;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -186,7 +186,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -195,7 +195,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -204,7 +204,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -213,7 +213,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
@@ -222,7 +222,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
@@ -231,7 +231,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: optional;
+  font-display: swap;
   src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -316,6 +316,19 @@ html {
     vertical-align: -0.125em;
 }
 
+/* One consistent, visible keyboard-focus ring across every interactive element
+   (mouse clicks stay clean via :focus-visible). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible,
+.type-filter-btn:focus-visible,
+.pokemon:focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 3px;
+    border-radius: 1px;
+}
+
 
 /* ==========================
    Global Styles
@@ -363,6 +376,7 @@ h2 {
     transition: color 0.4s ease;
 }
 
+
 h3 {
     font-size: clamp(1.6rem, 4.5vw, 3rem);
     font-weight: 800;
@@ -378,6 +392,18 @@ h3 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     filter: drop-shadow(0.5px 0.5px 2px rgba(0,0,0,0.15));
+}
+
+/* Carved rule beneath the inscription — a thin gold line that fades at both
+   ends, echoing the ◆ markers in the heading. */
+h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 70%;
+    margin: 0.7rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+    opacity: 0.75;
 }
 
 p {
@@ -633,6 +659,7 @@ body.mega-pokemon .pokemon-image-large {
     display: flex;
     align-items: center;
     justify-content: center;
+    fill-opacity: 0;
 }
 
 .search-toggle-btn:hover   { color: var(--accent2); }
@@ -650,6 +677,7 @@ body.mega-pokemon .pokemon-image-large {
     color: var(--second-text);
     font-size: 1rem;
     flex-shrink: 0;
+    fill-opacity: 0;
 }
 
 .search-input {
@@ -712,6 +740,7 @@ body.mega-pokemon .pokemon-image-large {
     white-space: nowrap;
     position: relative;
     overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .type-filter-btn img { height: 1.1rem; width: auto; }
@@ -720,6 +749,7 @@ body.mega-pokemon .pokemon-image-large {
     background: var(--bg2);
     border-color: var(--accent2);
     transform: translateY(-2px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 3px 8px var(--shadow);
 }
 
 .type-filter-btn.active {
@@ -727,17 +757,49 @@ body.mega-pokemon .pokemon-image-large {
     color: var(--bg3);
     border-color: var(--accent1);
     font-weight: 700;
-    box-shadow: 0 3px 12px rgba(45, 104, 80, 0.3);
+    /* Carved-in look when selected: lit top edge over the seated shadow. */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 3px rgba(0, 0, 0, 0.18),
+                0 3px 12px rgba(45, 104, 80, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .no-results {
     grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
     text-align: center;
-    padding: 3rem;
-    color: var(--second-text);
+    padding: 4rem 1.5rem;
+    min-height: 15rem;
+}
+
+.no-results-mark {
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--accent2);
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+}
+
+.no-results-title {
     font-family: "Syne", sans-serif;
-    font-size: 1.4rem;
-    height: 15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 1.35rem;
+    color: var(--main-text);
+}
+
+.no-results-sub {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--second-text);
+    max-width: 34ch;
 }
 
 
@@ -814,6 +876,10 @@ body.mega-pokemon .pokemon-image-large {
 }
 
 .measurement-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-style: normal;
     background: var(--bg3);
     border: 1.5px solid var(--accent4);
     border-radius: 0;
@@ -823,6 +889,13 @@ body.mega-pokemon .pokemon-image-large {
 
     /* Diagonal cut on left side */
     clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+}
+
+.measure-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+    color: var(--accent1);
 }
 
 
@@ -923,8 +996,12 @@ body.mega-pokemon .pokemon-image-large {
 
 .pokemon.slide-in:hover::before,
 .pokemon.slide-in:focus-visible::before {
+    /* The type-colored top bar lights up, and the card gains a faint glow in
+       its own type color. */
+    border-top-color: color-mix(in srgb, var(--card-type-color, var(--accent2)) 65%, #fff);
     box-shadow:
             0 1.6rem 3.2rem rgba(26, 18, 8, 0.25),
+            0 0 18px -6px var(--card-type-color, var(--accent2)),
             0 0 0 1px rgba(195, 137, 28, 0.3),
             inset 0 1px 0 rgba(255,255,255,0.6);
 }
@@ -955,8 +1032,17 @@ body.mega-pokemon .pokemon-image-large {
 }
 
 .pokemon-image {
+    /* Reserve a square box up front so the tile doesn't grow when the image
+       finishes loading — that late reflow was letting scroll-anchoring yank the
+       first card up under the fixed banner on refresh. The art is 1:1, so this
+       is visually identical, just pre-sized. */
+    width: 100%;
+    aspect-ratio: 1 / 1;
     max-width: 100%;
-    max-height: 100%;
+    object-fit: contain;
+    /* Positioned so its z-index (100, from the shared rule) takes effect and the
+       art paints in front of the corner number chip. */
+    position: relative;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -1018,6 +1104,7 @@ body.mega-pokemon .pokemon-image-large {
     height: 32rem;
     border: 5rem solid color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
     border-radius: 50%;
+    /* Just a frame for the art — no bevel or drop shadow. */
     transition: border-color 0.4s ease;
 }
 
@@ -1026,11 +1113,56 @@ body.mega-pokemon .pokemon-image-large {
     font-size: 1.2em;
     font-weight: 700;
     letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-top: 0.35rem;
     color: var(--main-text);
     transition: color 0.4s ease;
 }
 
+/* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
+   the card-page title before the name); the tile turns it into a corner chip. */
+.dex-num {
+    font-family: "DM Sans", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    margin-right: 0.15em;
+}
+
+/* Positioning context for the tile art + its corner index chip. */
+.pokemon-art {
+    position: relative;
+    width: 100%;
+}
+
+/* On a tile, the number becomes a small carved stone chip in the art's
+   top-left corner — off the name line entirely. */
+.pokemon-art .dex-num {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    z-index: 2;
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem;
+    background: color-mix(in srgb, var(--bg3) 82%, transparent);
+    /* Same bottom-right notch as the cards, so it reads as carved. */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
+}
+
 .type-image { max-height: 1.2rem; width: auto; }
+
+/* Tidy, centered type-icon row beneath the name. */
+.types {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.35rem;
+}
 
 .type-stack {
     left: 0;
@@ -1294,6 +1426,7 @@ body.mega-pokemon .pokemon-image-large {
     font-family: "DM Sans", sans-serif;
     font-weight: 500;
     font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;   /* digits stop jittering as they count up */
     width: 2.5rem;
     text-align: right;
     color: var(--main-text);
@@ -1306,6 +1439,8 @@ body.mega-pokemon .pokemon-image-large {
     border-radius: 0;
     overflow: visible;
     position: relative;
+    /* Carved track: the fill sits in a shallow recess. */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
     transition: background-color 0.4s ease;
 }
 
@@ -1334,15 +1469,31 @@ body.mega-pokemon .pokemon-image-large {
     transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 0;
+    /* Filled-tube gradient: a soft lit top and a gentle, warm-toned deepen at
+       the base (a touch of warm umber rather than flat black) — subtle. */
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--fill) 84%, #fff) 0%,
+        var(--fill) 58%,
+        color-mix(in srgb, var(--fill) 90%, #4a3a28) 100%);
+    box-shadow: inset 0 -1px 1px rgba(74, 58, 40, 0.12);
 }
 
-.bar-fill.hp   { background-color: #FF5959; }
-.bar-fill.atk  { background-color: #F5AC78; }
-.bar-fill.def  { background-color: #FAE078; }
-.bar-fill.spa  { background-color: #9DB7F5; }
-.bar-fill.spd  { background-color: #A7DB8D; }
-.bar-fill.spe  { background-color: #FA92B2; }
-.bar-fill.bst  { background-color: #CA72F2; }
+.bar-fill.hp   { --fill: #ef5a52; }
+.bar-fill.atk  { --fill: #f0a35a; }
+.bar-fill.def  { --fill: #f2ce56; }
+.bar-fill.spa  { --fill: #7fa8e6; }
+.bar-fill.spd  { --fill: #8bcf7a; }
+.bar-fill.spe  { --fill: #ef86a6; }
+.bar-fill.bst  { --fill: #CA72F2; }   /* total → purple */
+
+/* Emphasise the BST total row: taller carved track, gold labels. */
+.stat-bar.bst-row { margin-top: 0.55rem; }
+.stat-bar.bst-row .bar-container { height: 0.8rem; }
+.stat-bar.bst-row .stat-name,
+.stat-bar.bst-row .stat-value {
+    color: var(--accent2);
+    font-weight: 700;
+}
 
 
 /* ==========================
@@ -1386,6 +1537,12 @@ body.mega-pokemon .pokemon-image-large {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+    /* Carved-tile emboss: lit top edge, shadowed base, seated on the surface. */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+        0 1px 3px var(--shadow);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .type-badge-icon { height: 1rem; width: auto; }
@@ -1528,7 +1685,10 @@ body.mega-pokemon .pokemon-image-large {
    ========================== */
 .banner-main,
 .banner-card {
-    width: 99vw;
+    /* 100% (not 99vw): for a fixed element this is the viewport width excluding
+       any scrollbar, so the banner fills the width with no right-edge gap when
+       the page is short, and never overflows when a scrollbar is present. */
+    width: 100%;
     display: flex;
     align-items: center;
     position: fixed;
@@ -1596,10 +1756,6 @@ body.mega-pokemon .pokemon-image-large {
 
 
 @media (max-width: 600px) {
-    /* The prev/next Pokémon name no longer fits next to its number and
-       arrow icon at this width, and wrapping onto a second line inside
-       the fixed-height banner looked broken. Drop the number and keep just
-       the arrow + name. */
     #previousPokemonNumber,
     #nextPokemonNumber {
         display: none;
@@ -1623,6 +1779,21 @@ body.mega-pokemon .pokemon-image-large {
         margin: 3rem 0 0.5rem 1rem;
     }
 
+    h2 {
+        margin-right: 100rem;
+    }
+
+    /* The filter bar is nearly full-width on phones (the desktop
+       `calc(100% - 10rem)` left it far too narrow), and when open it can grow
+       tall and scroll so all the type buttons fit instead of being clipped. */
+    .search-filter-bar {
+        width: calc(100% - 1.5rem);
+    }
+    .search-filter-bar.open {
+        max-height: 75vh;
+        overflow-y: auto;
+        padding: 0.7rem 1rem 1.2rem;
+    }
 }
 
 
@@ -1671,4 +1842,21 @@ body.dark-mode .pokemon-description {
 
 body.dark-mode .bar-fill {
     opacity: 0.9;
+}
+
+/* ==========================
+   Reduced motion
+   Anyone who asks for less motion gets an essentially still page: entrances,
+   the stat-bar fills, and any ambient drift collapse to instant. (The stat
+   count-up is also skipped in JS.)
+   ========================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
