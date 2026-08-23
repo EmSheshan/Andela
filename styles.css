@@ -387,11 +387,31 @@ h3 {
     transition: color 0.4s ease;
     position: relative;
     display: inline-block;
+    filter: drop-shadow(0.5px 0.5px 2px rgba(0,0,0,0.15));
+}
+
+/* "◆ label ◆" laid out as a centered flex row so the flanking diamonds stay
+   vertically centered on the heading even when the label wraps to two lines
+   (as inline text, the diamonds otherwise stuck to the first and last line). */
+.h3-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+}
+
+.h3-label {
+    text-align: center;
+    text-wrap: balance;
+}
+
+/* The gold gradient can't live on .h3-inner: background-clip: text only clips to
+   an element's own text, not its descendants', so it has to sit on each leaf. */
+.gradient-text {
     background: linear-gradient(135deg, var(--accent1), var(--accent5));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0.5px 0.5px 2px rgba(0,0,0,0.15));
 }
 
 /* Carved rule beneath the inscription — a thin gold line that fades at both
@@ -1158,7 +1178,6 @@ body.mega-pokemon .pokemon-image-large {
     margin: 0;
     font-weight: 700;
     font-size: 0.68rem;
-    padding: 0.1rem 0.4rem;
     background: color-mix(in srgb, var(--bg3) 82%, transparent);
     /* Same bottom-right notch as the cards, so it reads as carved. */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
@@ -1639,7 +1658,10 @@ body.mega-pokemon .pokemon-image-large {
     border: none;
     background-color: var(--accent2);
     color: var(--bg3);
-    z-index: 10;
+    /* Above the .pokemon-image-large art (z-index: 100). On mobile the
+       oversized art overlaps this bottom-right corner; without this it would
+       paint on top and swallow the button's clicks until you scrolled past. */
+    z-index: 1000;
     box-shadow: 0 0.8rem 1rem var(--shadow);
     display: flex;
     align-items: center;
@@ -1686,7 +1708,10 @@ body.mega-pokemon .pokemon-image-large {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    /* Above the .pokemon-image-large art (z-index: 100) so it stays clickable
+       where the oversized art overlaps it on mobile — same reason as
+       .exit-button above. */
+    z-index: 1000;
 }
 
 

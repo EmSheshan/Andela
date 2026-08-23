@@ -122,9 +122,9 @@ export const pokedex = {
         ],
         signatureMove: null
     },
-    seagent: {
+    enseal: {
         num: 2007,
-        name: "Seagent",
+        name: "Enseal",
         types: ["Water"],
         genderRatio: {M: 0.875, F: 0.125},
         baseStats: {hp: 85, atk: 75, def: 85, spa: 65, spd: 70, spe: 40},
@@ -148,7 +148,7 @@ export const pokedex = {
         weightkg: 145.0,
         kind: "Naval",
         description: ["A legendary commander of the seas, its heavy, steel claws can shred through the hulls of ships. The iron plating on its chest acts as an impenetrable breastplate against enemy attacks.",
-            "It governs massive pods of Sealor and Seagent with unyielding strictness, communicating complex tactical formations through deep, rumbling barks. To withstand extreme deep-sea pressure, it continuously absorbs iron from the ocean floor to naturally harden its body."
+            "It governs massive pods of Sealor and Enseal with unyielding strictness, communicating complex tactical formations through deep, rumbling barks. To withstand extreme deep-sea pressure, it continuously absorbs iron from the ocean floor to naturally harden its body."
         ],
         signatureMove: "Hull Press"
     },

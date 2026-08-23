@@ -11,6 +11,31 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
+// Remember the scroll position so returning from a card page (via its X button)
+// lands you back where you were, instead of at the top. This is mainly a mobile
+// nicety — otherwise, backing out of e.g. Nº 070 dumps you at the top and you
+// have to scroll all the way down again. We opt out of the browser's automatic
+// restoration above (it lurches while the JS-built grid is still short), so do
+// it manually: stash scrollY on the way out, and re-apply it on the way back in
+// once the grid has been rebuilt.
+const SCROLL_KEY = 'pokedexScrollY';
+
+// pagehide fires on any navigation away (including tapping a card) and when the
+// page is frozen into the bfcache, so it reliably captures the last position.
+window.addEventListener('pagehide', () => {
+    sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+});
+
+// Only restore when we actually came back from a card page — a fresh visit or a
+// refresh should still start at the top (see the manual-restoration note above).
+function restoreScrollIfReturning() {
+    const cameFromCard = document.referrer.includes('cardPage.html');
+    const saved = sessionStorage.getItem(SCROLL_KEY);
+    if (cameFromCard && saved !== null) {
+        window.scrollTo(0, parseInt(saved, 10) || 0);
+    }
+}
+
 const IMAGE_PATH = "pokemonArt/";
 const TYPE_ICON_PATH = "typeIcons/";
 
@@ -51,6 +76,12 @@ function loadPokemonData() {
     // waiting for all this work to finish, cutting LCP render delay.
     const buildSecondaryUI = () => {
         displayPokemonData(megaList, "megadex");
+
+        // Both grids are now in the DOM (their tiles reserve height up front via
+        // the image aspect-ratio), so the page is its full height and a saved
+        // scroll position — which may point deep into the megadex — resolves
+        // correctly.
+        restoreScrollIfReturning();
 
         // Build type filter buttons from all unique types across both lists
         buildTypeFilters([...pokemonList, ...megaList]);
