@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "canvas": "^3.2.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,html,css}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css}\""
+  }
+}

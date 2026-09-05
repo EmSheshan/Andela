@@ -1,0 +1,6 @@
+id,name,forme,type1,type2,hp,atk,def,spa,spd,spe,ability0,ability1,abilityH,kind,heightm,weightkg,signatureMove,description1,description2,prevo,evo,evoMethod
+morelull,Morelull,,Grass,Fairy,,,,,,,,,,,,,,,,,shiinotic,
+shiinotic,Shiinotic,,Grass,Fairy,,,,,,,,,,,,,,,,morelull,amistaphore,Level 24
+lokix,Lokix,,Bug,Dark,,,,,,,,,,,,,,,,,megalokix,
+tyranitar,Tyranitar,,Rock,Dark,,,,,,,,,,,,,,,,,xenotyranitar,
+scizor,Scizor,,Bug,Steel,,,,,,,,,,,,,,,,,xenoscizor,

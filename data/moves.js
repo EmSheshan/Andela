@@ -1,0 +1,342 @@
+const Category = Object.freeze({
+  STATUS: "Status",
+  PHYSICAL: "Physical",
+  SPECIAL: "Special",
+});
+
+const Type = Object.freeze({
+  NORMAL: "Normal",
+  FIRE: "Fire",
+  WATER: "Water",
+  GRASS: "Grass",
+  ELECTRIC: "Electric",
+  ICE: "Ice",
+  FIGHTING: "Fighting",
+  POISON: "Poison",
+  GROUND: "Ground",
+  FLYING: "Flying",
+  PSYCHIC: "Psychic",
+  BUG: "Bug",
+  ROCK: "Rock",
+  GHOST: "Ghost",
+  DRAGON: "Dragon",
+  DARK: "Dark",
+  STEEL: "Steel",
+  FAIRY: "Fairy",
+});
+
+export const moves = {
+  "Ice Splinters": {
+    type: Type.ICE,
+    category: Category.STATUS,
+    pp: 20,
+    description:
+      "The user lays a trap of levitating icicles around the opposing team. The trap damages opposing Pokémon that switch into battle.",
+  },
+  "Bean Barrage": {
+    type: Type.GRASS,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 70,
+    pp: 10,
+    description:
+      "The user attacks with a barrage of seeds that begin to sprout and steal some HP from the target every turn.",
+  },
+  "Bushido Flurry": {
+    type: Type.STEEL,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 15,
+    pp: 10,
+    description:
+      "The user attacks flurry of sharp slashes. This attack hits five times in a row and every hit is always critical.",
+  },
+  "Zest Spray": {
+    type: Type.GRASS,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 85,
+    pp: 10,
+    description:
+      "The user attacks with a spray of acidic berry juice. If the user is holding a berry, the berry is consumed and the base power of this attack doubles.",
+  },
+  "Crushing Cleave": {
+    type: Type.GROUND,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 35,
+    pp: 10,
+    description:
+      "The user attacks twice with two axes. The first hit lowers the target's Defense stat, and the second hit lowers the target's Sp. Def stat.",
+  },
+  "Venom Spear": {
+    type: Type.POISON,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 60,
+    pp: 10,
+    description:
+      "The user attacks with a venomous stinger that leaves the target badly poisoned. Its poison damage worsens every turn.",
+  },
+  "Final Act": {
+    type: Type.NORMAL,
+    category: Category.STATUS,
+    accuracy: 100,
+    pp: 20,
+    description:
+      "The user compels the target to keep using the move it encored for three turns. Then it switches places with a party Pokémon in waiting.",
+  },
+  "Agave Shot": {
+    type: Type.GRASS,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 75,
+    pp: 10,
+    description:
+      "The user shoots hot agave nectar at the target. This move sharply boosts the user's Attack stat but lowers its accuracy.",
+  },
+  "Tundra Tango": {
+    type: Type.ICE,
+    category: Category.STATUS,
+    pp: 10,
+    description:
+      "The user dances to charge and concentrate its power. This raises its Special Attack and Speed stats and ensures the user's next moves do not miss against the current opponent.",
+  },
+  "Icy Harpoon": {
+    type: Type.ICE,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 90,
+    pp: 10,
+    description:
+      "The user launches sharpened icicle at the target. It may also badly poison the target.",
+  },
+  "Ego Crush": {
+    type: Type.PSYCHIC,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 80,
+    pp: 15,
+    description:
+      "The user uses its psychic powers to directly attack the opponent's mind. This move is super effective on Psychic types.",
+  },
+  "Power Scale": {
+    type: Type.NORMAL,
+    category: Category.PHYSICAL,
+    accuracy: 90,
+    power: 140,
+    pp: 5,
+    description:
+      "The user attacks the target by charging into the opponent to cut it with its scales. The user's secondary type determines the type of this move. This also damages the user terribly.",
+  },
+  "Snack Break": {
+    type: Type.FAIRY,
+    category: Category.STATUS,
+    pp: 20,
+    description:
+      "The user takes a break from battle to enjoy some berries. This switches out the user and heals the Pokemon that switched in for a quarter of their max HP.",
+  },
+  "Psycho-Fluid Distortion": {
+    type: Type.PSYCHIC,
+    category: Category.STATUS,
+    pp: 5,
+    description:
+      "The user creates a bizarre area in which slower Pokémon get to move first for five turns. This also summons a heavy rain that falls for five turns, powering up Water-type attacks and weakening Fire-type attacks.",
+  },
+  Shuck: {
+    type: Type.BUG,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 100,
+    pp: 10,
+    description:
+      "The user attacks the target with mold and acid. This lowers the opponent's Defense by one stage and raises the user's Attack by one stage.",
+  },
+  "Ion Storm": {
+    type: Type.ELECTRIC,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 50,
+    pp: 10,
+    description:
+      "The user attacks the target with a surge of electrically charged particles, which changes Normal-type moves to Electric-type moves. This move always goes first.",
+  },
+  "Zombie Process": {
+    type: Type.GHOST,
+    category: Category.PHYSICAL,
+    accuracy: 90,
+    power: 80,
+    pp: 10,
+    description:
+      "The user ensnares and traps the target with ghostly wires that inflict damage for four to five turns.",
+  },
+  Anathema: {
+    type: Type.FAIRY,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 50,
+    pp: 10,
+    description:
+      "The user attacks by reciting a divine curse. Any Pokémon that hears this chant faints in three turns, unless it switches out of battle.",
+  },
+  "Axe Kick": {
+    type: Type.FIGHTING,
+    category: Category.PHYSICAL,
+    accuracy: 90,
+    power: 120,
+    pp: 10,
+    description:
+      "The user attacks by kicking up into the air and slamming its heel down upon the target. This may also confuse the target. If it misses, the user takes damage instead.",
+  },
+  "Tempus Glaciale": {
+    type: Type.ICE,
+    category: Category.SPECIAL,
+    accuracy: 75,
+    power: 100,
+    pp: 5,
+    description:
+      "The user traps the target inside a raging blizzard that inflicts damage for four to five turns.",
+  },
+  "Revolutio Ignis": {
+    type: Type.FIRE,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 80,
+    pp: 5,
+    description:
+      "After making its attack, both the user and opponent are forced to switch places with a party Pokémon in waiting.",
+  },
+  "Landscape of Thorns": {
+    type: Type.POISON,
+    category: Category.STATUS,
+    pp: 5,
+    description:
+      "The user makes the surrounding landscape uninhabitable with two layers of randomized hazards.",
+  },
+  "Crying Edge": {
+    type: Type.FAIRY,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 80,
+    pp: 5,
+    description:
+      "The user imbues its lance with a powerful aroma before slashing. It has a high critical-hit ratio.",
+  },
+  Supernova: {
+    type: Type.DRAGON,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 250,
+    pp: 5,
+    description:
+      "The user unleashes one final attack that destroys everything around it with a tremendous explosion. The user faints upon using this move.",
+  },
+  "Devouring Jaws": {
+    type: Type.DARK,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 90,
+    pp: 5,
+    description:
+      "The user bites down with its massive jaws to sap the life-force of its target. The opponent loses its ability.",
+  },
+  "Gales of Darkness": {
+    type: Type.FLYING,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 80,
+    pp: 5,
+    description:
+      "The user shrieks while slashing with dark wings. This lowers the opponent's Defense and Special Defense by one stage.",
+  },
+  "Foretell Calamity": {
+    type: Type.GHOST,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 90,
+    pp: 5,
+    description:
+      "The user predicts a terrible accident before switching out with a party member in waiting. Two turns later, a disaster will befall the target.",
+  },
+  "Divine Smite": {
+    type: Type.FAIRY,
+    category: Category.PHYSICAL,
+    accuracy: 95,
+    power: 90,
+    pp: 5,
+    description:
+      "The user imbues its weapon with holy energy before striking. This move is super effective on Ghost types.",
+  },
+  Adrenalizer: {
+    type: Type.FIGHTING,
+    category: Category.STATUS,
+    pp: 5,
+    description:
+      "The user compresses its body before sending a powerful surge through its cardiovascular system. This restores a third of its max HP and boosts its Attack by one stage.",
+  },
+  "Pharaoh's Curse": {
+    type: Type.DARK,
+    category: Category.STATUS,
+    pp: 5,
+    description:
+      "The user drains the opponent's strength, eliminating their stat boosts and restoring 10% of the user's health for each boost removed.",
+  },
+  "Snipe Shot": {
+    type: Type.WATER,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 80,
+    pp: 15,
+    description:
+      "The user ignores the effects of opposing Pokémon’s moves and Abilities that draw in moves, allowing this move to hit the chosen target. It has a high critical-hit ratio.",
+  },
+  Transform: {
+    type: Type.NORMAL,
+    category: Category.STATUS,
+    pp: 10,
+    description:
+      "The user transforms into a copy of the target, right down to having the same move set.",
+  },
+  "Strength Sap": {
+    type: Type.GRASS,
+    category: Category.STATUS,
+    pp: 10,
+    description:
+      "The user restores its own HP by the same amount as the target’s Attack stat. It then lowers the target’s Attack stat.",
+  },
+  "Swift Riposte": {
+    type: Type.FIGHTING,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 70,
+    pp: 5,
+    description:
+      "This move enables the user to attack first. This move fails if the target is not readying an attack.",
+  },
+  "Desperado Strike": {
+    type: Type.FIRE,
+    category: Category.PHYSICAL,
+    accuracy: 90,
+    power: 20,
+    pp: 5,
+    description:
+      "A consecutive three-whip attack that becomes more powerful with each successful hit. This may also leave the target with a burn.",
+  },
+  "Hull Press": {
+    type: Type.STEEL,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 80,
+    pp: 5,
+    description:
+      "The user attacks by slamming its body into the target. The higher the user's Defense stat, the greater the damage this move deals.",
+  },
+
+  "Oven Bake": {
+    type: Type.GROUND,
+    category: Category.STATUS,
+    pp: 5,
+    description:
+      "The user restores its own HP by up to half its max HP. This also raises the user's Defense and Special Defense by one stage each.",
+  },
+};
