@@ -12,308 +12,372 @@
    CSS with gstatic URLs rewritten to local paths. */
 /* latin-ext */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4ET-DNl0.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/rP2Fp2ywxg089UriCZa4Hz-D.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* greek */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* greek */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* greek */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* greek */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 /* greek */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm2NL9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(assets/fonts/8vIH7w4qzmVxm25L9Hz_.woff2) format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(assets/fonts/8vIH7w4qzmVxm2BL9A.woff2) format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 /* ==========================
    :root Variables
    ========================== */
 :root {
-    /* --- Backgrounds (sun-warmed limestone; green kept, temperature warmed) --- */
-    --bg1: #e8ebd9;          /* Warm pale sage */
-    --bg2: #d7dcc6;          /* Warm mid sage-stone */
-    --bg3: #f5f4e9;          /* Warm limestone surface */
-    --bg-dark: #12140f;
+  /* --- Backgrounds (sun-warmed limestone; green kept, temperature warmed) --- */
+  --bg1: #e8ebd9; /* Warm pale sage */
+  --bg2: #d7dcc6; /* Warm mid sage-stone */
+  --bg3: #f5f4e9; /* Warm limestone surface */
+  --bg-dark: #12140f;
 
-    /* --- Accents (richer, less muted — jungle foliage + temple gold) --- */
-    --accent1: #c5542e;      /* Terracotta / copihue */
-    --accent2: #cf9622;      /* Temple gold */
-    --accent4: #689a52;      /* Foliage green */
-    --accent5: #2c7d54;      /* Jungle emerald */
-    --accent6: #1b3324;      /* Deep canopy green */
+  /* --- Accents (richer, less muted — jungle foliage + temple gold) --- */
+  --accent1: #c5542e; /* Terracotta / copihue */
+  --accent2: #cf9622; /* Temple gold */
+  --accent4: #689a52; /* Foliage green */
+  --accent5: #2c7d54; /* Jungle emerald */
+  --accent6: #1b3324; /* Deep canopy green */
 
-    /* --- Text --- */
-    --main-text: #23291c;    /* Warm near-black olive */
-    --second-text: #316b4c;  /* Deep jungle green */
-    /* Fixed (not theme-driven): the banner bars keep a constant dark
+  /* --- Text --- */
+  --main-text: #23291c; /* Warm near-black olive */
+  --second-text: #316b4c; /* Deep jungle green */
+  /* Fixed (not theme-driven): the banner bars keep a constant dark
        background in both light and dark mode, so their text needs a
        constant light color rather than one that flips per theme. */
-    --banner-text: #f5f2e8;
+  --banner-text: #f5f2e8;
 
-    /* --- Utility --- */
-    --shadow: rgba(28, 20, 10, 0.24);      /* warm brown-black */
-    --animation-delay: 0s;
+  /* --- Utility --- */
+  --shadow: rgba(28, 20, 10, 0.24); /* warm brown-black */
+  --animation-delay: 0s;
 
-    /* --- Geometric accent lines (warm carved-stone rules) --- */
-    --geo-line: rgba(60, 120, 78, 0.35);   /* mossy green rule */
-    --geo-cut:  rgba(191, 81, 46, 0.18);   /* terracotta rule (was cold blue) */
+  /* --- Geometric accent lines (warm carved-stone rules) --- */
+  --geo-line: rgba(60, 120, 78, 0.35); /* mossy green rule */
+  --geo-cut: rgba(191, 81, 46, 0.18); /* terracotta rule (was cold blue) */
 
-    /* Cap on the actual Pokémon artwork (not the decorative ring behind
+  /* Cap on the actual Pokémon artwork (not the decorative ring behind
        it) so it always stays fully visible and centered on narrow
        screens, even though the ring itself is allowed to bleed off the
        edges of the page. */
-    --card-art-size: min(32rem, 100vw);
+  --card-art-size: min(32rem, 100vw);
 
-    --type-normal: #cdc9c4;
-    --type-grass: #83c18b;
-    --type-fire: #ed8163;
-    --type-water: #7acde5;
-    --type-electric: #ede263;
-    --type-ice: #9bded5;
-    --type-fighting: #d59d9b;
-    --type-poison: #bc8dc4;
-    --type-ground: #ddbd8b;
-    --type-flying: #acc5ee;
-    --type-psychic: #f591ac;
-    --type-bug: #bcd15a;
-    --type-rock: #cd956b;
-    --type-ghost: #a4a9dd;
-    --type-dragon: #7ab1e5;
-    --type-dark: #a4a9ac;
-    --type-steel: #acc1bc;
-    --type-fairy: #f5b5ee;
+  --type-normal: #cdc9c4;
+  --type-grass: #83c18b;
+  --type-fire: #ed8163;
+  --type-water: #7acde5;
+  --type-electric: #ede263;
+  --type-ice: #9bded5;
+  --type-fighting: #d59d9b;
+  --type-poison: #bc8dc4;
+  --type-ground: #ddbd8b;
+  --type-flying: #acc5ee;
+  --type-psychic: #f591ac;
+  --type-bug: #bcd15a;
+  --type-rock: #cd956b;
+  --type-ghost: #a4a9dd;
+  --type-dragon: #7ab1e5;
+  --type-dark: #a4a9ac;
+  --type-steel: #acc1bc;
+  --type-fairy: #f5b5ee;
 }
-
 
 /* ==========================
    Utilities
    ========================== */
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 html {
-    width: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Inline icons, sized to inherit the parent's font-size like an icon font would. */
 .icon-svg {
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    vertical-align: -0.125em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
 }
 
 /* One consistent, visible keyboard-focus ring across every interactive element
@@ -324,672 +388,728 @@ input:focus-visible,
 [tabindex]:focus-visible,
 .type-filter-btn:focus-visible,
 .pokemon:focus-visible {
-    outline: 2px solid var(--accent2);
-    outline-offset: 3px;
-    border-radius: 1px;
+  outline: 2px solid var(--accent2);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
-
 
 /* ==========================
    Global Styles
    ========================== */
 body {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 8rem 0 0;
-    overflow-x: clip;
-    background-color: var(--bg1);
-    background-image: url('assets/Bg_Light.svg');
-    background-repeat: repeat;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    height: 100%;
-    position: relative;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem 0 0;
+  overflow-x: clip;
+  background-color: var(--bg1);
+  background-image: url("assets/Bg_Light.svg");
+  background-repeat: repeat;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  height: 100%;
+  position: relative;
 }
 
-
-
-h1, h2, h3 {
-    font-family: "Syne", sans-serif;
-    margin: 0;
-    letter-spacing: -0.01em;
-    text-wrap: balance;
+h1,
+h2,
+h3 {
+  font-family: "Syne", sans-serif;
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 5rem);
-    font-weight: 800;
-    color: var(--banner-text);
-    text-align: left;
-    letter-spacing: -0.02em;
-    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 800;
+  color: var(--banner-text);
+  text-align: left;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 h2 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 700;
-    color: var(--main-text);
-    text-align: left;
-    letter-spacing: -0.02em;
-    transition: color 0.4s ease;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--main-text);
+  text-align: left;
+  letter-spacing: -0.02em;
+  transition: color 0.4s ease;
 }
 
-
 h3 {
-    font-size: clamp(1.6rem, 4.5vw, 3rem);
-    font-weight: 800;
-    color: var(--main-text);
-    margin: 2rem 1rem 1.5rem 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;          /* carved-inscription tracking */
-    transition: color 0.4s ease;
-    position: relative;
-    display: inline-block;
-    filter: drop-shadow(0.5px 0.5px 2px rgba(0,0,0,0.15));
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--main-text);
+  margin: 2rem 1rem 1.5rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em; /* carved-inscription tracking */
+  transition: color 0.4s ease;
+  position: relative;
+  display: inline-block;
+  filter: drop-shadow(0.5px 0.5px 2px rgba(0, 0, 0, 0.15));
 }
 
 /* "◆ label ◆" laid out as a centered flex row so the flanking diamonds stay
    vertically centered on the heading even when the label wraps to two lines
    (as inline text, the diamonds otherwise stuck to the first and last line). */
 .h3-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
 }
 
 .h3-label {
-    text-align: center;
-    text-wrap: balance;
+  text-align: center;
+  text-wrap: balance;
 }
 
 /* The gold gradient can't live on .h3-inner: background-clip: text only clips to
    an element's own text, not its descendants', so it has to sit on each leaf. */
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent1), var(--accent5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  background: linear-gradient(135deg, var(--accent1), var(--accent5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Carved rule beneath the inscription — a thin gold line that fades at both
    ends, echoing the ◆ markers in the heading. */
 h3::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 70%;
-    margin: 0.7rem auto 0;
-    background: linear-gradient(90deg, transparent, var(--accent2), transparent);
-    opacity: 0.75;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 70%;
+  margin: 0.7rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+  opacity: 0.75;
 }
 
 p {
-    margin: 0;
-    font-family: "DM Sans", sans-serif;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
 }
-
 
 /* ==========================
    Containers & Layouts
    ========================== */
 .pokemon-card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: -4rem;
-    width: auto;
-    /* Flex items default to min-width:auto, which refuses to shrink below
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: -4rem;
+  width: auto;
+  /* Flex items default to min-width:auto, which refuses to shrink below
        the intrinsic width of content inside them (here, the decorative
        circle-background, which is deliberately oversized and meant to
        bleed off the page rather than push the whole layout wider). This
        overrides that so the container can actually shrink to fit narrow
        screens. */
-    min-width: 0;
+  min-width: 0;
 }
 
 .pokemon-card-left {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 70%;
-    max-width: 70%;
-    min-width: 0;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 70%;
+  max-width: 70%;
+  min-width: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .pokemon-card-right {
-    flex-direction: column;
-    padding: 2rem;
-    align-items: baseline;
-    flex: 1;
-    align-content: center;
-    max-width: 60%;
-    justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: baseline;
+  flex: 1;
+  align-content: center;
+  max-width: 60%;
+  /* Let the column shrink below its content's intrinsic width so a wide
+       evolution line scrolls inside its own box instead of forcing the column
+       wider (which used to bump the whole column below the description on
+       3-stage lines but not on 2-stage — see .evo-tree overflow-x). */
+  min-width: 0;
+  justify-content: space-between;
+}
+
+/* min-width:0 above lets the side column shrink indefinitely, so it no longer
+   wraps below the description on its own. Force the stack explicitly once the
+   page is too narrow for a comfortable two-column split. (Tune the breakpoint
+   to taste — this is roughly where the side column gets cramped.) */
+@media (max-width: 860px) {
+  .pokemon-card-left,
+  .pokemon-card-right {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 #card-page {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-top: 1rem;
-    box-sizing: border-box;
-    background-color: var(--bg1);
-    background-image: url('assets/Bg_Light.svg');
-    transition: background-color 0.4s ease, color 0.4s ease;
-    /* No overflow-x override here: the base `body { overflow-x: clip }` (and
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  background-color: var(--bg1);
+  background-image: url("assets/Bg_Light.svg");
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+  /* No overflow-x override here: the base `body { overflow-x: clip }` (and
        `html { overflow-x: hidden }`) already clip the circle's decorative bleed.
        Overriding the body to `hidden` made it a second scroll container, which
        showed a brief second scrollbar during card transitions. */
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 97vw;
-    margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 97vw;
+  margin: 1rem;
 }
 
 #typeColorOverlay {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background: linear-gradient(to top, color-mix(in srgb, var(--type1-color, var(--type-normal)) 20%, transparent) 0%, transparent 50%);
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--type1-color, var(--type-normal)) 20%, transparent)
+      0%,
+    transparent 50%
+  );
 }
 
 #pokemonCardContainer {
-    position: relative; /* if not already */
+  position: relative; /* if not already */
 }
 
 #pokemonTitleTypeContainer,
 #pokemonCardContainer {
-    transition: opacity 0.18s ease, transform 0.18s ease;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 #pokemonTitleTypeContainer.card-transitioning,
 #pokemonCardContainer.card-transitioning {
-    opacity: 0;
-    transform: translateY(10px);
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-#pokedex, #megadex {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    gap: 1.5rem;
-    margin: 0 auto;
-    justify-content: center;
-    min-height: 100%;
-    max-width: 200rem;
-    width: 80%;
+#pokedex,
+#megadex {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto;
+  justify-content: center;
+  min-height: 100%;
+  max-width: 200rem;
+  width: 80%;
 }
 
 #megadex {
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
 }
 
 /* ---- Legendary / mega Pokémon ---- */
 body.mega-pokemon h2 {
-    font-weight: 800;
-    background: linear-gradient(
-            112deg,
-            var(--accent1) 0%,
-            var(--accent5) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  font-weight: 800;
+  background: linear-gradient(112deg, var(--accent1) 0%, var(--accent5) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 body.mega-pokemon .pokemon-image-large {
-    filter:
-            drop-shadow(-0.2rem 0.2rem 0.45rem rgba(184, 92, 58, 0.65))
-            drop-shadow(0.2rem -0.1rem 0.35rem rgba(58, 88, 112, 0.65));
-    animation:
-            fadeInSlide 0.5s ease-out forwards,
-            slatePulse 5s ease-in-out infinite;
+  filter: drop-shadow(-0.2rem 0.2rem 0.45rem rgba(184, 92, 58, 0.65))
+    drop-shadow(0.2rem -0.1rem 0.35rem rgba(58, 88, 112, 0.65));
+  animation:
+    fadeInSlide 0.5s ease-out forwards,
+    slatePulse 5s ease-in-out infinite;
 }
-
 
 @keyframes slatePulse {
-    0% {
-        filter:
-                drop-shadow(-0.3rem 0.2rem 0.5rem rgba(184, 92, 58, 0.55))
-                drop-shadow(0.2rem 0 0.3rem rgba(58, 88, 112, 0.45));
-    }
-    50% {
-        filter:
-                drop-shadow(-0.2rem 0 0.3rem rgba(74, 122, 110, 0.55))
-                drop-shadow(0.3rem -0.2rem 0.5rem rgba(58, 88, 112, 0.55));
-    }
-    100% {
-        filter:
-                drop-shadow(-0.3rem 0.2rem 0.5rem rgba(184, 92, 58, 0.55))
-                drop-shadow(0.2rem 0 0.3rem rgba(58, 88, 112, 0.45));
-    }
+  0% {
+    filter: drop-shadow(-0.3rem 0.2rem 0.5rem rgba(184, 92, 58, 0.55))
+      drop-shadow(0.2rem 0 0.3rem rgba(58, 88, 112, 0.45));
+  }
+  50% {
+    filter: drop-shadow(-0.2rem 0 0.3rem rgba(74, 122, 110, 0.55))
+      drop-shadow(0.3rem -0.2rem 0.5rem rgba(58, 88, 112, 0.55));
+  }
+  100% {
+    filter: drop-shadow(-0.3rem 0.2rem 0.5rem rgba(184, 92, 58, 0.55))
+      drop-shadow(0.2rem 0 0.3rem rgba(58, 88, 112, 0.45));
+  }
 }
-
-
-
-
-
 
 /* ==========================
    Title / Type Container
    ========================== */
 .title-type-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 3rem 0 0 1rem;
-    width: auto;
-    justify-items: center;
-    flex-wrap: wrap;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3rem 0 0 1rem;
+  width: auto;
+  justify-items: center;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 #pokemonTitleTypeContainer {
-    position: relative;
-    z-index: 5;
+  position: relative;
+  z-index: 5;
 }
-
 
 /* ==========================
    Footer
    ========================== */
 .footer {
-    background-color: var(--bg2);
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    font-family: "DM Sans", sans-serif;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--second-text);
-    position: relative;
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: -1rem;
-    transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: var(--bg2);
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--second-text);
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 
-    /* Geometric top rule — two lines */
-    border-top: 3px solid var(--accent2);
-    box-shadow: inset 0 1px 0 var(--bg3);
+  /* Geometric top rule — two lines */
+  border-top: 3px solid var(--accent2);
+  box-shadow: inset 0 1px 0 var(--bg3);
 }
 
-.footer p { margin: 0; }
-
+.footer p {
+  margin: 0;
+}
 
 /* ==========================
    Search & Filter Bar
    ========================== */
 .search-filter-bar {
-    position: sticky;
-    top: 6.6rem;
-    z-index: 900;
-    background: var(--bg2);
-    width: calc(100% - 10rem);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1.5rem;
-    transition:
-            max-height 0.35s ease,
-            padding 0.35s ease,
-            box-shadow 0.35s ease,
-            background-color 0.4s ease;
-    border-radius: 0;   /* Hard geometric — no rounding */
-    border-top: 0 solid transparent;
+  position: sticky;
+  top: 6.6rem;
+  z-index: 900;
+  background: var(--bg2);
+  width: calc(100% - 10rem);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.4s ease;
+  border-radius: 0; /* Hard geometric — no rounding */
+  border-top: 0 solid transparent;
 }
 
 .search-filter-bar.open {
-    max-height: 14rem;
-    padding: 0.7rem 2.5rem 1.4rem 1.5rem;
-    box-shadow: 0 0.3rem 0.6rem var(--shadow);
-    margin-bottom: 1rem;
-    border-top-color: var(--accent2);
+  max-height: 14rem;
+  padding: 0.7rem 2.5rem 1.4rem 1.5rem;
+  box-shadow: 0 0.3rem 0.6rem var(--shadow);
+  margin-bottom: 1rem;
+  border-top-color: var(--accent2);
 }
 
 .search-toggle-btn {
-    background: none;
-    border: none;
-    color: var(--banner-text);
-    font-size: 1.4rem;
-    cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    border-radius: 0;
-    margin-left: auto;
-    margin-right: 2rem;
-    transition: color 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    fill-opacity: 0;
+  background: none;
+  border: none;
+  color: var(--banner-text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0;
+  margin-left: auto;
+  margin-right: 2rem;
+  transition:
+    color 0.2s,
+    background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill-opacity: 0;
 }
 
-.search-toggle-btn:hover   { color: var(--accent2); }
-.search-toggle-btn.active  { color: var(--accent2); background: rgba(255,255,255,0.12); }
+.search-toggle-btn:hover {
+  color: var(--accent2);
+}
+.search-toggle-btn.active {
+  color: var(--accent2);
+  background: rgba(255, 255, 255, 0.12);
+}
 
 .search-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 540px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 540px;
 }
 
 .search-icon {
-    color: var(--second-text);
-    font-size: 1rem;
-    flex-shrink: 0;
-    fill-opacity: 0;
+  color: var(--second-text);
+  font-size: 1rem;
+  flex-shrink: 0;
+  fill-opacity: 0;
 }
 
 .search-input {
-    flex: 1;
-    padding: 0.55rem 1rem;
-    border-radius: 0;
-    border: 1.5px solid var(--bg2);
-    border-bottom: 2px solid var(--accent2);   /* Geometric underline accent */
-    background: var(--bg3);
-    color: var(--main-text);
-    font-family: "DM Sans", sans-serif;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.4s ease;
+  flex: 1;
+  padding: 0.55rem 1rem;
+  border-radius: 0;
+  border: 1.5px solid var(--bg2);
+  border-bottom: 2px solid var(--accent2); /* Geometric underline accent */
+  background: var(--bg3);
+  color: var(--main-text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background-color 0.4s ease;
 }
 
 .search-input:focus {
-    border-bottom-color: var(--accent5);
-    box-shadow: 0 2px 0 var(--accent5);
+  border-bottom-color: var(--accent5);
+  box-shadow: 0 2px 0 var(--accent5);
 }
 
 .result-count-badge {
-    background: var(--accent2);
-    color: var(--bg3);
-    font-family: "Syne", sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    border-radius: 0;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: opacity 0.2s;
-    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 50%, calc(100% - 6px) 100%, 0 100%);
-    padding: 0.25rem 1rem 0.25rem 0.7rem;
+  background: var(--accent2);
+  color: var(--bg3);
+  font-family: "Syne", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 6px) 0,
+    100% 50%,
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  padding: 0.25rem 1rem 0.25rem 0.7rem;
 }
 
 .type-filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
 }
 
 .type-filter-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.35rem 0.8rem;
-    border-radius: 0;
-    border: 2px solid var(--bg2);
-    background: var(--bg3);
-    color: var(--main-text);
-    font-family: "DM Sans", sans-serif;
-    font-weight: 600;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0;
+  border: 2px solid var(--bg2);
+  background: var(--bg3);
+  color: var(--main-text);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-.type-filter-btn img { height: 1.1rem; width: auto; }
+.type-filter-btn img {
+  height: 1.1rem;
+  width: auto;
+}
 
 .type-filter-btn:hover:not(.active) {
-    background: var(--bg2);
-    border-color: var(--accent2);
-    transform: translateY(-2px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 3px 8px var(--shadow);
+  background: var(--bg2);
+  border-color: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 3px 8px var(--shadow);
 }
 
 .type-filter-btn.active {
-    background: linear-gradient(135deg, var(--accent5), var(--accent2));
-    color: var(--bg3);
-    border-color: var(--accent1);
-    font-weight: 700;
-    /* Carved-in look when selected: lit top edge over the seated shadow. */
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -2px 3px rgba(0, 0, 0, 0.18),
-                0 3px 12px rgba(45, 104, 80, 0.3);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--accent5), var(--accent2));
+  color: var(--bg3);
+  border-color: var(--accent1);
+  font-weight: 700;
+  /* Carved-in look when selected: lit top edge over the seated shadow. */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.18),
+    0 3px 12px rgba(45, 104, 80, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .no-results {
-    grid-column: 1 / -1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    text-align: center;
-    padding: 4rem 1.5rem;
-    min-height: 15rem;
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  min-height: 15rem;
 }
 
 .no-results-mark {
-    font-size: 2.2rem;
-    line-height: 1;
-    color: var(--accent2);
-    opacity: 0.7;
-    margin-bottom: 0.4rem;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--accent2);
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
 }
 
 .no-results-title {
-    font-family: "Syne", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-size: 1.35rem;
-    color: var(--main-text);
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.35rem;
+  color: var(--main-text);
 }
 
 .no-results-sub {
-    font-family: "DM Sans", sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: var(--second-text);
-    max-width: 34ch;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--second-text);
+  max-width: 34ch;
 }
-
 
 /* ==========================
    Back to Top Button
    ========================== */
 .back-to-top {
-    fill: var(--bg3);
-    position: fixed;
-    bottom: 0.7rem;
-    left: 0.7rem;
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border: none;
-    background: var(--accent2);
-    color: var(--bg3);
-    z-index: 10;
-    box-shadow: 0 0.6rem 1.2rem var(--shadow);
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease, background 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+  fill: var(--bg3);
+  position: fixed;
+  bottom: 0.7rem;
+  left: 0.7rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  background: var(--accent2);
+  color: var(--bg3);
+  z-index: 10;
+  box-shadow: 0 0.6rem 1.2rem var(--shadow);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease,
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
-    /* Notched bottom-right corner */
+/* Notched bottom-right corner */
 
 .back-to-top::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    transition: left 0.6s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: left 0.6s ease;
 }
 
-.back-to-top.visible  {
-    opacity: 1;
-    pointer-events: auto;
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.back-to-top:hover    {
-    background:var(--accent1);
-    transform: translateY(-3px);
-    box-shadow: 0 0.8rem 1.6rem var(--shadow);
+.back-to-top:hover {
+  background: var(--accent1);
+  transform: translateY(-3px);
+  box-shadow: 0 0.8rem 1.6rem var(--shadow);
 }
 
 .back-to-top:hover::before {
-    left: 100%;
+  left: 100%;
 }
-
 
 /* ==========================
    Pokemon Measurements
    ========================== */
 .pokemon-measurements {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    color: var(--second-text);
-    font-size: 0.9rem;
-    font-style: italic;
-    font-family: "DM Sans", sans-serif;
-    margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  color: var(--second-text);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 0.8rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .measurement-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-style: normal;
-    background: var(--bg3);
-    border: 1.5px solid var(--accent4);
-    border-radius: 0;
-    padding: 0.2rem 0.7rem;
-    filter: drop-shadow(1px 1px 2px var(--shadow));
-    transition: background-color 0.4s ease, border-color 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-style: normal;
+  background: var(--bg3);
+  border: 1.5px solid var(--accent4);
+  border-radius: 0;
+  padding: 0.2rem 0.7rem;
+  filter: drop-shadow(1px 1px 2px var(--shadow));
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
 
-    /* Diagonal cut on left side */
-    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+  /* Diagonal cut on left side */
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
 }
 
 .measure-icon {
-    width: 0.95rem;
-    height: 0.95rem;
-    flex-shrink: 0;
-    color: var(--accent1);
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+  color: var(--accent1);
 }
-
 
 /* ==========================
    Animations
    ========================== */
 @keyframes fadeInSlide {
-    0%   { opacity: 0; transform: translateY(1.5rem) scale(0.95); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes geoReveal {
-    0%   { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); opacity: 0; }
-    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); opacity: 1; }
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
 }
-
-
-
 
 /* ==========================
    Pokemon Cards
    ========================== */
 .pokemon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: clamp(100rem, 20vw, 100rem);
-    max-width: 100%;
-    max-height: 100%;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 0;
-    text-decoration: none;
-    color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: clamp(100rem, 20vw, 100rem);
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0;
+  text-decoration: none;
+  color: inherit;
 
-    opacity: 0;
-    transform: translateY(50px) scale(0.95);
-    transition:
-            opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: var(--animation-delay, 0s);
-    cursor: pointer;
-    position: relative;
-    /* The frame (background, borders, notch, shadow) lives on ::before so the
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--animation-delay, 0s);
+  cursor: pointer;
+  position: relative;
+  /* The frame (background, borders, notch, shadow) lives on ::before so the
        card art can scale up on hover and spill outside the outline without the
        notch's clip-path cutting it off. `isolation` keeps ::before's negative
        z-index contained to this card. */
-    isolation: isolate;
+  isolation: isolate;
 }
 
 .pokemon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 
-    /* Hard geometric frame — top accent bar + bottom-right notch. Lives on
+  /* Hard geometric frame — top accent bar + bottom-right notch. Lives on
        ::before (not .pokemon) so its clip-path clips only the frame, letting
        the art overflow the card on hover. */
-    background-color: var(--bg3);
-    border-top: 6px solid var(--card-type-color, var(--accent2));
-    border-left: 1px solid var(--bg2);
-    border-right: 1px solid var(--bg2);
-    border-bottom: 1px solid var(--bg2);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
-    box-shadow: 0 0.4rem 0.8rem var(--shadow);
-    transition: box-shadow 0.3s ease, background 0.4s ease, border-color 0.4s ease;
+  background-color: var(--bg3);
+  border-top: 6px solid var(--card-type-color, var(--accent2));
+  border-left: 1px solid var(--bg2);
+  border-right: 1px solid var(--bg2);
+  border-bottom: 1px solid var(--bg2);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0 100%
+  );
+  box-shadow: 0 0.4rem 0.8rem var(--shadow);
+  transition:
+    box-shadow 0.3s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .pokemon.slide-in {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* The first Pokédex tile is the LCP element, so it can't fade in from
@@ -1000,393 +1120,472 @@ body.mega-pokemon .pokemon-image-large {
    No forwards fill: once done it reverts to .slide-in's transform, so hover
    lift works normally. */
 .pokemon.lcp-tile {
-    animation: lcpSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: lcpSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes lcpSlideIn {
-    from { transform: translateY(50px) scale(0.95); }
-    to   { transform: translateY(0) scale(1); }
+  from {
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .pokemon.slide-in:hover,
 .pokemon.slide-in:focus-visible {
-    transform: translateY(-8px) scale(1.02);
-    z-index: 5; /* lift the card — and its overflowing art — above neighbours */
+  transform: translateY(-8px) scale(1.02);
+  z-index: 5; /* lift the card — and its overflowing art — above neighbours */
 }
 
 .pokemon.slide-in:hover::before,
 .pokemon.slide-in:focus-visible::before {
-    /* The type-colored top bar lights up, and the card gains a faint glow in
+  /* The type-colored top bar lights up, and the card gains a faint glow in
        its own type color. */
-    border-top-color: color-mix(in srgb, var(--card-type-color, var(--accent2)) 65%, #fff);
-    box-shadow:
-            0 1.6rem 3.2rem rgba(26, 18, 8, 0.25),
-            0 0 18px -6px var(--card-type-color, var(--accent2)),
-            0 0 0 1px rgba(195, 137, 28, 0.3),
-            inset 0 1px 0 rgba(255,255,255,0.6);
+  border-top-color: color-mix(
+    in srgb,
+    var(--card-type-color, var(--accent2)) 65%,
+    #fff
+  );
+  box-shadow:
+    0 1.6rem 3.2rem rgba(26, 18, 8, 0.25),
+    0 0 18px -6px var(--card-type-color, var(--accent2)),
+    0 0 0 1px rgba(195, 137, 28, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .pokemon.slide-in:focus-visible {
-    outline: 2px solid var(--accent2);
-    outline-offset: 3px;
+  outline: 2px solid var(--accent2);
+  outline-offset: 3px;
 }
 
 .pokemon-image,
 .pokemon-image-large {
-    object-fit: cover;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 100;
-    filter: drop-shadow(2px 4px 8px var(--shadow));
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  filter: drop-shadow(2px 4px 8px var(--shadow));
 }
 
-.pokemon-image:hover { transform: scale(1.1); }
+.pokemon-image:hover {
+  transform: scale(1.1);
+}
 
 .pokemon-image-large {
-    position: absolute;
-    width: var(--card-art-size);
-    height: var(--card-art-size);
-    animation: fadeInSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    filter: drop-shadow(4px 8px 16px rgba(26, 18, 8, 0.35));
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    flex: 0 0 200px;
+  position: absolute;
+  width: var(--card-art-size);
+  height: var(--card-art-size);
+  animation: fadeInSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  filter: drop-shadow(4px 8px 16px rgba(26, 18, 8, 0.35));
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 0 0 200px;
 }
 
 .pokemon-image {
-    /* Reserve a square box up front so the tile doesn't grow when the image
+  /* Reserve a square box up front so the tile doesn't grow when the image
        finishes loading — that late reflow was letting scroll-anchoring yank the
        first card up under the fixed banner on refresh. The art is 1:1, so this
        is visually identical, just pre-sized. */
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    object-fit: contain;
-    /* Positioned so its z-index (100, from the shared rule) takes effect and the
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  object-fit: contain;
+  /* Positioned so its z-index (100, from the shared rule) takes effect and the
        art paints in front of the corner number chip. */
-    position: relative;
-    transition: transform 0.2s ease-in-out;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
 }
 
 .pokemon-images-container {
-    position: relative;
-    margin-top: -1rem;
-    margin-bottom: -3rem;
-    /* Center the (oversized) circle on the cross axis. Unlike a block child,
+  position: relative;
+  margin-top: -1rem;
+  margin-bottom: -3rem;
+  /* Center the (oversized) circle on the cross axis. Unlike a block child,
        a centered flex item overflows its box *equally* on both sides instead
        of only spilling to the right — so on narrow screens the ring bleeds
        symmetrically and stays centered rather than sliding half off-screen. */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    /* Without this, the box shrink-wraps to the oversized circle-background
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  /* Without this, the box shrink-wraps to the oversized circle-background
        inside it (672px), which genuinely widens the page's scrollable
        area rather than just letting the ring bleed past its edges visually. */
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .card-shiny-toggle {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    background: none;
-    border: none;
-    color: var(--accent2);
-    cursor: pointer;
-    z-index: 10;
-    padding: 0.2rem;
-    line-height: 1;
-    transition: transform 0.25s ease, color 0.25s ease;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  background: none;
+  border: none;
+  color: var(--accent2);
+  cursor: pointer;
+  z-index: 10;
+  padding: 0.2rem;
+  line-height: 1;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
 }
 
 .card-shiny-toggle .sparkle-icon {
-    width: 4rem;
-    height: 4rem;
-    display: block;
+  width: 4rem;
+  height: 4rem;
+  display: block;
 }
 
-
-.card-shiny-toggle:hover     { transform: scale(1.2); filter: brightness(1.2); }
-.card-shiny-toggle.shiny-active { color: var(--accent1); }
+.card-shiny-toggle:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+.card-shiny-toggle.shiny-active {
+  color: var(--accent1);
+}
 
 /* Circle frame */
 .circle-background {
-    /* Stays position: static on purpose. That keeps the outer
+  /* Stays position: static on purpose. That keeps the outer
        .pokemon-images-container (position: relative) as the art's containing
        block, exactly as originally — so the art renders on top of the ring and
        isn't clipped. Making this box positioned turned it into the containing
        block, which pulled the art behind/into the ring. Horizontal centering of
        the whole circle is handled by the flexbox on .pokemon-images-container,
        so it no longer needs to be positioned here. */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32rem;
-    height: 32rem;
-    border: 5rem solid color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
-    border-radius: 50%;
-    /* Just a frame for the art — no bevel or drop shadow. */
-    transition: border-color 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32rem;
+  height: 32rem;
+  border: 5rem solid
+    color-mix(in srgb, var(--type1-color, var(--bg2)) 30%, var(--bg2) 70%);
+  border-radius: 50%;
+  /* Just a frame for the art — no bevel or drop shadow. */
+  transition: border-color 0.4s ease;
 }
 
 .name {
-    font-family: "Syne", sans-serif;
-    font-size: 1.2em;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    color: var(--main-text);
-    transition: color 0.4s ease;
+  font-family: "Syne", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--main-text);
+  transition: color 0.4s ease;
 }
 
 /* Name and type icons share one line, centered, pulled up into the art's
    transparent bottom padding so there's no big gap under the mon. Wraps the
    icons below only if a name is too long to fit alongside them. */
 .name-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: -0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: -0.75rem;
 }
 
 /* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
    the card-page title before the name); the tile turns it into a corner chip. */
 .dex-num {
-    font-family: "DM Sans", sans-serif;
-    font-variant-numeric: tabular-nums;
-    font-weight: 600;
-    font-size: 0.72em;
-    letter-spacing: 0.08em;
-    color: var(--accent2);
-    margin-right: 0.15em;
+  font-family: "DM Sans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.72em;
+  letter-spacing: 0.08em;
+  color: var(--accent2);
+  margin-right: 0.15em;
 }
 
 /* Positioning context for the tile art + its corner index chip. */
 .pokemon-art {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 /* On a tile, the number becomes a small carved stone chip in the art's
    top-left corner — off the name line entirely. */
 .pokemon-art .dex-num {
-    position: absolute;
-    top: 0.4rem;
-    left: 0.4rem;
-    z-index: 2;
-    margin: 0;
-    font-weight: 700;
-    font-size: 0.68rem;
-    background: color-mix(in srgb, var(--bg3) 82%, transparent);
-    /* Same bottom-right notch as the cards, so it reads as carved. */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  z-index: 2;
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.68rem;
+  background: color-mix(in srgb, var(--bg3) 82%, transparent);
+  /* Same bottom-right notch as the cards, so it reads as carved. */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 5px),
+    calc(100% - 5px) 100%,
+    0 100%
+  );
 }
 
-.type-image { max-height: 1.2rem; width: auto; }
+.type-image {
+  max-height: 1.2rem;
+  width: auto;
+}
 
 /* Type-icon row, sitting inline next to the name (see .name-row). */
 .types {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .type-stack {
-    left: 0;
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    filter: drop-shadow(3px 3px 6px var(--shadow));
+  left: 0;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  filter: drop-shadow(3px 3px 6px var(--shadow));
 }
 
 .pokemon-title {
-    font-size: clamp(0.8rem, 5vw, 1.5rem);
-    font-family: "DM Sans", sans-serif;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--second-text);
-    margin-top: 0;
-    margin-left: 1rem;
-    letter-spacing: 0.02em;
-    position: relative;
-    transition: color 0.4s ease;
+  font-size: clamp(0.8rem, 5vw, 1.5rem);
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--second-text);
+  margin-top: 0;
+  margin-left: 1rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.4s ease;
 }
-
 
 /* ==========================
    Description / Sig Move Boxes
    ========================== */
 .pokemon-description {
-    display: block;
-    width: 80%;
-    text-align: left;
-    box-sizing: border-box;
-    padding: 1.4rem;
-    color: var(--second-text);
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.65;
-    margin-top: -1rem;
-    background-color: var(--bg3);
-    border-radius: 0;
-    border: 1px solid var(--bg2);
-    border-left: 4px solid var(--accent2);
-    filter: drop-shadow(3px 3px 6px var(--shadow));
-    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+  display: block;
+  width: 80%;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 1.4rem;
+  color: var(--second-text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-top: -1rem;
+  background-color: var(--bg3);
+  border-radius: 0;
+  border: 1px solid var(--bg2);
+  border-left: 4px solid var(--accent2);
+  filter: drop-shadow(3px 3px 6px var(--shadow));
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease;
 }
 
-.pokemon-description::before { content: '"'; position: absolute; top: -4px; left: 10px; font-family: "Syne", sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--accent5); opacity: 0.24; line-height: 1; pointer-events: none; }
-.pokemon-description { position: relative; } /* make sure this is set */
+.pokemon-description::before {
+  content: '"';
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent5);
+  opacity: 0.24;
+  line-height: 1;
+  pointer-events: none;
+}
+.pokemon-description {
+  position: relative;
+} /* make sure this is set */
 
 .pokemon-sigmove {
-    align-content: center;
-    text-align: center;
-    padding: 0.7rem;
-    color: var(--main-text);
-    font-family: "Syne", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    font-size: 1.05rem;
-    background-color: var(--bg3);
-    border-radius: 0;
-    border: 1px solid var(--bg2);
-    border-left: 4px solid var(--accent1);
-    display: flex;
-    flex-direction: column;
-    filter: drop-shadow(3px 3px 6px var(--shadow));
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+  align-content: center;
+  text-align: center;
+  padding: 0.7rem;
+  color: var(--main-text);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  background-color: var(--bg3);
+  border-radius: 0;
+  border: 1px solid var(--bg2);
+  border-left: 4px solid var(--accent1);
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(3px 3px 6px var(--shadow));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .pokemon-sigmove-description {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    color: var(--second-text);
-    margin-top: 0.3rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  color: var(--second-text);
+  margin-top: 0.3rem;
 }
 
 .sigmove-icon {
-    width: 1.8rem;
-    height: 1.8rem;
-    vertical-align: middle;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: middle;
 }
-
 
 /* ==========================
    Ability List
    ========================== */
 .ability-list {
-    display: flex;
-    flex-direction: column;
-    background: var(--bg2);
-    border-radius: 0;
-    border: 1px solid var(--bg2);
-    border-top: 4px solid var(--accent5);
-    padding: 1rem 0.5rem;
-    box-shadow: 2px 2px 10px var(--shadow);
-    margin: 4rem 3rem;
-    transition: background-color 0.4s ease, border-color 0.4s ease;
-
-
+  display: flex;
+  flex-direction: column;
+  background: var(--bg2);
+  border-radius: 0;
+  border: 1px solid var(--bg2);
+  border-top: 4px solid var(--accent5);
+  padding: 1rem 0.5rem;
+  box-shadow: 2px 2px 10px var(--shadow);
+  margin: 4rem 3rem;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .ability-list::before {
-    content: '';
-    position: absolute;
-    top: 0.6rem;
-    left: 1rem;
-    right: 1rem;
-    height: 0;
-    background: var(--geo-line);
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  right: 1rem;
+  height: 0;
+  background: var(--geo-line);
 }
 
 .pokemon-ability {
-    width: auto;
-    align-content: center;
-    flex: 1;
-    padding: 0.4rem 0.8rem 0.4rem 1.6rem;
-    text-align: left;
-    color: var(--main-text);
-    font-family: "Syne", sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-    border-radius: 0;
-    position: relative;
-    background: none;
-    border-top: 1px solid rgba(74,122,110,0.15);
-    cursor: pointer;
-    outline: none;
-    transition: background 0.2s, color 0.2s;
-    animation: fadeInSlide 0.4s ease-out backwards;
+  width: auto;
+  align-content: center;
+  flex: 1;
+  padding: 0.4rem 0.8rem 0.4rem 1.6rem;
+  text-align: left;
+  color: var(--main-text);
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  position: relative;
+  background: none;
+  border-top: 1px solid rgba(74, 122, 110, 0.15);
+  cursor: pointer;
+  outline: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  animation: fadeInSlide 0.4s ease-out backwards;
 }
 
-.pokemon-ability:nth-child(1) { animation-delay: 0s; }
-.pokemon-ability:nth-child(2) { animation-delay: 0.08s; }
-.pokemon-ability:nth-child(3) { animation-delay: 0.16s; }
+.pokemon-ability:nth-child(1) {
+  animation-delay: 0s;
+}
+.pokemon-ability:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.pokemon-ability:nth-child(3) {
+  animation-delay: 0.16s;
+}
 
-.pokemon-ability::before { content: ''; position: absolute; left: 0.6rem; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; background: var(--accent5); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
-.andela-ability::before { background: var(--accent1); }
+.pokemon-ability::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent5);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.andela-ability::before {
+  background: var(--accent1);
+}
 
 .pokemon-ability:hover,
 .pokemon-ability:focus {
-    background: rgba(74, 122, 110, 0.15);
-    color: var(--accent2);
+  background: rgba(74, 122, 110, 0.15);
+  color: var(--accent2);
 }
 
 .andela-ability {
-    color: var(--accent1);
-    font-weight: 700;
+  color: var(--accent1);
+  font-weight: 700;
 }
 
 .ability-description-popup {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    position: absolute;
-    right: 100%;
-    left: auto;
-    top: 50%;
-    transform: translateY(-50%) translateX(6px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-    margin-right: 1rem;
-    min-width: 220px;
-    max-width: 320px;
-    background: var(--bg3);
-    color: var(--second-text);
-    font-family: "DM Sans", sans-serif;
-    font-size: 0.9rem;
-    border: 1px solid var(--bg2);
-    border-left: 3px solid var(--accent5);
-    border-radius: 0;
-    box-shadow: 0 2px 12px var(--shadow);
-    padding: 0.7rem 1rem;
-    z-index: 100;
-    white-space: normal;
-    text-align: left;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 100%;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s;
+  margin-right: 1rem;
+  min-width: 220px;
+  max-width: 320px;
+  background: var(--bg3);
+  color: var(--second-text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid var(--bg2);
+  border-left: 3px solid var(--accent5);
+  border-radius: 0;
+  box-shadow: 0 2px 12px var(--shadow);
+  padding: 0.7rem 1rem;
+  z-index: 100;
+  white-space: normal;
+  text-align: left;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
 }
 
 .pokemon-ability:hover .ability-description-popup,
 .pokemon-ability:focus .ability-description-popup {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
 }
 
 .ability-description-popup.left {
-    left: auto;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%) translateX(0);
+  left: auto;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
 }
 
-.pokemon-ability:hover  .ability-description-popup.left,
-.pokemon-ability:focus  .ability-description-popup.left {
-    transform: translateY(-50%) translateX(0);
+.pokemon-ability:hover .ability-description-popup.left,
+.pokemon-ability:focus .ability-description-popup.left {
+  transform: translateY(-50%) translateX(0);
 }
 
 /* Phones & tablets: the side popup can run off the edge, so drop it straight
@@ -1395,213 +1594,292 @@ body.mega-pokemon .pokemon-image-large {
    keeps it inside the card — it can't overflow the viewport, and it needs no JS,
    so it keeps working after navigating between Pokémon. */
 @media (max-width: 1024px) {
-    .ability-description-popup,
-    .ability-description-popup.left {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        width: auto;
-        min-width: 0;
-        max-width: none;
-        margin: 0.4rem 0 0 0;
-        transform: translateY(4px);
-        clip-path: none;   /* the side-pointing notch reads wrong pointing down */
-    }
-    .pokemon-ability:hover .ability-description-popup,
-    .pokemon-ability:focus .ability-description-popup,
-    .pokemon-ability:hover .ability-description-popup.left,
-    .pokemon-ability:focus .ability-description-popup.left {
-        transform: translateY(0);
-    }
+  .ability-description-popup,
+  .ability-description-popup.left {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    margin: 0.4rem 0 0 0;
+    transform: translateY(4px);
+    clip-path: none; /* the side-pointing notch reads wrong pointing down */
+  }
+  .pokemon-ability:hover .ability-description-popup,
+  .pokemon-ability:focus .ability-description-popup,
+  .pokemon-ability:hover .ability-description-popup.left,
+  .pokemon-ability:focus .ability-description-popup.left {
+    transform: translateY(0);
+  }
 }
-
 
 /* ==========================
    Details / Stats
    ========================== */
 .pokemon-stats {
-    margin-right: 1.25rem;
-    color: var(--second-text);
-    right: 1rem;
+  margin-right: 1.25rem;
+  color: var(--second-text);
+  right: 1rem;
 }
-
 
 /* ==========================
    Stat Bars
    ========================== */
 .stat-bar {
-    display: inline-flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 0.25rem;
-    width: 100%;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  width: 100%;
 }
 
 .stat-name {
-    font-family: "Syne", sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    width: 3rem;
-    text-align: right;
-    margin-right: 0.6rem;
-    font-weight: 600;
-    color: var(--second-text);
+  font-family: "Syne", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 3rem;
+  text-align: right;
+  margin-right: 0.6rem;
+  font-weight: 600;
+  color: var(--second-text);
 }
 
 .stat-value {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    font-variant-numeric: tabular-nums;   /* digits stop jittering as they count up */
-    width: 2.5rem;
-    text-align: right;
-    color: var(--main-text);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums; /* digits stop jittering as they count up */
+  width: 2.5rem;
+  text-align: right;
+  color: var(--main-text);
 }
 
 .bar-container {
-    width: 10rem;
-    height: 0.6rem;
-    background-color: var(--bg2);
-    border-radius: 0;
-    overflow: visible;
-    position: relative;
-    /* Carved track: the fill sits in a shallow recess. */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
-    transition: background-color 0.4s ease;
+  width: 10rem;
+  height: 0.6rem;
+  background-color: var(--bg2);
+  border-radius: 0;
+  overflow: visible;
+  position: relative;
+  /* Carved track: the fill sits in a shallow recess. */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.4s ease;
 }
 
 /* Geometric tick marks on bar track */
 .bar-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent calc(25% - 1px),
-            var(--bg1) calc(25% - 1px),
-            var(--bg1) 25%
-    );
-    pointer-events: none;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent calc(25% - 1px),
+    var(--bg1) calc(25% - 1px),
+    var(--bg1) 25%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .bar-fill {
-    height: 100%;
-    width: 0;
-    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    z-index: 0;
-    /* Filled-tube gradient: a soft lit top and a gentle, warm-toned deepen at
+  height: 100%;
+  width: 0;
+  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 0;
+  /* Filled-tube gradient: a soft lit top and a gentle, warm-toned deepen at
        the base (a touch of warm umber rather than flat black) — subtle. */
-    background: linear-gradient(180deg,
-        color-mix(in srgb, var(--fill) 84%, #fff) 0%,
-        var(--fill) 58%,
-        color-mix(in srgb, var(--fill) 90%, #4a3a28) 100%);
-    box-shadow: inset 0 -1px 1px rgba(74, 58, 40, 0.12);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--fill) 84%, #fff) 0%,
+    var(--fill) 58%,
+    color-mix(in srgb, var(--fill) 90%, #4a3a28) 100%
+  );
+  box-shadow: inset 0 -1px 1px rgba(74, 58, 40, 0.12);
 }
 
-.bar-fill.hp   { --fill: #ef5a52; }
-.bar-fill.atk  { --fill: #f0a35a; }
-.bar-fill.def  { --fill: #f2ce56; }
-.bar-fill.spa  { --fill: #7fa8e6; }
-.bar-fill.spd  { --fill: #8bcf7a; }
-.bar-fill.spe  { --fill: #ef86a6; }
-.bar-fill.bst  { --fill: #CA72F2; }   /* total → purple */
+.bar-fill.hp {
+  --fill: #ef5a52;
+}
+.bar-fill.atk {
+  --fill: #f0a35a;
+}
+.bar-fill.def {
+  --fill: #f2ce56;
+}
+.bar-fill.spa {
+  --fill: #7fa8e6;
+}
+.bar-fill.spd {
+  --fill: #8bcf7a;
+}
+.bar-fill.spe {
+  --fill: #ef86a6;
+}
+.bar-fill.bst {
+  --fill: #ca72f2;
+} /* total → purple */
 
 /* Emphasise the BST total row: taller carved track, gold labels. */
-.stat-bar.bst-row { margin-top: 0.55rem; }
-.stat-bar.bst-row .bar-container { height: 0.8rem; }
+.stat-bar.bst-row {
+  margin-top: 0.55rem;
+}
+.stat-bar.bst-row .bar-container {
+  height: 0.8rem;
+}
 .stat-bar.bst-row .stat-name,
 .stat-bar.bst-row .stat-value {
-    color: var(--accent2);
-    font-weight: 700;
+  color: var(--accent2);
+  font-weight: 700;
 }
-
 
 /* ==========================
    Navigation Arrows
    ========================== */
-.arrow-left  { display: flex; justify-content: center; align-items: center; top: 50%; padding-left: 0.5rem; }
-.arrow-right { display: flex; justify-content: center; align-items: center; padding-right: 1rem; top: 50%; }
+.arrow-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  padding-left: 0.5rem;
+}
+.arrow-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+  top: 50%;
+}
 
 .arrow {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    color: var(--banner-text);
-    font-size: min(1.7rem, 5.5vw);
-    cursor: pointer;
-    transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--banner-text);
+  font-size: min(1.7rem, 5.5vw);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .arrow:focus-visible {
-    outline: 2px solid var(--accent2);
-    outline-offset: 2px;
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
 }
 
-.arrow:hover { color: var(--accent2); }
+.arrow:hover {
+  color: var(--accent2);
+}
 
-.pokemon-info { text-align: center; flex-grow: 1; }
+.pokemon-info {
+  text-align: center;
+  flex-grow: 1;
+}
 
 .type-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    width: fit-content;
-    margin-top: 0.4rem;
-    padding: 0.15rem 0.8rem;
-    color: var(--accent6);
-    font-family: "Syne", sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    line-height: 1.3;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
-    /* Carved-tile emboss: lit top edge, shadowed base, seated on the surface. */
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.12),
-        0 1px 3px var(--shadow);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.8rem;
+  color: var(--accent6);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  /* Carved-tile emboss: lit top edge, shadowed base, seated on the surface. */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 3px var(--shadow);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
-.type-badge-icon { height: 1rem; width: auto; }
-
-.type-badge.normal   { background-color: var(--type-normal); }
-.type-badge.fire     { background-color: var(--type-fire); }
-.type-badge.water    { background-color: var(--type-water); }
-.type-badge.grass    { background-color: var(--type-grass); }
-.type-badge.electric { background-color: var(--type-electric); }
-.type-badge.ice      { background-color: var(--type-ice); }
-.type-badge.fighting { background-color: var(--type-fighting); }
-.type-badge.poison   { background-color: var(--type-poison); }
-.type-badge.ground   { background-color: var(--type-ground); }
-.type-badge.flying   { background-color: var(--type-flying); }
-.type-badge.psychic  { background-color: var(--type-psychic); }
-.type-badge.bug      { background-color: var(--type-bug); }
-.type-badge.rock     { background-color: var(--type-rock); }
-.type-badge.ghost    { background-color: var(--type-ghost); }
-.type-badge.dragon   { background-color: var(--type-dragon); }
-.type-badge.dark     { background-color: var(--type-dark); }
-.type-badge.steel    { background-color: var(--type-steel); }
-.type-badge.fairy    { background-color: var(--type-fairy); }
-
-#previousPokemonInfo, #nextPokemonInfo {
-    font-family: "Syne", sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
+.type-badge-icon {
+  height: 1rem;
+  width: auto;
 }
 
+.type-badge.normal {
+  background-color: var(--type-normal);
+}
+.type-badge.fire {
+  background-color: var(--type-fire);
+}
+.type-badge.water {
+  background-color: var(--type-water);
+}
+.type-badge.grass {
+  background-color: var(--type-grass);
+}
+.type-badge.electric {
+  background-color: var(--type-electric);
+}
+.type-badge.ice {
+  background-color: var(--type-ice);
+}
+.type-badge.fighting {
+  background-color: var(--type-fighting);
+}
+.type-badge.poison {
+  background-color: var(--type-poison);
+}
+.type-badge.ground {
+  background-color: var(--type-ground);
+}
+.type-badge.flying {
+  background-color: var(--type-flying);
+}
+.type-badge.psychic {
+  background-color: var(--type-psychic);
+}
+.type-badge.bug {
+  background-color: var(--type-bug);
+}
+.type-badge.rock {
+  background-color: var(--type-rock);
+}
+.type-badge.ghost {
+  background-color: var(--type-ghost);
+}
+.type-badge.dragon {
+  background-color: var(--type-dragon);
+}
+.type-badge.dark {
+  background-color: var(--type-dark);
+}
+.type-badge.steel {
+  background-color: var(--type-steel);
+}
+.type-badge.fairy {
+  background-color: var(--type-fairy);
+}
+
+#previousPokemonInfo,
+#nextPokemonInfo {
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
 
 /* ==========================
    Buttons
@@ -1610,273 +1888,546 @@ body.mega-pokemon .pokemon-image-large {
 .exit-button,
 .toggle-dark-mode,
 .toggle-dark-mode-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
 .form-switch-button {
-    /* Needed for the z-index below (from the shared button rule above) to
+  /* Needed for the z-index below (from the shared button rule above) to
        actually take effect — without a position, z-index is a no-op, which
        is why this was rendering under the (z-index: 100) artwork. */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1.1rem;
-    margin-top: 0.2rem;
-    margin-bottom: -2.6rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 2px solid var(--accent1);
-    background-color: var(--accent2);
-    color: var(--bg3);
-    font-size: 0.85rem;
-    font-family: "Syne", sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    width: auto;
-    height: auto;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    filter: drop-shadow(3px 3px 4px var(--shadow));
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1.1rem;
+  margin-top: 0.2rem;
+  margin-bottom: -2.6rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid var(--accent1);
+  background-color: var(--accent2);
+  color: var(--bg3);
+  font-size: 0.85rem;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  filter: drop-shadow(3px 3px 4px var(--shadow));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
 }
 
-.form-switch-button:hover { background-color: var(--accent1); }
+.form-switch-button:hover {
+  background-color: var(--accent1);
+}
 
 .exit-button {
-    position: fixed;
-    bottom: 0.7rem;
-    right: 0.7rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 0;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border: none;
-    background-color: var(--accent2);
-    color: var(--bg3);
-    /* Above the .pokemon-image-large art (z-index: 100). On mobile the
+  position: fixed;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  background-color: var(--accent2);
+  color: var(--bg3);
+  /* Above the .pokemon-image-large art (z-index: 100). On mobile the
        oversized art overlaps this bottom-right corner; without this it would
        paint on top and swallow the button's clicks until you scrolled past. */
-    z-index: 1000;
-    box-shadow: 0 0.8rem 1rem var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+  z-index: 1000;
+  box-shadow: 0 0.8rem 1rem var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
-.exit-button:hover { background-color: var(--accent1); }
+.exit-button:hover {
+  background-color: var(--accent1);
+}
 
 .toggle-dark-mode {
-    position: fixed;
-    bottom: 0.58rem;
-    right: 0.3rem;
-    background-color: rgba(0,0,0,0);
-    color: var(--accent2);
-    font-size: 4rem;
-    padding: 0.5rem 0.6rem;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 2px 4px var(--shadow));
+  position: fixed;
+  bottom: 0.58rem;
+  right: 0.3rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--accent2);
+  font-size: 4rem;
+  padding: 0.5rem 0.6rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px var(--shadow));
 }
 
 .toggle-dark-mode:hover,
 .toggle-dark-mode-card:hover {
-    color: var(--accent1);
-    transform: scale(1.15) rotate(15deg);
+  color: var(--accent1);
+  transform: scale(1.15) rotate(15deg);
 }
 
 .toggle-dark-mode-card {
-    background-color: rgba(0,0,0,0);
-    color: var(--accent2);
-    font-size: 3rem;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    position: fixed;
-    bottom: 4.25rem;
-    right: 0.7rem;
-    font-weight: bold;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Above the .pokemon-image-large art (z-index: 100) so it stays clickable
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--accent2);
+  font-size: 3rem;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: fixed;
+  bottom: 4.25rem;
+  right: 0.7rem;
+  font-weight: bold;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Above the .pokemon-image-large art (z-index: 100) so it stays clickable
        where the oversized art overlaps it on mobile — same reason as
        .exit-button above. */
-    z-index: 1000;
+  z-index: 1000;
 }
-
 
 /* ==========================
    Banners
    ========================== */
 .banner-main,
 .banner-card {
-    /* 100% (not 99vw): for a fixed element this is the viewport width excluding
+  /* 100% (not 99vw): for a fixed element this is the viewport width excluding
        any scrollbar, so the banner fills the width with no right-edge gap when
        the page is short, and never overflows when a scrollbar is present. */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 .4rem .6rem var(--shadow);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0.4rem 0.6rem var(--shadow);
 }
 
 .banner-main {
-    top: 0;
-    padding: 1.3rem;
-    height: 4rem;
-    background: var(--accent6);
-    /* Thin geometric accent stripe at bottom */
-    border-bottom: 3px solid var(--accent2);
-    /* Subtle angled stripe detail using gradient. The stops feather by
+  top: 0;
+  padding: 1.3rem;
+  height: 4rem;
+  background: var(--accent6);
+  /* Thin geometric accent stripe at bottom */
+  border-bottom: 3px solid var(--accent2);
+  /* Subtle angled stripe detail using gradient. The stops feather by
        0.5px on each edge so the angled line anti-aliases cleanly instead
        of showing a hard, pixelated staircase edge. */
-    background-image: repeating-linear-gradient(
-            -65deg,
-            transparent 0px,
-            transparent 27.5px,
-            rgba(207,150,34,0.22) 28px,
-            rgba(207,150,34,0.22) 30px,
-            transparent 30.5px
-    );
+  background-image: repeating-linear-gradient(
+    -65deg,
+    transparent 0px,
+    transparent 27.5px,
+    rgba(207, 150, 34, 0.22) 28px,
+    rgba(207, 150, 34, 0.22) 30px,
+    transparent 30.5px
+  );
 }
 
 .banner-card {
-    top: 0;
-    justify-content: space-between;
-    padding: 0.3rem;
-    background: var(--accent6);
-    border-bottom: 5px solid transparent;
-    border-image: linear-gradient(to right, var(--type1-color, var(--accent2)), var(--type2-color, var(--accent2))) 1;
-    background-image: repeating-linear-gradient(
-            -65deg,
-            transparent 0px,
-            transparent 27.5px,
-            rgba(207,150,34,0.22) 28px,
-            rgba(207,150,34,0.22) 30px,
-            transparent 30.5px
-    );
-    color: var(--banner-text);
-    height: 3rem;
+  top: 0;
+  justify-content: space-between;
+  padding: 0.3rem;
+  background: var(--accent6);
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      var(--type1-color, var(--accent2)),
+      var(--type2-color, var(--accent2))
+    )
+    1;
+  background-image: repeating-linear-gradient(
+    -65deg,
+    transparent 0px,
+    transparent 27.5px,
+    rgba(207, 150, 34, 0.22) 28px,
+    rgba(207, 150, 34, 0.22) 30px,
+    transparent 30.5px
+  );
+  color: var(--banner-text);
+  height: 3rem;
 }
-
 
 /* ==========================
    Scrollbar Customization
    ========================== */
-::-webkit-scrollbar          { width: 1rem; height: 1rem; }
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
 ::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner   { background: var(--bg2); }
+::-webkit-scrollbar-corner {
+  background: var(--bg2);
+}
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent5);
-    border-radius: 0;
-    border: 2px solid var(--bg2);
-    transition: background 0.2s ease;
+  background: var(--accent5);
+  border-radius: 0;
+  border: 2px solid var(--bg2);
+  transition: background 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb:hover  { background: var(--accent2); }
-::-webkit-scrollbar-thumb:active { background: var(--accent1); }
-
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent2);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--accent1);
+}
 
 @media (max-width: 600px) {
-    #previousPokemonNumber,
-    #nextPokemonNumber {
-        display: none;
-    }
+  #previousPokemonNumber,
+  #nextPokemonNumber {
+    display: none;
+  }
 
-    .card-shiny-toggle {
-        top: 4.5rem;
-        right: -2.5rem;
-    }
+  .card-shiny-toggle {
+    top: 4.5rem;
+    right: -0.5rem;
+  }
 
-    .pokemon-description {
-        width: 120%;
-    }
+  .pokemon-description {
+    /* 100% fills the parent's content box, so its 1rem padding becomes the side
+       margin (120% overflowed past it, running edge to edge). */
+    width: 100%;
+  }
 
-    .ability-list {
-        margin: 3rem -2rem;
-    }
+  .ability-list {
+    /* -1rem instead of -2rem: the column has 2rem of padding, so this leaves a
+       ~1rem side margin instead of pulling flush to the screen edge. */
+    margin: 3rem -1rem;
+  }
 
-    .title-type-container {
-        gap: 0;
-        margin: 3rem 0 0.5rem 1rem;
-    }
+  .title-type-container {
+    gap: 0;
+    margin: 3rem 0 0.5rem 1rem;
+  }
 
-    h2 {
-        margin-right: 100rem;
-    }
+  h2 {
+    margin-right: 100rem;
+  }
 
-    /* The filter bar is nearly full-width on phones (the desktop
+  /* The filter bar is nearly full-width on phones (the desktop
        `calc(100% - 10rem)` left it far too narrow), and when open it can grow
        tall and scroll so all the type buttons fit instead of being clipped. */
-    .search-filter-bar {
-        width: calc(100% - 1.5rem);
-    }
-    .search-filter-bar.open {
-        max-height: 75vh;
-        overflow-y: auto;
-        padding: 0.7rem 1rem 1.2rem;
-    }
+  .search-filter-bar {
+    width: calc(100% - 1.5rem);
+  }
+  .search-filter-bar.open {
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 0.7rem 1rem 1.2rem;
+  }
 }
-
 
 /* ==========================
    Dark Mode
    ========================== */
 html.dark-mode,
 body.dark-mode {
-    --bg1: #18201a;          /* Warm canopy night */
-    --bg2: #33402f;          /* Mossy stone surface */
-    --bg3: #2a3327;          /* Warm card surface */
+  --bg1: #18201a; /* Warm canopy night */
+  --bg2: #33402f; /* Mossy stone surface */
+  --bg3: #2a3327; /* Warm card surface */
 
-    --accent1: #cf5a34;      /* Ember terracotta */
-    --accent2: #d39e2e;      /* Firelight gold */
-    --accent4: #74a35c;      /* Foliage green */
-    --accent5: #33875a;      /* Jungle emerald — lightened */
-    /* --accent6 intentionally not overridden: the banner bars and type-badge
+  --accent1: #cf5a34; /* Ember terracotta */
+  --accent2: #d39e2e; /* Firelight gold */
+  --accent4: #74a35c; /* Foliage green */
+  --accent5: #33875a; /* Jungle emerald — lightened */
+  /* --accent6 intentionally not overridden: the banner bars and type-badge
        text are designed against a fixed deep charcoal in both themes. */
 
-    --main-text: #e3e6d5;    /* Warm off-white */
-    --second-text: #9ab98a;  /* Warm sage */
-    --shadow: rgba(0, 0, 0, 0.7);
+  --main-text: #e3e6d5; /* Warm off-white */
+  --second-text: #9ab98a; /* Warm sage */
+  --shadow: rgba(0, 0, 0, 0.7);
 
-    --geo-line: rgba(90, 150, 110, 0.22);
-    --geo-cut:  rgba(207, 90, 52, 0.18);   /* warm ember rule (was cold blue) */
+  --geo-line: rgba(90, 150, 110, 0.22);
+  --geo-cut: rgba(207, 90, 52, 0.18); /* warm ember rule (was cold blue) */
 
-    background-image: url('assets/Bg_Dark.svg');
+  background-image: url("assets/Bg_Dark.svg");
 }
 
 #card-page.dark-mode {
-    background-image: url('assets/Bg_Dark.svg');
+  background-image: url("assets/Bg_Dark.svg");
 }
 
 body.dark-mode .pokemon.slide-in:hover::before,
 body.dark-mode .pokemon.slide-in:focus-visible::before {
-    box-shadow: 0 1rem 2rem var(--shadow);
+  box-shadow: 0 1rem 2rem var(--shadow);
 }
 
 body.dark-mode .ability-list {
-    border-top-color: var(--accent5);
+  border-top-color: var(--accent5);
 }
 
 body.dark-mode .pokemon-description {
-    border-left-color: var(--accent2);
+  border-left-color: var(--accent2);
 }
 
 body.dark-mode .bar-fill {
-    opacity: 0.9;
+  opacity: 0.9;
+}
+
+/* ==========================
+   Evolution tree (card page)
+   A family line rendered left-to-right; split evolutions stack as vertical
+   branches. Each Pokémon is a tall, right-leaning parallelogram framing a
+   cropped close-up of its art. Every chip is the same width and every arrow is
+   the same width, so a line reads as one even run of shapes. Colors come from
+   the shared theme variables (dark-mode-safe); each chip tints with its type.
+   ========================== */
+
+.evolution-section {
+    --evo-w: 5.5rem;
+    --evo-h: 7.5rem;
+    --evo-lean: 1.2rem;
+    --evo-arrow-w: 1rem;
+
+    /* THE BASE SHAPE: Perfect right-leaning parallelogram (/ /) */
+    --evo-shape: polygon(
+            var(--evo-lean) 0,
+            100% 0,
+            calc(100% - var(--evo-lean)) 100%,
+            0 100%
+    );
+
+    /* THE ART MASK: Opens top & left, but strictly matches the right & bottom edges */
+    /* THE ART MASK:
+         Traces the left slant, bottom, and right slant exactly.
+         Once it hits the top corners, it shoots out and up so the art can break out. */
+    --evo-crop: polygon(
+            40% -100%,                       /* 1. Way up and way left */
+            100% -100%,                        /* 2. Way up, aligned with right edge */
+            100% 0%,                           /* 3. Top-right corner of the box */
+            calc(100% - var(--evo-lean)) 100%, /* 4. Bottom-right corner (slanted) */
+            0% 100%,                           /* 5. Bottom-left corner */
+            var(--evo-lean) 0%                 /* 6. Top-left corner of the box (slanted) */
+    );
+
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+    margin: 1.25rem 0 0.5rem;
+    padding: 1.25rem 0 1.5rem;
+}
+
+.evolution-heading {
+  text-align: center;
+  font-family: "Syne", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--second-text);
+  margin: 0 0 3rem; /* headroom for the art that breaks out upward */
+  display: block;
+  position: relative;
+  z-index: 4; /* stays above any art that reaches up toward it */
+}
+
+.evo-tree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* let the art break out of its chip */
+  padding: 0.25rem 0.25rem 0.5rem;
+}
+
+.evo-branch,
+.evo-step {
+  display: flex;
+  align-items: center;
+}
+
+/* Split evolutions: each target is its own row, stacked vertically. The gap is
+   generous because each node's art breaks out upward (see .evo-node-art img) —
+   a tight gap lets a lower branch's art spill up over the branch above it. */
+.evo-children {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Single-stage Pokémon: the lone chip plus a quiet "does not evolve" note. */
+.evo-solo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.evo-none {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--second-text);
+}
+
+.evo-node {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: var(--evo-w);
+  color: var(--main-text);
+  text-decoration: none;
+  text-align: center;
+  overflow: visible;
+  transition: transform 0.15s ease;
+}
+
+/* No box, no fill — just the chip's footprint. The art breaks out of it and the
+   only frame is a slanted type-colored baseline (::after) the character sits on. */
+.evo-node-frame {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--evo-w);
+  height: var(--evo-h);
+  overflow: visible;
+  transition: transform 0.15s ease;
+}
+
+.evo-node-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 80%;
+  height: 0.4rem;
+  background: var(--evo-type);
+  /* Same slant as the crop's sides, not var(--evo-shape). --evo-shape leans a
+     full --evo-lean over the crop's 7.5rem height (a gentle angle); reused on
+     this 0.4rem bar that same lean shears off far too sharply. So scale the lean
+     by the bar's height ÷ the crop's height (0.4 / 7.5) — the ends now run
+     parallel to the crop. */
+  clip-path: polygon(
+    calc(var(--evo-lean) * (0.4 / 7.5)) 0,
+    100% 0,
+    calc(100% - var(--evo-lean) * (0.4 / 7.5)) 100%,
+    0 100%
+  );
+  z-index: 2; /* baseline reads in front of the art's cropped foot */
+}
+
+.evo-node-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  clip-path: var(--evo-crop); /* the slanted parallelogram crop */
+}
+
+/* The crop clips to the chip's width, so the art has to LIVE inside that width or
+   it gets sliced. So: centre it, rest it on the baseline (bottom), and let
+   `contain` fit the whole mon within the chip — never wider than the crop window,
+   so every stage reads in full. Height runs taller than the chip so taller mons
+   still break out of the top (which the crop leaves open). drop-shadow gives it
+   depth now that there's no frame behind it. */
+.evo-node-art img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -1rem;
+  transform: translateX(-50%);
+  width: 185%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 0.3rem 0.4rem var(--shadow));
+}
+
+a.evo-node:hover,
+a.evo-node:focus-visible {
+  transform: translateY(-0.25rem);
+}
+
+/* The current Pokémon on the page — a gold baseline, the one point of emphasis. */
+.evo-node-current .evo-node-frame::after {
+  background: var(--accent2);
+  height: 0.55rem;
+}
+
+.evo-node-name {
+  font-weight: 700;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+    margin-right: 1rem;
+}
+
+.evo-node-num {
+  display: block;
+  font-size: 0.66rem;
+  color: var(--second-text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  margin-top: 0.1rem;
+}
+
+.evo-node-canon {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+/* Connector: a fixed-width column holding the method label above a chevron.
+   Nudged up so the chevron sits on the chip's vertical centre, not the node's
+   (whose name/number sit below the chip). */
+.evo-arrow {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 3; /* stay above any art that breaks out toward it */
+  width: var(--evo-arrow-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.6rem;
+  color: var(--second-text);
+}
+
+.evo-arrow svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  stroke-width: 3; /* bolder so the arrow doesn't get lost */
+  flex: 0 0 auto;
+}
+
+/* Method label: an opaque pill that wraps long methods (e.g. "High Friendship")
+   onto a second line instead of spilling out of the bubble. Soft shadow instead
+   of a hard border keeps it quiet against the art. */
+.evo-method {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: var(--main-text);
+  background: var(--bg3);
+  border-radius: 0.55rem;
+  padding: 0.18rem 0.4rem;
+  text-align: center;
+  max-width: 4.25rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+  box-shadow: 0 0.15rem 0.45rem var(--shadow);
 }
 
 /* ==========================
@@ -1886,12 +2437,12 @@ body.dark-mode .bar-fill {
    count-up is also skipped in JS.)
    ========================== */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

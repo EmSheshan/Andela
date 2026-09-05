@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <!-- Must be within the first 1024 bytes, so keep it first in <head>. -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <!-- Apply dark mode before first paint so a saved dark theme never flashes
          light on load. Runs synchronously here (and on <body> below); the full
          toggle wiring lives in darkMode.js. -->
     <script>
-        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkMode) document.documentElement.classList.add('dark-mode');
+      const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+      if (isDarkMode) document.documentElement.classList.add("dark-mode");
     </script>
 
     <!-- Fonts are self-hosted (see @font-face in styles.css + assets/fonts/),
@@ -17,23 +17,37 @@
          latin files (DM Sans body, Syne headings) so they're ready before first
          paint — this avoids the layout shift a late font swap would cause.
          crossorigin is required on font preloads, even same-origin. -->
-    <link rel="preload" href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 
-    <link id="dynamic-favicon" rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>'">
+    <link
+      id="dynamic-favicon"
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>'"
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andela Pokédex</title>
-
 
     <!-- Both are ~500 bytes; preloading both unconditionally avoids a mismatch
          with the site's manual (localStorage-based) dark mode toggle, which
          prefers-color-scheme can't detect. -->
-    <link rel="preload" href="assets/Bg_Light.svg" as="image">
-    <link rel="preload" href="assets/Bg_Dark.svg" as="image">
+    <link rel="preload" href="assets/Bg_Light.svg" as="image" />
+    <link rel="preload" href="assets/Bg_Dark.svg" as="image" />
 
     <!-- LCP image: the first Pokédex tile (Synthecyte) is the largest element
          above the fold. The grid is rendered by a deferred module script, so
@@ -41,65 +55,133 @@
          Preloading it here lets the browser's preload scanner fetch it from
          the initial document, at high priority. Keep this href in sync with
          the first tile rendered by index.js. -->
-    <link rel="preload" href="pokemonArt/synthecyte.png" as="image" fetchpriority="high">
+    <link
+      rel="preload"
+      href="data/pokemonArt/synthecyte.png"
+      as="image"
+      fetchpriority="high"
+    />
 
     <!-- Preload the whole module graph up front. Without this the browser
          discovers each import only as the previous module executes
-         (index.js → pokedex.js → megadex.js, a serial round-trip each), which
-         delays creation of the LCP <img> element and shows up as LCP "render
-         delay". modulepreload fetches + compiles them in parallel now. -->
-    <link rel="modulepreload" href="index.js">
-    <link rel="modulepreload" href="pokedex.js">
-    <link rel="modulepreload" href="megadex.js">
-</head>
-<body>
-<script>if (isDarkMode) document.body.classList.add('dark-mode');</script>
+         (index.js → pokeData.js, a serial round-trip each), which delays
+         creation of the LCP <img> element and shows up as LCP "render delay".
+         modulepreload fetches + compiles them in parallel now. -->
+    <link rel="modulepreload" href="index.js" />
+    <link rel="modulepreload" href="pokeData.js" />
 
-<button class="toggle-dark-mode" onclick="toggleDarkMode('.toggle-dark-mode')"></button>
+    <!-- The dex data is a small CSV fetched by pokeData.js. Preload it so the
+         request starts during initial parse rather than after the module runs. -->
+    <link rel="preload" href="data/pokedex.csv" as="fetch" crossorigin />
+    <link rel="preload" href="data/megadex.csv" as="fetch" crossorigin />
+  </head>
+  <body>
+    <script>
+      if (isDarkMode) document.body.classList.add("dark-mode");
+    </script>
 
+    <button
+      class="toggle-dark-mode"
+      onclick="toggleDarkMode('.toggle-dark-mode')"
+    ></button>
 
-<header>
-    <div class="banner-main">
+    <header>
+      <div class="banner-main">
         <h1>Andela Pokédex</h1>
-        <button id="searchToggleBtn" class="search-toggle-btn" title="Search & Filter" aria-label="Search & Filter" aria-expanded="false">
-            <svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15.5" y2="15.5"/></svg>
+        <button
+          id="searchToggleBtn"
+          class="search-toggle-btn"
+          title="Search & Filter"
+          aria-label="Search & Filter"
+          aria-expanded="false"
+        >
+          <svg
+            class="icon-svg"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15.5" y2="15.5" />
+          </svg>
         </button>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="search-filter-bar">
-    <div class="search-wrapper">
-        <svg class="icon-svg search-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15.5" y2="15.5"/></svg>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search Pokémon…" autocomplete="off" aria-label="Search Pokémon">
+    <div class="search-filter-bar">
+      <div class="search-wrapper">
+        <svg
+          class="icon-svg search-icon"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15.5" y2="15.5" />
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search Pokémon…"
+          autocomplete="off"
+          aria-label="Search Pokémon"
+        />
         <span id="resultCount" class="result-count-badge"></span>
+      </div>
+      <div id="typeFilterContainer" class="type-filter-container"></div>
     </div>
-    <div id="typeFilterContainer" class="type-filter-container"></div>
-</div>
 
-<main id="pokedex">
-</main>
-<h3><span class="h3-inner"><span class="gradient-text">◆</span><span class="gradient-text h3-label">Xenos and Megas</span><span class="gradient-text">◆</span></span></h3>
-<main id="megadex">
-</main>
+    <main id="pokedex"></main>
+    <h3>
+      <span class="h3-inner"
+        ><span class="gradient-text">◆</span
+        ><span class="gradient-text h3-label">Xenos and Megas</span
+        ><span class="gradient-text">◆</span></span
+      >
+    </h3>
+    <main id="megadex"></main>
 
-<script src="index.js" type="module"></script>
-<script src="darkMode.js" defer></script>
+    <script src="index.js" type="module"></script>
+    <script src="darkMode.js" defer></script>
 
-<footer class="footer">
-    <p>&copy; 2026 Pokémon Project. All rights reserved. This is a fan-made project and is not affiliated with or
-        endorsed by Pokémon, Nintendo, Game Freak, or any related entities.</p>
-</footer>
+    <footer class="footer">
+      <p>
+        &copy; 2026 Pokémon Project. All rights reserved. This is a fan-made
+        project and is not affiliated with or endorsed by Pokémon, Nintendo,
+        Game Freak, or any related entities.
+      </p>
+    </footer>
 
-<button id="backToTop" class="back-to-top" title="Back to top" aria-label="Back to top">
-    <svg class="icon-svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-</button>
+    <button
+      id="backToTop"
+      class="back-to-top"
+      title="Back to top"
+      aria-label="Back to top"
+    >
+      <svg
+        class="icon-svg"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+      </svg>
+    </button>
 
-<script>
-
-    // Set initial icon and mode based on the saved state
-    document.addEventListener('DOMContentLoaded', () => {
-        setDarkModeFromStorage('.toggle-dark-mode');
-    });
-</script>
-</body>
+    <script>
+      // Set initial icon and mode based on the saved state
+      document.addEventListener("DOMContentLoaded", () => {
+        setDarkModeFromStorage(".toggle-dark-mode");
+      });
+    </script>
+  </body>
 </html>

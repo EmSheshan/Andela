@@ -1,124 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-
-<head>
+  <head>
     <!-- Must be within the first 1024 bytes, so keep it first in <head>. -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <!-- LCP discovery: the large Pokémon art is the LCP element, but its URL
-         depends on ?pokemonNumber, so it can't be a static <link rel=preload>.
+         depends on the ?pokemon slug, so it can't be a static <link rel=preload>.
          Resolve it synchronously here — the first thing in <head> — so the
          request is injected during initial parse instead of waiting for the
-         module graph (pokedex/megadex/cardPage.js) to download and execute.
-         NUM_TO_ART mirrors the num→image-filename mapping in pokedex.js +
-         megadex.js; if a Pokémon is added there, add it here too. A miss only
-         costs the head-start preload — the page still renders the art normally. -->
+         module graph (cardPage.js + the CSV fetch) to download and execute.
+         The slug in the URL *is* the art filename (?pokemon=grismirk →
+         data/pokemonArt/grismirk.png), so no lookup table is needed. A bad slug just
+         means no preload — the page still renders the art normally. -->
     <script>
-        (function () {
-            var NUM_TO_ART = {"1999":"synthecyte","2000":"fawnna","2001":"fawliage","2002":"dynastag","2003":"pumace","2004":"pyroncho","2005":"smoldero","2006":"sealor","2007":"seagent","2008":"brigantide","2009":"panacha","2010":"marracacha","2017":"grismirk","2018":"grimson","2021":"cackloon","2022":"necrondor","2023":"peppilla","2024":"peppyre","2025":"pepperisher","2036":"sedimentaldormant","2068":"amistaphore","3000":"megalokix","3001":"xenotyranitar","3002":"xenoscizor"};
-            var base = NUM_TO_ART[new URLSearchParams(location.search).get('pokemonNumber')];
-            if (base) {
-                var link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = 'pokemonArt/' + base + '.png';
-                link.setAttribute('fetchpriority', 'high');
-                document.head.appendChild(link);
-            }
-        })();
+      (function () {
+        var base = new URLSearchParams(location.search).get("pokemon");
+        if (base && /^[a-z0-9]+$/.test(base)) {
+          var link = document.createElement("link");
+          link.rel = "preload";
+          link.as = "image";
+          link.href = "data/pokemonArt/" + base + ".png";
+          link.setAttribute("fetchpriority", "high");
+          document.head.appendChild(link);
+        }
+      })();
     </script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script>
-        // Check local storage and apply dark-mode class immediately if needed.
-        // (document.body doesn't exist yet here, so only <html> can be tagged;
-        // the body itself is tagged right after its opening tag, below.)
-        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark-mode');
+      // Check local storage and apply dark-mode class immediately if needed.
+      // (document.body doesn't exist yet here, so only <html> can be tagged;
+      // the body itself is tagged right after its opening tag, below.)
+      const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark-mode");
+      }
+
+      // Optional: Update favicon immediately if you want
+      window.changeFavicon = (href) => {
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+          link = document.createElement("link");
+          link.rel = "icon";
+          document.getElementsByTagName("head")[0].appendChild(link);
         }
+        link.href = href;
+      };
 
-        // Optional: Update favicon immediately if you want
-        window.changeFavicon = (href) => {
-            let link = document.querySelector("link[rel~='icon']");
-            if (!link) {
-                link = document.createElement('link');
-                link.rel = 'icon';
-                document.getElementsByTagName('head')[0].appendChild(link);
-            }
-            link.href = href;
-        };
-
-        // Apply initial favicon based on mode
-        if (isDarkMode) {
-            window.changeFavicon("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>");
-        } else {
-            window.changeFavicon("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>");
-        }
-
+      // Apply initial favicon based on mode
+      if (isDarkMode) {
+        window.changeFavicon(
+          "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>",
+        );
+      } else {
+        window.changeFavicon(
+          "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>",
+        );
+      }
     </script>
-
 
     <!-- Self-hosted fonts (see @font-face in styles.css + assets/fonts/).
          Preload the primary latin files so they're ready before first paint,
          avoiding font-swap layout shift. See index.html for full rationale. -->
-    <link rel="preload" href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/8vIH7w4qzmVxm2BL9A.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link id="dynamic-favicon" rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+    <link
+      id="dynamic-favicon"
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>"
+    />
     <title>Andela Pokédex</title>
-</head>
+  </head>
 
-<body id="card-page">
-<script>
-    if (isDarkMode) document.body.classList.add('dark-mode');
-</script>
+  <body id="card-page">
+    <script>
+      if (isDarkMode) document.body.classList.add("dark-mode");
+    </script>
 
-<div id="typeColorOverlay"></div>
+    <div id="typeColorOverlay"></div>
 
-
-<div class="banner-card">
-    <div class="arrow-left">
-            <button class="arrow" onclick="navigatePokemon('previous')" aria-label="Previous Pokémon">
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> <span id="previousPokemonNumber"></span> <span id="previousPokemonName"></span>
-            </button>
+    <div class="banner-card">
+      <div class="arrow-left">
+        <button
+          class="arrow"
+          onclick="navigatePokemon('previous')"
+          aria-label="Previous Pokémon"
+        >
+          <svg
+            class="icon-svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          <span id="previousPokemonNumber"></span>
+          <span id="previousPokemonName"></span>
+        </button>
         <span id="previousPokemonInfo" class="pokemon-info"></span>
-    </div>
-    <div class="pokemon-info" id="currentPokemonInfo"></div>
+      </div>
+      <div class="pokemon-info" id="currentPokemonInfo"></div>
 
-
-    <div class="arrow-right">
-            <button class="arrow" onclick="navigatePokemon('next')" aria-label="Next Pokémon">
-                <span id="nextPokemonNumber"></span> <span id="nextPokemonName"> </span> <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-
-            </button>
+      <div class="arrow-right">
+        <button
+          class="arrow"
+          onclick="navigatePokemon('next')"
+          aria-label="Next Pokémon"
+        >
+          <span id="nextPokemonNumber"></span>
+          <span id="nextPokemonName"> </span>
+          <svg
+            class="icon-svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
         <span id="nextPokemonInfo" class="pokemon-info"></span>
+      </div>
     </div>
-</div>
 
+    <div id="pokemonTitleTypeContainer"></div>
+    <div id="pokemonCardContainer" class="pokemon-card-container">
+      <button
+        class="exit-button"
+        onclick="window.location.href = 'index.html'"
+        aria-label="Back to Pokédex"
+      >
+        <svg
+          class="icon-svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
 
-<div id="pokemonTitleTypeContainer"></div>
-<div id="pokemonCardContainer" class="pokemon-card-container">
-    <button class="exit-button" onclick="window.location.href='index.html'" aria-label="Back to Pokédex"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button
+        class="toggle-dark-mode-card"
+        onclick="toggleDarkMode('.toggle-dark-mode-card')"
+      ></button>
+      <div id="pokemonCardLeft" class="pokemon-card-left"></div>
+      <div id="pokemonCardRight" class="pokemon-card-right"></div>
+    </div>
 
-    <button class="toggle-dark-mode-card" onclick="toggleDarkMode('.toggle-dark-mode-card')"></button>
-    <div id="pokemonCardLeft" class="pokemon-card-left"></div>
-    <div id="pokemonCardRight" class="pokemon-card-right"></div>
-
-
-
-</div>
-
-
-
-
-
-<script type="module" src="cardPage.js"></script>
-<script src="darkMode.js" defer></script>
-
-</body>
+    <script type="module" src="cardPage.js"></script>
+    <script src="darkMode.js" defer></script>
+  </body>
 </html>
