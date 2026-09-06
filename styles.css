@@ -370,6 +370,11 @@
 html {
   width: 100%;
   overflow-x: hidden;
+  /* Always reserve the vertical scrollbar's space, even on pages short enough
+     not to need it (e.g. a Pokémon with a brief dex entry). Otherwise the
+     scrollbar appears/disappears from page to page, nudging the centered layout
+     sideways — distracting when navigating between cards quickly. */
+  scrollbar-gutter: stable;
 }
 
 /* Inline icons, sized to inherit the parent's font-size like an icon font would. */
@@ -378,6 +383,7 @@ html {
   height: 1em;
   display: inline-block;
   vertical-align: -0.125em;
+    fill: transparent;
 }
 
 /* One consistent, visible keyboard-focus ring across every interactive element
@@ -2232,7 +2238,7 @@ body.dark-mode .bar-fill {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--second-text);
-  margin: 0 0 3rem; /* headroom for the art that breaks out upward */
+  margin: 0 0 2rem; /* headroom for the art that breaks out upward */
   display: block;
   position: relative;
   z-index: 4; /* stays above any art that reaches up toward it */
@@ -2343,9 +2349,9 @@ body.dark-mode .bar-fill {
   display: block;
   position: absolute;
   left: 50%;
-  bottom: -1rem;
+  bottom: -0.5rem;
   transform: translateX(-50%);
-  width: 185%;
+  width: 160%;
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(0 0.3rem 0.4rem var(--shadow));

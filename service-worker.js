@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v6";
+const CACHE_VERSION = "v7";
 const APP_SHELL_CACHE = `andela-pokedex-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `andela-pokedex-images-${CACHE_VERSION}`;
 const CURRENT_CACHES = [APP_SHELL_CACHE, IMAGE_CACHE];
@@ -46,14 +46,44 @@ const APP_SHELL_URLS = [
   "/moveIcons/Status.png",
 ];
 
+// Canon reference Pokémon (canondex.csv) have no grid tile and no card page —
+// their art is only ever requested from inside an evolution node. That means
+// nothing ever warms it into IMAGE_CACHE the way scrolling the grid warms every
+// regular/Mega mon, so on mobile (offline / flaky / installed PWA) the canon art
+// in evo trees just fails to load. Precache it here, reading the ids straight
+// from canondex.csv so this stays in sync as canon mons are added.
+async function precacheCanonArt(cache) {
+  const res = await fetch("/data/canondex.csv");
+  if (!res.ok) return; // canondex.csv is optional
+  const rows = (await res.text()).split(/\r?\n/).filter((line) => line.trim());
+  const header = rows.shift();
+  if (!header) return;
+  const idCol = header.split(",").indexOf("id");
+  if (idCol === -1) return;
+  // ids are simple slugs in leading columns (before any quoted description
+  // fields), so a plain comma-split reliably yields the id here.
+  const artUrls = rows
+    .map((line) => line.split(",")[idCol]?.trim())
+    .filter(Boolean)
+    .map((id) => `/data/pokemonArt/${id}.png`);
+  // allSettled so a canon mon missing its art file can't sink the precache.
+  await Promise.allSettled(artUrls.map((url) => cache.add(url)));
+}
+
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(APP_SHELL_CACHE).then((cache) =>
-      // allSettled (not addAll) so one bad/missing URL can't sink the
-      // whole precache.
-      Promise.allSettled(APP_SHELL_URLS.map((url) => cache.add(url))),
-    ),
+    Promise.all([
+      caches.open(APP_SHELL_CACHE).then((cache) =>
+        // allSettled (not addAll) so one bad/missing URL can't sink the
+        // whole precache.
+        Promise.allSettled(APP_SHELL_URLS.map((url) => cache.add(url))),
+      ),
+      caches
+        .open(IMAGE_CACHE)
+        .then((cache) => precacheCanonArt(cache))
+        .catch(() => {}),
+    ]),
   );
 });
 
