@@ -8,6 +8,7 @@
   },
   "scripts": {
     "format": "prettier --write \"**/*.{js,html,css}\"",
-    "format:check": "prettier --check \"**/*.{js,html,css}\""
+    "format:check": "prettier --check \"**/*.{js,html,css}\"",
+    "generate:share": "node sharableImageGenerator.js"
   }
 }
