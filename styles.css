@@ -1292,17 +1292,7 @@ body.mega-pokemon .pokemon-image-large {
   margin-top: -0.75rem;
 }
 
-/* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
-   the card-page title before the name); the tile turns it into a corner chip. */
-.dex-num {
-  font-family: "DM Sans", sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  font-size: 0.72em;
-  letter-spacing: 0.08em;
-  color: var(--accent2);
-  margin-right: 0.15em;
-}
+
 
 /* Positioning context for the tile art + its corner index chip. */
 .pokemon-art {
@@ -1320,8 +1310,6 @@ body.mega-pokemon .pokemon-image-large {
   margin: 0;
   font-weight: 700;
   font-size: 0.68rem;
-  background: color-mix(in srgb, var(--bg3) 82%, transparent);
-  /* Same bottom-right notch as the cards, so it reads as carved. */
   clip-path: polygon(
     0 0,
     100% 0,
@@ -1329,6 +1317,19 @@ body.mega-pokemon .pokemon-image-large {
     calc(100% - 5px) 100%,
     0 100%
   );
+}
+
+/* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
+   the card-page title before the name); the tile turns it into a corner chip. */
+.dex-num {
+    font-family: "DM Sans", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    color: var(--accent2);
+    margin-right: 0.15em;
+    background: transparent;
 }
 
 .type-image {
