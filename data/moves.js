@@ -340,13 +340,13 @@ export const moves = {
       "The user restores its own HP by up to half its max HP. This also raises the user's Defense and Special Defense by one stage each.",
   },
 
-  "Annihilation Beam": {
+  "Assimilation Beam": {
     type: Type.NORMAL,
     category: Category.SPECIAL,
     accuracy: 100,
-    power: 140,
+    power: 120,
     pp: 5,
     description:
-      "The user fires a beam that unmakes whatever it strikes. This also lowers the user's Sp. Atk stat.",
+      "The user fires a beam that rewrites the DNA of whatever it strikes. This changes the target's type to Normal.",
   },
 };

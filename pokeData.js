@@ -151,7 +151,7 @@ function parseRow(row) {
  * of the base forme above them instead of consuming a new one.
  *
  * Each entry gains:
- *   num         dex number (1-based) — null for Megas and canon (they show none)
+ *   num         dex number (0-based) — null for Megas and canon (they show none)
  *   speciesId   id of the base forme this row belongs to (its own id if a base)
  *   isForme     true for an extra forme
  *   isMega      true for entries from megadex.csv
@@ -163,7 +163,7 @@ function parseRow(row) {
  */
 export function buildDex(rows, { mega = false, external = false } = {}) {
   const dex = {};
-  let counter = 0;
+  let counter = -1;
   let speciesId = null;
 
   for (const row of rows) {

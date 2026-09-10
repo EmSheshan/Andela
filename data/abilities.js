@@ -901,9 +901,9 @@ export const abilities = {
       "Becomes competitive and deals more damage to Pokémon heavier than the user, but deals less to Pokémon lighter than the user.",
     tag: "andela",
   },
-  Assimilation: {
+  Singularity: {
     description:
-      "All other Pokémon become Normal-type while this Pokémon is on the battlefield.",
+      "Decreases the damage the Pokémon takes from moves that don't share a type with the Pokémon using them.",
     tag: "andela",
   },
 };
