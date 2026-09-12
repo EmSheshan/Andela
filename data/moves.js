@@ -349,4 +349,14 @@ export const moves = {
     description:
       "The user fires a beam that rewrites the DNA of whatever it strikes. This changes the target's type to Normal.",
   },
+
+  "Strip Mine": {
+    type: Type.STEEL,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 90,
+    pp: 5,
+    description:
+      "The user rakes the target with metal-hardened talons and strips away its held item.",
+  },
 };
