@@ -350,11 +350,21 @@ export const moves = {
       "The user fires a beam that rewrites the DNA of whatever it strikes. This changes the target's type to Normal.",
   },
 
+  Riftrun: {
+    type: Type.FAIRY,
+    category: Category.PHYSICAL,
+    accuracy: 100,
+    power: 120,
+    pp: 5,
+    description:
+      "The user charges headlong, splitting the ground in its wake. This also lowers the target’s Speed stat.",
+  },
+
   "Strip Mine": {
     type: Type.STEEL,
     category: Category.PHYSICAL,
     accuracy: 100,
-    power: 90,
+    power: 100,
     pp: 5,
     description:
       "The user rakes the target with metal-hardened talons and strips away its held item.",

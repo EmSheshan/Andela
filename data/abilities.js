@@ -906,4 +906,8 @@ export const abilities = {
       "Decreases the damage the Pokémon takes from moves that don't share a type with the Pokémon using them.",
     tag: "andela",
   },
+  Earthshaker: {
+    description: "Powers up moves with a base power of 100 or higher.",
+    tag: "andela",
+  },
 };
