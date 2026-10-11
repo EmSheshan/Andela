@@ -357,7 +357,16 @@ export const moves = {
     power: 120,
     pp: 5,
     description:
-      "The user charges headlong, splitting the ground in its wake. This also lowers the target’s Speed stat.",
+      "The user charges headlong, splitting the ground in its wake. This attack is not blocked or redirected.",
+  },
+  Witherwood: {
+    type: Type.FAIRY,
+    category: Category.SPECIAL,
+    accuracy: 100,
+    power: 110,
+    pp: 5,
+    description:
+      "The user channels energy from its dead limb, and the rot takes hold. The target is damaged each turn until it switches out.",
   },
 
   "Strip Mine": {

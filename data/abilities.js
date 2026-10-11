@@ -910,4 +910,9 @@ export const abilities = {
     description: "Powers up moves with a base power of 100 or higher.",
     tag: "andela",
   },
+  Spiritwalker: {
+    description:
+      "Takes reduced damage from moves with a base power of 100 or higher.",
+    tag: "andela",
+  },
 };
