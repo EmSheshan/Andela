@@ -43,6 +43,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Andela Pokédex</title>
 
+    <meta
+      name="description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <link rel="canonical" href="https://emsheshan.github.io/Andela/" />
+
+    <!-- Link previews. Crawlers read the HTML as served and do not run JS, so
+         these are the same on every card — the card page picks its Pokémon
+         from ?pokemon= at runtime, long after a crawler has gone. Per-mon
+         previews would need one prerendered page per Pokémon. -->
+    <meta property="og:site_name" content="Andela Pokédex" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emsheshan.github.io/Andela/" />
+    <meta property="og:title" content="Andela Pokédex" />
+    <meta
+      property="og:description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <meta
+      property="og:image"
+      content="https://emsheshan.github.io/Andela/sharablePokemonArt/dynastag-1-art.png"
+    />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content="Dynastag, the Crested Pokémon" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Andela Pokédex" />
+    <meta
+      name="twitter:description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <meta
+      name="twitter:image"
+      content="https://emsheshan.github.io/Andela/sharablePokemonArt/dynastag-1-art.png"
+    />
+
     <!-- Both are ~500 bytes; preloading both unconditionally avoids a mismatch
          with the site's manual (localStorage-based) dark mode toggle, which
          prefers-color-scheme can't detect. -->
@@ -80,6 +116,8 @@
       if (isDarkMode) document.body.classList.add("dark-mode");
     </script>
 
+    <a class="skip-link" href="#pokedex">Skip to the Pokédex</a>
+
     <button
       class="toggle-dark-mode"
       onclick="toggleDarkMode('.toggle-dark-mode')"
@@ -97,14 +135,13 @@
         >
           <svg
             class="icon-svg"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
             aria-hidden="true"
           >
-            <circle cx="10" cy="10" r="7" />
-            <line x1="21" y1="21" x2="15.5" y2="15.5" />
+            <path
+              d="M782.87-98.52 526.91-354.48q-29.43 21.74-68.15 34.61Q420.04-307 375.48-307q-114.09 0-193.55-79.46-79.45-79.45-79.45-193.54 0-114.09 79.45-193.54Q261.39-853 375.48-853q114.09 0 193.54 79.46 79.46 79.45 79.46 193.54 0 45.13-12.87 83.28T601-429.7l256.52 257.09-74.65 74.09ZM375.48-413q69.91 0 118.45-48.54 48.55-48.55 48.55-118.46t-48.55-118.46Q445.39-747 375.48-747t-118.46 48.54Q208.48-649.91 208.48-580t48.54 118.46Q305.57-413 375.48-413Z"
+            />
           </svg>
         </button>
       </div>
@@ -114,14 +151,13 @@
       <div class="search-wrapper">
         <svg
           class="icon-svg search-icon"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
+          viewBox="0 -960 960 960"
+          fill="currentColor"
           aria-hidden="true"
         >
-          <circle cx="10" cy="10" r="7" />
-          <line x1="21" y1="21" x2="15.5" y2="15.5" />
+          <path
+            d="M782.87-98.52 526.91-354.48q-29.43 21.74-68.15 34.61Q420.04-307 375.48-307q-114.09 0-193.55-79.46-79.45-79.45-79.45-193.54 0-114.09 79.45-193.54Q261.39-853 375.48-853q114.09 0 193.54 79.46 79.46 79.45 79.46 193.54 0 45.13-12.87 83.28T601-429.7l256.52 257.09-74.65 74.09ZM375.48-413q69.91 0 118.45-48.54 48.55-48.55 48.55-118.46t-48.55-118.46Q445.39-747 375.48-747t-118.46 48.54Q208.48-649.91 208.48-580t48.54 118.46Q305.57-413 375.48-413Z"
+          />
         </svg>
         <input
           type="text"
@@ -131,20 +167,29 @@
           autocomplete="off"
           aria-label="Search Pokémon"
         />
-        <span id="resultCount" class="result-count-badge"></span>
+        <span
+          id="resultCount"
+          class="result-count-badge"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></span>
       </div>
       <div id="typeFilterContainer" class="type-filter-container"></div>
     </div>
 
-    <main id="pokedex"></main>
-    <h3>
-      <span class="h3-inner"
-        ><span class="gradient-text">◆</span
-        ><span class="gradient-text h3-label">Xenos and Megas</span
-        ><span class="gradient-text">◆</span></span
-      >
-    </h3>
-    <main id="megadex"></main>
+    <main class="dex-main">
+      <h2 id="regional-heading" class="visually-hidden">Regional Pokédex</h2>
+      <section id="pokedex" aria-labelledby="regional-heading"></section>
+      <h2 id="mega-heading" class="section-heading">
+        <span class="h3-inner"
+          ><span class="gradient-text">◆</span
+          ><span class="gradient-text h3-label">Xenos and Megas</span
+          ><span class="gradient-text">◆</span></span
+        >
+      </h2>
+      <section id="megadex" aria-labelledby="mega-heading"></section>
+    </main>
 
     <script src="index.js" type="module"></script>
     <script src="darkMode.js" defer></script>
@@ -165,15 +210,13 @@
     >
       <svg
         class="icon-svg"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        viewBox="0 -960 960 960"
+        fill="currentColor"
         aria-hidden="true"
       >
-        <line x1="12" y1="19" x2="12" y2="5" />
-        <polyline points="5 12 12 5 19 12" />
+        <path
+          d="M427-140.78v-475.13L215.43-404.35 140.78-480 480-819.22 819.22-480l-74.65 75.65L533-615.91v475.13H427Z"
+        />
       </svg>
     </button>
 

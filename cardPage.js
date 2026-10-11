@@ -174,7 +174,7 @@ function familyHTML(entry, currentId, seen = new Set()) {
         <div class="evo-step">
             <span class="evo-arrow" aria-hidden="true">
                 ${child.evoMethod ? `<span class="evo-method">${child.evoMethod}</span>` : ""}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12 6 18 12 12 18"/></svg>
+                <svg viewBox="0 -960 960 960" fill="currentColor"><path d="M615.91-427H140.78v-106h475.13L404.35-744.57 480-819.22 819.22-480 480-140.78l-75.65-74.65L615.91-427Z"/></svg>
             </span>
             ${familyHTML(child, currentId, seen)}
         </div>`,
@@ -359,12 +359,7 @@ function displaySelectedPokemon(formIndex = 0) {
                 <img src="${regularImage}" class="pokemon-image-large" id="pokemonMainImage" alt="" fetchpriority="high"/>
             </div>
             <button class="card-shiny-toggle" id="cardShinyToggle" title="Toggle Shiny" aria-label="Toggle shiny form" aria-pressed="false">
-                <svg class="sparkle-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <!-- large sparkle -->
-                    <path d="M10 5 L11.8 12.2 L19 14 L11.8 15.8 L10 23 L8.2 15.8 L1 14 L8.2 12.2 Z"/>
-                    <!-- small sparkle offset top-right -->
-                    <path d="M20 2 L20.7 4.3 L23 5 L20.7 5.7 L20 8 L19.3 5.7 L17 5 L19.3 4.3 Z"/>
-                </svg>
+                <svg class="sparkle-icon" viewBox="0 -960 960 960" fill="currentColor"><path d="m761.13-583.61-55.65-121.3L584.17-760l121.31-55.09 55.65-121.3 55.09 121.3L937.52-760l-121.3 55.09-55.09 121.3Zm0 560-55.65-121.3L584.17-200l121.31-55.09 55.65-121.3 55.09 121.3L937.52-200l-121.3 55.09-55.09 121.3ZM363.39-139.09 256.61-373.22 22.48-480l234.13-106.78 106.78-234.13 106.78 234.13L704.31-480 470.17-373.22 363.39-139.09Zm0-214.91 40-86 86-40-86-40-40-86-40 86-86 40 86 40 40 86Zm0-126Z"/></svg>
             </button>
         </div>
         <div class="pokemon-description">
@@ -389,8 +384,8 @@ function displaySelectedPokemon(formIndex = 0) {
 
   document.getElementById("pokemonCardRight").innerHTML = `
         <div class="pokemon-measurements">
-            ${selectedPokemon.heightm != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M8 6l4-3 4 3"/><path d="M8 18l4 3 4-3"/></svg>${selectedPokemon.heightm} m</span>` : ""}
-            ${selectedPokemon.weightkg != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7a3 3 0 0 1 6 0"/><path d="M6 8h12l1.6 12H4.4z"/></svg>${selectedPokemon.weightkg} kg</span>` : ""}
+            ${selectedPokemon.heightm != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-100.78 290.61-290.17l74.09-74.66 62.3 61.31v-353.52l-62.3 62.43-74.66-74.65L480-859.22l189.96 189.96-74.66 74.52-62.3-61.74v352.96l62.87-61.31 74.09 74.09L480-100.78Z"/></svg>${selectedPokemon.heightm} m</span>` : ""}
+            ${selectedPokemon.weightkg != null ? `<span class="measurement-pill"><svg class="measure-icon" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M256.96-214.7h446.08L650-585.3H310l-53.04 370.6ZM480-691.3q14.74 0 24.54-10.09 9.81-10.09 9.81-24.26 0-14.74-9.81-24.55-9.8-9.8-24.54-9.8-14.17 0-24.26 9.8-10.09 9.81-10.09 24.55 0 14.17 10.09 24.26Q465.83-691.3 480-691.3ZM135-108.7l82.83-582.6h132.21q-2.43-8.87-3.58-16.96-1.16-8.09-1.16-17.39 0-55.65 39.53-95.18 39.52-39.52 95.17-39.52t95.17 39.52q39.53 39.53 39.53 95.18 0 9.3-1.16 17.39-1.15 8.09-3.58 16.96h132.21L825-108.7H135Zm121.96-106h446.08-446.08Z"/></svg>${selectedPokemon.weightkg} kg</span>` : ""}
         </div>
         <div class="pokemon-stats">
             ${displayStatBar("HP", selectedPokemon.baseStats.hp, "hp")}

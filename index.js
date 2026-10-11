@@ -313,6 +313,12 @@ function displayPokemonData(pokemonList, containerId) {
       "--card-type-color",
       `var(--type-${type1.toLowerCase()})`,
     );
+    // Second stop for the tile's top bar. Mono-types repeat type1, so their
+    // bar stays a flat band exactly as before — only dual-types blend.
+    pokemonCard.style.setProperty(
+      "--card-type-color-2",
+      `var(--type-${(type2 || type1).toLowerCase()})`,
+    );
 
     if (isLcpTile) {
       // The LCP tile must be visible on the very first frame. The default

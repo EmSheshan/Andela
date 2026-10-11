@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v18";
 const APP_SHELL_CACHE = `andela-pokedex-shell-${CACHE_VERSION}`;
 const IMAGE_CACHE = `andela-pokedex-images-${CACHE_VERSION}`;
 const CURRENT_CACHES = [APP_SHELL_CACHE, IMAGE_CACHE];

@@ -85,6 +85,48 @@
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>"
     />
     <title>Andela Pokédex</title>
+
+    <meta
+      name="description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <link
+      rel="canonical"
+      href="https://emsheshan.github.io/Andela/cardPage.html"
+    />
+
+    <!-- Link previews. Crawlers read the HTML as served and do not run JS, so
+         these are the same on every card — the card page picks its Pokémon
+         from ?pokemon= at runtime, long after a crawler has gone. Per-mon
+         previews would need one prerendered page per Pokémon. -->
+    <meta property="og:site_name" content="Andela Pokédex" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://emsheshan.github.io/Andela/cardPage.html"
+    />
+    <meta property="og:title" content="Andela Pokédex" />
+    <meta
+      property="og:description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <meta
+      property="og:image"
+      content="https://emsheshan.github.io/Andela/sharablePokemonArt/dynastag-1-art.png"
+    />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content="Dynastag, the Crested Pokémon" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Andela Pokédex" />
+    <meta
+      name="twitter:description"
+      content="A regional Pokédex of 29 original Pokémon from Andela — artwork, dex entries, base stats, abilities and evolution lines."
+    />
+    <meta
+      name="twitter:image"
+      content="https://emsheshan.github.io/Andela/sharablePokemonArt/dynastag-1-art.png"
+    />
   </head>
 
   <body id="card-page">
@@ -103,15 +145,13 @@
         >
           <svg
             class="icon-svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
             aria-hidden="true"
           >
-            <polyline points="15 18 9 12 15 6" />
+            <path
+              d="M560-221.91 301.91-480 560-738.09 634.09-664l-184 184 184 184L560-221.91Z"
+            />
           </svg>
           <span id="previousPokemonNumber"></span>
           <span id="previousPokemonName"></span>
@@ -130,15 +170,13 @@
           <span id="nextPokemonName"> </span>
           <svg
             class="icon-svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
             aria-hidden="true"
           >
-            <polyline points="9 18 15 12 9 6" />
+            <path
+              d="m485.91-480-184-184L376-738.09 634.09-480 376-221.91 301.91-296l184-184Z"
+            />
           </svg>
         </button>
         <span id="nextPokemonInfo" class="pokemon-info"></span>
@@ -158,15 +196,13 @@
     >
       <svg
         class="icon-svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        viewBox="0 -960 960 960"
+        fill="currentColor"
         aria-hidden="true"
       >
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
+        <path
+          d="M256-181.91 181.91-256l224-224-224-224L256-778.09l224 224 224-224L778.09-704l-224 224 224 224L704-181.91l-224-224-224 224Z"
+        />
       </svg>
     </button>
 

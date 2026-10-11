@@ -321,6 +321,19 @@
   /* --- Text --- */
   --main-text: #23291c; /* Warm near-black olive */
   --second-text: #316b4c; /* Deep jungle green */
+  /* accent1 and accent2 are fill colors — as text on a light surface they
+       measure 3.2:1 and 1.9:1, under the 4.5:1 needed to read comfortably.
+       These are the same two hues darkened until they clear it on bg1, bg2
+       and bg3. Use accent1/accent2 for fills, rules and active states; use
+       these for type. */
+  /* Gold marks use the full-brightness accent, chosen for looks over the
+       contrast formula: on this page colour it measures 2.15:1, below the
+       4.5:1 AA wants for text. Every compliant alternative sits near 36%
+       lightness, where yellow reads as mud. These stay as separate tokens so
+       the decision is in one place if it ever needs revisiting. */
+  --gold-ink: var(--accent2);
+  --gold-ui: var(--accent2);
+  --ember-ink: #9e3a1c;
   /* Fixed (not theme-driven): the banner bars keep a constant dark
        background in both light and dark mode, so their text needs a
        constant light color rather than one that flips per theme. */
@@ -328,6 +341,13 @@
 
   /* --- Utility --- */
   --shadow: rgba(28, 20, 10, 0.24); /* warm brown-black */
+
+  /* One elevation scale, all cast straight down. The page previously mixed
+       straight-down shadows with diagonal ones (3px 3px), which read as two
+       light sources at once. Three steps: resting, panel, floating. */
+  --elev-1: 0 2px 4px var(--shadow);
+  --elev-2: 0 4px 10px var(--shadow);
+  --elev-3: 0 12px 24px var(--shadow);
   --animation-delay: 0s;
 
   /* --- Geometric accent lines (warm carved-stone rules) --- */
@@ -434,7 +454,7 @@ h1 {
   color: var(--banner-text);
   text-align: left;
   letter-spacing: -0.02em;
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 h2 {
@@ -446,7 +466,8 @@ h2 {
   transition: color 0.4s ease;
 }
 
-h3 {
+h3,
+.section-heading {
   font-size: clamp(1.6rem, 4.5vw, 3rem);
   font-weight: 800;
   color: var(--main-text);
@@ -456,7 +477,7 @@ h3 {
   transition: color 0.4s ease;
   position: relative;
   display: inline-block;
-  filter: drop-shadow(0.5px 0.5px 2px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
 /* "◆ label ◆" laid out as a centered flex row so the flanking diamonds stay
@@ -485,7 +506,8 @@ h3 {
 
 /* Carved rule beneath the inscription — a thin gold line that fades at both
    ends, echoing the ◆ markers in the heading. */
-h3::after {
+h3::after,
+.section-heading::after {
   content: "";
   display: block;
   height: 2px;
@@ -616,6 +638,53 @@ p {
   transform: translateY(10px);
 }
 
+/* The grid sections live inside one <main>. It inherits the body's column
+   centring so wrapping them changed nothing about where they sit. */
+.dex-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Available to screen readers, never painted. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hidden until focused, then it drops in over the fixed banner. */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -110%);
+  z-index: 2000;
+  padding: 0.6rem 1.2rem;
+  background: var(--bg3);
+  color: var(--main-text);
+  border: 1px solid var(--bg2);
+  border-top: none;
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: var(--elev-2);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+}
+
 #pokedex,
 #megadex {
   display: grid;
@@ -743,7 +812,7 @@ body.mega-pokemon .pokemon-image-large {
 .search-filter-bar.open {
   max-height: 14rem;
   padding: 0.7rem 2.5rem 1.4rem 1.5rem;
-  box-shadow: 0 0.3rem 0.6rem var(--shadow);
+  box-shadow: var(--elev-2);
   margin-bottom: 1rem;
   border-top-color: var(--accent2);
 }
@@ -764,7 +833,6 @@ body.mega-pokemon .pokemon-image-large {
   display: flex;
   align-items: center;
   justify-content: center;
-  fill-opacity: 0;
 }
 
 .search-toggle-btn:hover {
@@ -787,14 +855,13 @@ body.mega-pokemon .pokemon-image-large {
   color: var(--second-text);
   font-size: 1rem;
   flex-shrink: 0;
-  fill-opacity: 0;
 }
 
 .search-input {
   flex: 1;
   padding: 0.55rem 1rem;
   border-radius: 0;
-  border: 1.5px solid var(--bg2);
+  border: 1px solid var(--bg2);
   border-bottom: 2px solid var(--accent2); /* Geometric underline accent */
   background: var(--bg3);
   color: var(--main-text);
@@ -931,33 +998,32 @@ body.mega-pokemon .pokemon-image-large {
    Back to Top Button
    ========================== */
 .back-to-top {
-  fill: var(--bg3);
+  /* No gold block — just the mark. (The old `fill: var(--bg3)` also has to go:
+     CSS beats the SVG's own fill attribute, so it would repaint the glyph
+     pale and make it vanish against the page.) */
   position: fixed;
-  bottom: 0.7rem;
-  left: 0.7rem;
-  width: 3.2rem;
-  height: 3.2rem;
+  bottom: 0.8rem;
+  left: 0.8rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0;
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
-  background: var(--accent2);
-  color: var(--bg3);
+  background: transparent;
+  color: var(--gold-ui);
   z-index: 10;
-  box-shadow: 0 0.6rem 1.2rem var(--shadow);
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
   transition:
     opacity 0.4s ease,
-    background 0.3s ease,
+    color 0.3s ease,
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
-/* Notched bottom-right corner */
 
 .back-to-top::before {
   content: "";
@@ -976,9 +1042,8 @@ body.mega-pokemon .pokemon-image-large {
 }
 
 .back-to-top:hover {
-  background: var(--accent1);
+  color: var(--ember-ink);
   transform: translateY(-3px);
-  box-shadow: 0 0.8rem 1.6rem var(--shadow);
 }
 
 .back-to-top:hover::before {
@@ -1007,10 +1072,10 @@ body.mega-pokemon .pokemon-image-large {
   gap: 0.4rem;
   font-style: normal;
   background: var(--bg3);
-  border: 1.5px solid var(--accent4);
+  border: 1px solid var(--accent4);
   border-radius: 0;
   padding: 0.2rem 0.7rem;
-  filter: drop-shadow(1px 1px 2px var(--shadow));
+  filter: drop-shadow(0 2px 4px var(--shadow));
   transition:
     background-color 0.4s ease,
     border-color 0.4s ease;
@@ -1094,7 +1159,23 @@ body.mega-pokemon .pokemon-image-large {
        ::before (not .pokemon) so its clip-path clips only the frame, letting
        the art overflow the card on hover. */
   background-color: var(--bg3);
-  border-top: 6px solid var(--card-type-color, var(--accent2));
+  /* The top bar carries BOTH types: type1 on the left, type2 on the right,
+       blending across the middle third. The stops hold each colour flat at
+       its own end so neither type is muddied — a straight two-stop blend
+       turns the centre into a third colour that belongs to neither.
+       --card-type-color-2 falls back to type1, so mono-types render a flat
+       band identical to before. */
+  --bar-1: var(--card-type-color, var(--accent2));
+  --bar-2: var(--card-type-color-2, var(--bar-1));
+  /* Two declarations on purpose: the first is the sRGB fallback, the second
+       wins wherever oklab interpolation is supported. Blending in oklab is
+       what keeps a full-width gradient from going grey through the middle —
+       sRGB interpolation dips in lightness between two saturated hues. */
+  background-image: linear-gradient(90deg, var(--bar-1), var(--bar-2));
+  background-image: linear-gradient(90deg in oklab, var(--bar-1), var(--bar-2));
+  background-repeat: no-repeat;
+  background-size: 100% 6px;
+  background-position: top left;
   border-left: 1px solid var(--bg2);
   border-right: 1px solid var(--bg2);
   border-bottom: 1px solid var(--bg2);
@@ -1105,7 +1186,7 @@ body.mega-pokemon .pokemon-image-large {
     calc(100% - 14px) 100%,
     0 100%
   );
-  box-shadow: 0 0.4rem 0.8rem var(--shadow);
+  box-shadow: var(--elev-2);
   transition:
     box-shadow 0.3s ease,
     background 0.4s ease,
@@ -1143,21 +1224,10 @@ body.mega-pokemon .pokemon-image-large {
   z-index: 5; /* lift the card — and its overflowing art — above neighbours */
 }
 
-.pokemon.slide-in:hover::before,
-.pokemon.slide-in:focus-visible::before {
-  /* The type-colored top bar lights up, and the card gains a faint glow in
-       its own type color. */
-  border-top-color: color-mix(
-    in srgb,
-    var(--card-type-color, var(--accent2)) 65%,
-    #fff
-  );
-  box-shadow:
-    0 1.6rem 3.2rem rgba(26, 18, 8, 0.25),
-    0 0 18px -6px var(--card-type-color, var(--accent2)),
-    0 0 0 1px rgba(195, 137, 28, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
+/* Hover is the lift and nothing else. The frame used to gain a type-coloured
+   glow, a 1px gold ring and an inset highlight on top of a deeper shadow —
+   four effects all saying "hovered", and the ring read as the border thickening.
+   Keyboard focus is unaffected: it has its own outline rule below. */
 
 .pokemon.slide-in:focus-visible {
   outline: 2px solid var(--accent2);
@@ -1225,7 +1295,9 @@ body.mega-pokemon .pokemon-image-large {
   right: 2.5rem;
   background: none;
   border: none;
-  color: var(--accent2);
+  /* A control's glyph needs 3:1 against what's behind it. accent2 over the
+     page measures 2.15:1. */
+  color: var(--gold-ui);
   cursor: pointer;
   z-index: 10;
   padding: 0.2rem;
@@ -1246,7 +1318,8 @@ body.mega-pokemon .pokemon-image-large {
   filter: brightness(1.2);
 }
 .card-shiny-toggle.shiny-active {
-  color: var(--accent1);
+  /* accent1 over the page is 3.7:1 light / 4.1:1 dark; ember-ink is 5.6/7.1. */
+  color: var(--ember-ink);
 }
 
 /* Circle frame */
@@ -1310,13 +1383,6 @@ body.mega-pokemon .pokemon-image-large {
   margin: 0;
   font-weight: 700;
   font-size: 0.68rem;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 5px),
-    calc(100% - 5px) 100%,
-    0 100%
-  );
 }
 
 /* Catalog-style dex number: tabular, tracked, gold. Inline by default (used in
@@ -1327,7 +1393,7 @@ body.mega-pokemon .pokemon-image-large {
     font-weight: 600;
     font-size: 0.72em;
     letter-spacing: 0.08em;
-    color: var(--accent2);
+    color: var(--gold-ink);
     margin-right: 0.15em;
     background: transparent;
 }
@@ -1351,7 +1417,7 @@ body.mega-pokemon .pokemon-image-large {
   display: flex;
   flex-direction: column;
   margin-top: 0;
-  filter: drop-shadow(3px 3px 6px var(--shadow));
+  filter: drop-shadow(0 4px 10px var(--shadow));
 }
 
 .pokemon-title {
@@ -1385,7 +1451,7 @@ body.mega-pokemon .pokemon-image-large {
   border-radius: 0;
   border: 1px solid var(--bg2);
   border-left: 4px solid var(--accent2);
-  filter: drop-shadow(3px 3px 6px var(--shadow));
+  filter: drop-shadow(0 4px 10px var(--shadow));
   transition:
     background-color 0.4s ease,
     border-color 0.4s ease,
@@ -1424,12 +1490,12 @@ body.mega-pokemon .pokemon-image-large {
   border-left: 4px solid var(--accent1);
   display: flex;
   flex-direction: column;
-  filter: drop-shadow(3px 3px 6px var(--shadow));
+  filter: drop-shadow(0 4px 10px var(--shadow));
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
     0 100%
   );
   transition:
@@ -1462,7 +1528,7 @@ body.mega-pokemon .pokemon-image-large {
   border: 1px solid var(--bg2);
   border-top: 4px solid var(--accent5);
   padding: 1rem 0.5rem;
-  box-shadow: 2px 2px 10px var(--shadow);
+  box-shadow: var(--elev-2);
   margin: 4rem 3rem;
   transition:
     background-color 0.4s ease,
@@ -1530,11 +1596,11 @@ body.mega-pokemon .pokemon-image-large {
 .pokemon-ability:hover,
 .pokemon-ability:focus {
   background: rgba(74, 122, 110, 0.15);
-  color: var(--accent2);
+  color: var(--gold-ink);
 }
 
 .andela-ability {
-  color: var(--accent1);
+  color: var(--ember-ink);
   font-weight: 700;
 }
 
@@ -1561,7 +1627,7 @@ body.mega-pokemon .pokemon-image-large {
   border: 1px solid var(--bg2);
   border-left: 3px solid var(--accent5);
   border-radius: 0;
-  box-shadow: 0 2px 12px var(--shadow);
+  box-shadow: var(--elev-3);
   padding: 0.7rem 1rem;
   z-index: 100;
   white-space: normal;
@@ -1569,8 +1635,8 @@ body.mega-pokemon .pokemon-image-large {
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 8px),
-    calc(100% - 8px) 100%,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
     0 100%
   );
 }
@@ -1743,7 +1809,7 @@ body.mega-pokemon .pokemon-image-large {
 }
 .stat-bar.bst-row .stat-name,
 .stat-bar.bst-row .stat-value {
-  color: var(--accent2);
+  color: var(--gold-ink);
   font-weight: 700;
 }
 
@@ -1924,7 +1990,7 @@ body.mega-pokemon .pokemon-image-large {
   height: auto;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  filter: drop-shadow(3px 3px 4px var(--shadow));
+  filter: drop-shadow(0 2px 4px var(--shadow));
   clip-path: polygon(
     0 0,
     100% 0,
@@ -1938,41 +2004,48 @@ body.mega-pokemon .pokemon-image-large {
   background-color: var(--accent1);
 }
 
+/* Same shape as .back-to-top: a mark, not a filled block. As a gold block its
+   glyph measured 2.36:1 against its own fill, and it was the only filled
+   control left once the scroll-up arrow lost its block. */
 .exit-button {
   position: fixed;
-  bottom: 0.7rem;
-  right: 0.7rem;
+  bottom: 0.8rem;
+  right: 0.8rem;
   width: 3rem;
   height: 3rem;
   border-radius: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   border: none;
-  background-color: var(--accent2);
-  color: var(--bg3);
+  background-color: transparent;
+  color: var(--gold-ui);
   /* Above the .pokemon-image-large art (z-index: 100). On mobile the
        oversized art overlaps this bottom-right corner; without this it would
        paint on top and swallow the button's clicks until you scrolled past. */
   z-index: 1000;
-  box-shadow: 0 0.8rem 1rem var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
 .exit-button:hover {
-  background-color: var(--accent1);
+  color: var(--ember-ink);
+  transform: translateY(-3px);
 }
 
 .toggle-dark-mode {
   position: fixed;
-  bottom: 0.58rem;
-  right: 0.3rem;
+  bottom: 0.8rem;
+  right: 0.8rem;
   background-color: rgba(0, 0, 0, 0);
-  color: var(--accent2);
-  font-size: 4rem;
-  padding: 0.5rem 0.6rem;
+  color: var(--gold-ui);
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   border: none;
   cursor: pointer;
   z-index: 1001;
@@ -1982,20 +2055,20 @@ body.mega-pokemon .pokemon-image-large {
 
 .toggle-dark-mode:hover,
 .toggle-dark-mode-card:hover {
-  color: var(--accent1);
+  color: var(--ember-ink);
   transform: scale(1.15) rotate(15deg);
 }
 
 .toggle-dark-mode-card {
   background-color: rgba(0, 0, 0, 0);
-  color: var(--accent2);
-  font-size: 3rem;
+  color: var(--gold-ui);
+  font-size: 1.5rem;
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
   position: fixed;
-  bottom: 4.25rem;
-  right: 0.7rem;
+  bottom: 4.1rem;
+  right: 0.8rem;
   font-weight: bold;
   width: 3rem;
   height: 3rem;
@@ -2022,7 +2095,7 @@ body.mega-pokemon .pokemon-image-large {
   position: fixed;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 0.4rem 0.6rem var(--shadow);
+  box-shadow: var(--elev-2);
 }
 
 .banner-main {
@@ -2158,6 +2231,12 @@ body.dark-mode {
 
   --main-text: #e3e6d5; /* Warm off-white */
   --second-text: #9ab98a; /* Warm sage */
+  /* Dark-mode accent2 already clears 4.5:1 on every surface, so gold-ink just
+       tracks it here. accent1 does not (2.7:1 on bg2), hence the lift. */
+  /* Gold on the dark page is 6.9:1 — no issue in this theme. */
+  --gold-ink: var(--accent2);
+  --gold-ui: var(--accent2);
+  --ember-ink: #ef9070;
   --shadow: rgba(0, 0, 0, 0.7);
 
   --geo-line: rgba(90, 150, 110, 0.22);
@@ -2170,10 +2249,7 @@ body.dark-mode {
   background-image: url("assets/Bg_Dark.svg");
 }
 
-body.dark-mode .pokemon.slide-in:hover::before,
-body.dark-mode .pokemon.slide-in:focus-visible::before {
-  box-shadow: 0 1rem 2rem var(--shadow);
-}
+/* (No dark-mode hover shadow either — same reason as the light rule above.) */
 
 body.dark-mode .ability-list {
   border-top-color: var(--accent5);
@@ -2354,7 +2430,7 @@ body.dark-mode .bar-fill {
   width: 160%;
   object-fit: contain;
   object-position: bottom center;
-  filter: drop-shadow(0 0.3rem 0.4rem var(--shadow));
+  filter: drop-shadow(0 2px 4px var(--shadow));
 }
 
 a.evo-node:hover,
@@ -2412,7 +2488,6 @@ a.evo-node:focus-visible {
 .evo-arrow svg {
   width: 1.4rem;
   height: 1.4rem;
-  stroke-width: 3; /* bolder so the arrow doesn't get lost */
   flex: 0 0 auto;
 }
 
@@ -2433,7 +2508,7 @@ a.evo-node:focus-visible {
   max-width: 4.25rem;
   white-space: normal;
   overflow-wrap: break-word;
-  box-shadow: 0 0.15rem 0.45rem var(--shadow);
+  box-shadow: var(--elev-1);
 }
 
 /* ==========================
