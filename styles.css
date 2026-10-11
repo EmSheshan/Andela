@@ -554,18 +554,18 @@ p {
 }
 
 .pokemon-card-right {
-  flex-direction: column;
+  /* No display:flex here on purpose — this column has always laid out as a
+     block, so the flex-direction / align-items / justify-content that used to
+     sit here never applied. Removed rather than activated, which would move
+     every panel. */
   padding: 2rem;
-  align-items: baseline;
   flex: 1;
-  align-content: center;
   max-width: 60%;
   /* Let the column shrink below its content's intrinsic width so a wide
        evolution line scrolls inside its own box instead of forcing the column
        wider (which used to bump the whole column below the description on
        3-stage lines but not on 2-stage — see .evo-tree overflow-x). */
   min-width: 0;
-  justify-content: space-between;
 }
 
 /* min-width:0 above lets the side column shrink indefinitely, so it no longer
@@ -1124,8 +1124,9 @@ body.mega-pokemon .pokemon-image-large {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: clamp(100rem, 20vw, 100rem);
-  max-width: 100%;
+  /* Was clamp(100rem, 20vw, 100rem) — min equalled max, so the 20vw never
+       did anything. The grid track sizes the tile. */
+  width: 100%;
   max-height: 100%;
   padding: 0.5rem;
   text-align: center;
@@ -1438,6 +1439,7 @@ body.mega-pokemon .pokemon-image-large {
    ========================== */
 .pokemon-description {
   display: block;
+  position: relative; /* anchors the ::before quote mark */
   width: 80%;
   text-align: left;
   box-sizing: border-box;
@@ -1471,10 +1473,6 @@ body.mega-pokemon .pokemon-image-large {
   line-height: 1;
   pointer-events: none;
 }
-.pokemon-description {
-  position: relative;
-} /* make sure this is set */
-
 .pokemon-sigmove {
   align-content: center;
   text-align: center;
@@ -1693,7 +1691,6 @@ body.mega-pokemon .pokemon-image-large {
 .pokemon-stats {
   margin-right: 1.25rem;
   color: var(--second-text);
-  right: 1rem;
 }
 
 /* ==========================
@@ -2451,21 +2448,6 @@ a.evo-node:focus-visible {
   letter-spacing: 0.01em;
   white-space: nowrap;
     margin-right: 1rem;
-}
-
-.evo-node-num {
-  display: block;
-  font-size: 0.66rem;
-  color: var(--second-text);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
-  margin-top: 0.1rem;
-}
-
-.evo-node-canon {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.7;
 }
 
 /* Connector: a fixed-width column holding the method label above a chevron.

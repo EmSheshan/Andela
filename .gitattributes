@@ -1,0 +1,10 @@
+# Normalise line endings. Git already stores LF; without this, autocrlf
+# checks files out as CRLF on Windows, which makes `prettier --check` fail
+# on files that are actually fine and shows whole-file diffs between machines.
+* text=auto eol=lf
+
+# Binary assets — never touch these.
+*.png binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
